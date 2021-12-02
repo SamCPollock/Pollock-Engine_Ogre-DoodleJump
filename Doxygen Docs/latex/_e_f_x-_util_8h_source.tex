@@ -1,0 +1,452 @@
+\hypertarget{_e_f_x-_util_8h_source}{}\doxysection{EFX-\/\+Util.h}
+\label{_e_f_x-_util_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/EFX-\/Util.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/EFX-\/Util.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*******************************************************************\(\backslash\)}}
+\DoxyCodeLine{2 \textcolor{comment}{*                                                                   *}}
+\DoxyCodeLine{3 \textcolor{comment}{*  EFX-\/UTIL.H -\/ EFX Utilities functions and Reverb Presets          *}}
+\DoxyCodeLine{4 \textcolor{comment}{*                                                                   *}}
+\DoxyCodeLine{5 \textcolor{comment}{*               File revision 1.0                                   *}}
+\DoxyCodeLine{6 \textcolor{comment}{*                                                                   *}}
+\DoxyCodeLine{7 \textcolor{comment}{\(\backslash\)*******************************************************************/}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef EFX\_UTIL\_H\_INCLUDED}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define EFX\_UTIL\_H\_INCLUDED}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{13 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#pragma pack(push, 4)}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef EAXVECTOR\_DEFINED}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define EAXVECTOR\_DEFINED}}
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___e_a_x_v_e_c_t_o_r}{\_EAXVECTOR}} \{}
+\DoxyCodeLine{21     \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{float} z;}
+\DoxyCodeLine{24 \} \mbox{\hyperlink{struct___e_a_x_v_e_c_t_o_r}{EAXVECTOR}};}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifndef EAXREVERBPROPERTIES\_DEFINED}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define EAXREVERBPROPERTIES\_DEFINED}}
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{\_EAXREVERBPROPERTIES}}}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulEnvironment;}
+\DoxyCodeLine{32     \textcolor{keywordtype}{float} flEnvironmentSize;}
+\DoxyCodeLine{33     \textcolor{keywordtype}{float} flEnvironmentDiffusion;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{long} lRoom;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{long} lRoomHF;}
+\DoxyCodeLine{36     \textcolor{keywordtype}{long} lRoomLF;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{float} flDecayTime;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{float} flDecayHFRatio;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{float} flDecayLFRatio;}
+\DoxyCodeLine{40     \textcolor{keywordtype}{long} lReflections;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{float} flReflectionsDelay;}
+\DoxyCodeLine{42     \mbox{\hyperlink{struct___e_a_x_v_e_c_t_o_r}{EAXVECTOR}} vReflectionsPan;}
+\DoxyCodeLine{43     \textcolor{keywordtype}{long} lReverb;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{float} flReverbDelay;}
+\DoxyCodeLine{45     \mbox{\hyperlink{struct___e_a_x_v_e_c_t_o_r}{EAXVECTOR}} vReverbPan;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{float} flEchoTime;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{float} flEchoDepth;}
+\DoxyCodeLine{48     \textcolor{keywordtype}{float} flModulationTime;}
+\DoxyCodeLine{49     \textcolor{keywordtype}{float} flModulationDepth;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{float} flAirAbsorptionHF;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{float} flHFReference;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{float} flLFReference;}
+\DoxyCodeLine{53     \textcolor{keywordtype}{float} flRoomRolloffFactor;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulFlags;}
+\DoxyCodeLine{55 \} \mbox{\hyperlink{struct___e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{EAXREVERBPROPERTIES}}, *\mbox{\hyperlink{struct___e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{LPEAXREVERBPROPERTIES}};}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#ifndef EFXEAXREVERBPROPERTIES\_DEFINED}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define EFXEAXREVERBPROPERTIES\_DEFINED}}
+\DoxyCodeLine{60 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     \textcolor{keywordtype}{float} flDensity;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{float} flDiffusion;}
+\DoxyCodeLine{64     \textcolor{keywordtype}{float} flGain;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{float} flGainHF;}
+\DoxyCodeLine{66     \textcolor{keywordtype}{float} flGainLF;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{float} flDecayTime;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{float} flDecayHFRatio;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{float} flDecayLFRatio;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{float} flReflectionsGain;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{float} flReflectionsDelay;}
+\DoxyCodeLine{72     \textcolor{keywordtype}{float} flReflectionsPan[3];}
+\DoxyCodeLine{73     \textcolor{keywordtype}{float} flLateReverbGain;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{float} flLateReverbDelay;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{float} flLateReverbPan[3];}
+\DoxyCodeLine{76     \textcolor{keywordtype}{float} flEchoTime;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{float} flEchoDepth;}
+\DoxyCodeLine{78     \textcolor{keywordtype}{float} flModulationTime;}
+\DoxyCodeLine{79     \textcolor{keywordtype}{float} flModulationDepth;}
+\DoxyCodeLine{80     \textcolor{keywordtype}{float} flAirAbsorptionGainHF;}
+\DoxyCodeLine{81     \textcolor{keywordtype}{float} flHFReference;}
+\DoxyCodeLine{82     \textcolor{keywordtype}{float} flLFReference;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{float} flRoomRolloffFactor;}
+\DoxyCodeLine{84     \textcolor{keywordtype}{int} iDecayHFLimit;}
+\DoxyCodeLine{85 \} \mbox{\hyperlink{struct_e_f_x_e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{EFXEAXREVERBPROPERTIES}}, *\mbox{\hyperlink{struct_e_f_x_e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{LPEFXEAXREVERBPROPERTIES}};}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifndef EAXOBSTRUCTIONPROPERTIES\_DEFINED}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define EAXOBSTRUCTIONPROPERTIES\_DEFINED}}
+\DoxyCodeLine{90 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___e_a_x_o_b_s_t_r_u_c_t_i_o_n_p_r_o_p_e_r_t_i_e_s}{\_EAXOBSTRUCTIONPROPERTIES}}}
+\DoxyCodeLine{91 \{}
+\DoxyCodeLine{92     \textcolor{keywordtype}{long}          lObstruction;}
+\DoxyCodeLine{93     \textcolor{keywordtype}{float}         flObstructionLFRatio;}
+\DoxyCodeLine{94 \} \mbox{\hyperlink{struct___e_a_x_o_b_s_t_r_u_c_t_i_o_n_p_r_o_p_e_r_t_i_e_s}{EAXOBSTRUCTIONPROPERTIES}}, *\mbox{\hyperlink{struct___e_a_x_o_b_s_t_r_u_c_t_i_o_n_p_r_o_p_e_r_t_i_e_s}{LPEAXOBSTRUCTIONPROPERTIES}};}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#ifndef EAXOCCLUSIONPROPERTIES\_DEFINED}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define EAXOCCLUSIONPROPERTIES\_DEFINED}}
+\DoxyCodeLine{99 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___e_a_x_o_c_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{\_EAXOCCLUSIONPROPERTIES}}}
+\DoxyCodeLine{100 \{}
+\DoxyCodeLine{101     \textcolor{keywordtype}{long}          lOcclusion;}
+\DoxyCodeLine{102     \textcolor{keywordtype}{float}         flOcclusionLFRatio;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{float}         flOcclusionRoomRatio;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{float}         flOcclusionDirectRatio;}
+\DoxyCodeLine{105 \} \mbox{\hyperlink{struct___e_a_x_o_c_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{EAXOCCLUSIONPROPERTIES}}, *\mbox{\hyperlink{struct___e_a_x_o_c_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{LPEAXOCCLUSIONPROPERTIES}};}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#ifndef EAXEXCLUSIONPROPERTIES\_DEFINED}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define EAXEXCLUSIONPROPERTIES\_DEFINED}}
+\DoxyCodeLine{110 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___e_a_x_e_x_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{\_EAXEXCLUSIONPROPERTIES}}}
+\DoxyCodeLine{111 \{}
+\DoxyCodeLine{112     \textcolor{keywordtype}{long}          lExclusion;}
+\DoxyCodeLine{113     \textcolor{keywordtype}{float}         flExclusionLFRatio;}
+\DoxyCodeLine{114 \} \mbox{\hyperlink{struct___e_a_x_e_x_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{EAXEXCLUSIONPROPERTIES}}, *\mbox{\hyperlink{struct___e_a_x_e_x_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{LPEAXEXCLUSIONPROPERTIES}};}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#ifndef EFXLOWPASSFILTER\_DEFINED}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define EFXLOWPASSFILTER\_DEFINED}}
+\DoxyCodeLine{119 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{\_EFXLOWPASSFILTER}}}
+\DoxyCodeLine{120 \{}
+\DoxyCodeLine{121     \textcolor{keywordtype}{float}       flGain;}
+\DoxyCodeLine{122     \textcolor{keywordtype}{float}       flGainHF;}
+\DoxyCodeLine{123 \} \mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{EFXLOWPASSFILTER}}, *\mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{LPEFXLOWPASSFILTER}};}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#ifdef EFXUTILDLL\_EXPORTS}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{ \#define EFX\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{ \#define EFX\_API}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 EFX\_API \textcolor{keywordtype}{void} \_\_cdecl ConvertReverbParameters(\mbox{\hyperlink{struct___e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{EAXREVERBPROPERTIES}} *pEAXProp, \mbox{\hyperlink{struct_e_f_x_e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{EFXEAXREVERBPROPERTIES}} *pEFXEAXReverb);}
+\DoxyCodeLine{133 EFX\_API \textcolor{keywordtype}{void} \_\_cdecl ConvertObstructionParameters(\mbox{\hyperlink{struct___e_a_x_o_b_s_t_r_u_c_t_i_o_n_p_r_o_p_e_r_t_i_e_s}{EAXOBSTRUCTIONPROPERTIES}} *pObProp, \mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{EFXLOWPASSFILTER}} *pDirectLowPassFilter);}
+\DoxyCodeLine{134 EFX\_API \textcolor{keywordtype}{void} \_\_cdecl ConvertExclusionParameters(\mbox{\hyperlink{struct___e_a_x_e_x_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{EAXEXCLUSIONPROPERTIES}} *pExProp, \mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{EFXLOWPASSFILTER}} *pSendLowPassFilter);}
+\DoxyCodeLine{135 EFX\_API \textcolor{keywordtype}{void} \_\_cdecl ConvertOcclusionParameters(\mbox{\hyperlink{struct___e_a_x_o_c_c_l_u_s_i_o_n_p_r_o_p_e_r_t_i_e_s}{EAXOCCLUSIONPROPERTIES}} *pOcProp, \mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{EFXLOWPASSFILTER}} *pDirectLowPassFilter, \mbox{\hyperlink{struct___e_f_x_l_o_w_p_a_s_s_f_i_l_t_e_r}{EFXLOWPASSFILTER}} *pSendLowPassFilter);}
+\DoxyCodeLine{136 EFX\_API \textcolor{keywordtype}{void} \_\_cdecl AdjustEnvironmentSize(\mbox{\hyperlink{struct___e_a_x_r_e_v_e_r_b_p_r_o_p_e_r_t_i_e_s}{EAXREVERBPROPERTIES}} *pEAXProp, \textcolor{keywordtype}{float} flEnvironmentSize);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{comment}{/***********************************************************************************************\(\backslash\)}}
+\DoxyCodeLine{139 \textcolor{comment}{*}}
+\DoxyCodeLine{140 \textcolor{comment}{* EAX Reverb Presets in legacy format -\/ use ConvertReverbParameters() to convert to}}
+\DoxyCodeLine{141 \textcolor{comment}{* EFX EAX Reverb Presets for use with the OpenAL Effects Extension.}}
+\DoxyCodeLine{142 \textcolor{comment}{*}}
+\DoxyCodeLine{143 \textcolor{comment}{************************************************************************************************/}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define REVERB\_PRESET\_GENERIC \(\backslash\)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{    \{0,     7.5f,   1.000f, -\/1000,  -\/100,   0,      1.49f,  0.83f,  1.00f,  -\/2602,  0.007f, 0.00f,0.00f,0.00f,  200,    0.011f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PADDEDCELL \(\backslash\)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{    \{1,     1.4f,   1.000f, -\/1000,  -\/6000,  0,      0.17f,  0.10f,  1.00f,  -\/1204,  0.001f, 0.00f,0.00f,0.00f,  207,    0.002f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ROOM \(\backslash\)}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{    \{2,     1.9f,   1.000f, -\/1000,  -\/454,   0,      0.40f,  0.83f,  1.00f,  -\/1646,  0.002f, 0.00f,0.00f,0.00f,  53,     0.003f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define REVERB\_PRESET\_BATHROOM \(\backslash\)}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{    \{3,     1.4f,   1.000f, -\/1000,  -\/1200,  0,      1.49f,  0.54f,  1.00f,  -\/370,   0.007f, 0.00f,0.00f,0.00f,  1030,   0.011f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define REVERB\_PRESET\_LIVINGROOM \(\backslash\)}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{    \{4,     2.5f,   1.000f, -\/1000,  -\/6000,  0,      0.50f,  0.10f,  1.00f,  -\/1376,  0.003f, 0.00f,0.00f,0.00f,  -\/1104,  0.004f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define REVERB\_PRESET\_STONEROOM \(\backslash\)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{    \{5,     11.6f,  1.000f,  -\/1000, -\/300,   0,      2.31f,  0.64f,  1.00f,  -\/711,   0.012f, 0.00f,0.00f,0.00f,  83,     0.017f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define REVERB\_PRESET\_AUDITORIUM \(\backslash\)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{    \{6,     21.6f,  1.000f,  -\/1000, -\/476,   0,      4.32f,  0.59f,  1.00f,  -\/789,   0.020f, 0.00f,0.00f,0.00f,  -\/289,   0.030f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CONCERTHALL \(\backslash\)}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{    \{7,     19.6f,  1.000f,  -\/1000, -\/500,   0,      3.92f,  0.70f,  1.00f,  -\/1230,  0.020f, 0.00f,0.00f,0.00f,  -\/02,    0.029f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CAVE \(\backslash\)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{    \{8,     14.6f,  1.000f,  -\/1000, 0,      0,      2.91f,  1.30f,  1.00f,  -\/602,   0.015f, 0.00f,0.00f,0.00f,  -\/302,   0.022f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x1f \}}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ARENA \(\backslash\)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{    \{9,     36.2f,  1.000f,  -\/1000, -\/698,   0,      7.24f,  0.33f,  1.00f,  -\/1166,  0.020f, 0.00f,0.00f,0.00f,  16,     0.030f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define REVERB\_PRESET\_HANGAR \(\backslash\)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{    \{10,    50.3f,  1.000f,  -\/1000, -\/1000,  0,      10.05f, 0.23f,  1.00f,  -\/602,   0.020f, 0.00f,0.00f,0.00f,  198,    0.030f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CARPETTEDHALLWAY \(\backslash\)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{    \{11,    1.9f,   1.000f, -\/1000,  -\/4000,  0,      0.30f,  0.10f,  1.00f,  -\/1831,  0.002f, 0.00f,0.00f,0.00f,  -\/1630,  0.030f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define REVERB\_PRESET\_HALLWAY \(\backslash\)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{    \{12,    1.8f,   1.000f, -\/1000,  -\/300,   0,      1.49f,  0.59f,  1.00f,  -\/1219,  0.007f, 0.00f,0.00f,0.00f,  441,    0.011f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define REVERB\_PRESET\_STONECORRIDOR \(\backslash\)}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{    \{13,    13.5f,  1.000f, -\/1000,  -\/237,   0,      2.70f,  0.79f,  1.00f,  -\/1214,  0.013f, 0.00f,0.00f,0.00f,  395,    0.020f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ALLEY \(\backslash\)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{    \{14,    7.5f,   0.300f, -\/1000,  -\/270,   0,      1.49f,  0.86f,  1.00f,  -\/1204,  0.007f, 0.00f,0.00f,0.00f,  -\/4,     0.011f,     0.00f,0.00f,0.00f,  0.125f, 0.950f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FOREST \(\backslash\)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{    \{15,    38.0f,  0.300f, -\/1000,  -\/3300,  0,      1.49f,  0.54f,  1.00f,  -\/2560,  0.162f, 0.00f,0.00f,0.00f,  -\/229,   0.088f,     0.00f,0.00f,0.00f,  0.125f, 1.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY \(\backslash\)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{    \{16,    7.5f,   0.500f, -\/1000,  -\/800,   0,      1.49f,  0.67f,  1.00f,  -\/2273,  0.007f, 0.00f,0.00f,0.00f,  -\/1691,  0.011f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define REVERB\_PRESET\_MOUNTAINS \(\backslash\)}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{    \{17,    100.0f, 0.270f, -\/1000,  -\/2500,  0,      1.49f,  0.21f,  1.00f,  -\/2780,  0.300f, 0.00f,0.00f,0.00f,  -\/1434,  0.100f,     0.00f,0.00f,0.00f,  0.250f, 1.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x1f \}}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define REVERB\_PRESET\_QUARRY \(\backslash\)}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{    \{18,    17.5f,  1.000f, -\/1000,  -\/1000,  0,      1.49f,  0.83f,  1.00f,  -\/10000, 0.061f, 0.00f,0.00f,0.00f,  500,    0.025f,     0.00f,0.00f,0.00f,  0.125f, 0.700f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PLAIN \(\backslash\)}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{    \{19,    42.5f,  0.210f, -\/1000,  -\/2000,  0,      1.49f,  0.50f,  1.00f,  -\/2466,  0.179f, 0.00f,0.00f,0.00f,  -\/1926,  0.100f,     0.00f,0.00f,0.00f,  0.250f, 1.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PARKINGLOT \(\backslash\)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{    \{20,    8.3f,   1.000f, -\/1000,  0,      0,      1.65f,  1.50f,  1.00f,  -\/1363,  0.008f, 0.00f,0.00f,0.00f,  -\/1153,  0.012f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x1f \}}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SEWERPIPE \(\backslash\)}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{    \{21,    1.7f,   0.800f, -\/1000,  -\/1000,  0,      2.81f,  0.14f,  1.00f,  429,    0.014f, 0.00f,0.00f,0.00f,  1023,   0.021f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define REVERB\_PRESET\_UNDERWATER \(\backslash\)}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{    \{22,    1.8f,   1.000f, -\/1000,  -\/4000,  0,      1.49f,  0.10f,  1.00f,  -\/449,   0.007f, 0.00f,0.00f,0.00f,  1700,   0.011f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 1.180f, 0.348f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRUGGED \(\backslash\)}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{    \{23,    1.9f,   0.500f, -\/1000,  0,      0,      8.39f,  1.39f,  1.00f,  -\/115,   0.002f, 0.00f,0.00f,0.00f,  985,    0.030f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 1.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x1f \}}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DIZZY \(\backslash\)}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{    \{24,    1.8f,   0.600f, -\/1000,  -\/400,   0,      17.23f, 0.56f,  1.00f,  -\/1713,  0.020f, 0.00f,0.00f,0.00f,  -\/613,   0.030f,     0.00f,0.00f,0.00f,  0.250f, 1.000f, 0.810f, 0.310f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x1f \}}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PSYCHOTIC \(\backslash\)}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{    \{25,    1.0f,   0.500f, -\/1000,  -\/151,   0,      7.56f,  0.91f,  1.00f,  -\/626,   0.020f, 0.00f,0.00f,0.00f,  774,    0.030f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 4.000f, 1.000f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x1f \}}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{comment}{// CASTLE PRESETS}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_SMALLROOM \(\backslash\)}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.890f, -\/1000,  -\/800,   -\/2000,  1.22f,  0.83f,  0.31f,  -\/100,   0.022f, 0.00f,0.00f,0.00f,  600,    0.011f,     0.00f,0.00f,0.00f,  0.138f, 0.080f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_SHORTPASSAGE \(\backslash\)}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.890f, -\/1000,  -\/1000,  -\/2000,  2.32f,  0.83f,  0.31f,  -\/100,   0.007f, 0.00f,0.00f,0.00f,  200,        0.023f,     0.00f,0.00f,0.00f,  0.138f, 0.080f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_MEDIUMROOM \(\backslash\)}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.930f, -\/1000,  -\/1100,  -\/2000,  2.04f,  0.83f,  0.46f,  -\/400,   0.022f, 0.00f,0.00f,0.00f,  400,    0.011f,     0.00f,0.00f,0.00f,  0.155f, 0.030f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_LONGPASSAGE \(\backslash\)}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.890f, -\/1000,  -\/800,   -\/2000,  3.42f,  0.83f,  0.31f,  -\/100,   0.007f, 0.00f,0.00f,0.00f,  300,    0.023f,     0.00f,0.00f,0.00f,  0.138f, 0.080f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{211 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_LARGEROOM \(\backslash\)}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.820f, -\/1000,  -\/1100,  -\/1800,  2.53f,  0.83f,  0.50f,  -\/700,   0.034f, 0.00f,0.00f,0.00f,  200,        0.016f,     0.00f,0.00f,0.00f,  0.185f, 0.070f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_HALL \(\backslash\)}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.810f, -\/1000,  -\/1100,  -\/1500,  3.14f,  0.79f,  0.62f,  -\/1500,  0.056f, 0.00f,0.00f,0.00f,  100,    0.024f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_CUPBOARD \(\backslash\)}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.890f, -\/1000,  -\/1100,  -\/2000,  0.67f,  0.87f,  0.31f,  300,    0.010f, 0.00f,0.00f,0.00f,  1100,   0.007f,     0.00f,0.00f,0.00f,  0.138f, 0.080f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_COURTYARD \(\backslash\)}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.420f, -\/1000,  -\/700,   -\/1400,  2.13f,  0.61f,  0.23f,  -\/1300,  0.160f, 0.00f,0.00f,0.00f,  -\/300,   0.036f,     0.00f,0.00f,0.00f,  0.250f, 0.370f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x1f \}}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CASTLE\_ALCOVE \(\backslash\)}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{    \{ 26,   8.3f,   0.890f, -\/1000,  -\/600,   -\/2000,  1.64f,  0.87f,  0.31f,  00, 0.007f, 0.00f,0.00f,0.00f,      300,    0.034f,     0.00f,0.00f,0.00f,  0.138f, 0.080f, 0.250f, 0.000f, -\/5.0f,  5168.6f,    139.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{comment}{// FACTORY PRESETS}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_ALCOVE \(\backslash\)}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{    \{ 26,   1.8f,   0.590f,  -\/1200, -\/200,   -\/600,   3.14f,  0.65f,  1.31f,  300,    0.010f, 0.00f,0.00f,0.00f,  000,    0.038f,     0.00f,0.00f,0.00f,  0.114f, 0.100f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_SHORTPASSAGE \(\backslash\)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{    \{ 26,   1.8f,   0.640f,  -\/1200, -\/200,   -\/600,   2.53f,  0.65f,  1.31f,  0,      0.010f, 0.00f,0.00f,0.00f,  200,    0.038f,     0.00f,0.00f,0.00f,  0.135f, 0.230f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_MEDIUMROOM \(\backslash\)}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{    \{ 26,   1.9f,   0.820f,  -\/1200, -\/200,   -\/600,   2.76f,  0.65f,  1.31f,  -\/1100,  0.022f, 0.00f,0.00f,0.00f,  300,    0.023f,     0.00f,0.00f,0.00f,  0.174f, 0.070f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_LONGPASSAGE \(\backslash\)}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{    \{ 26,   1.8f,   0.640f,  -\/1200, -\/200,   -\/600,   4.06f,  0.65f,  1.31f,  0,      0.020f, 0.00f,0.00f,0.00f,  200,    0.037f,     0.00f,0.00f,0.00f,  0.135f, 0.230f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_LARGEROOM \(\backslash\)}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{    \{ 26,   1.9f,   0.750f,  -\/1200, -\/300,   -\/400,   4.24f,  0.51f,  1.31f,  -\/1500,  0.039f, 0.00f,0.00f,0.00f,  100,        0.023f,     0.00f,0.00f,0.00f,  0.231f, 0.070f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_HALL \(\backslash\)}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{    \{ 26,   1.9f,   0.750f,  -\/1000, -\/300,   -\/400,   7.43f,  0.51f,  1.31f,  -\/2400,  0.073f, 0.00f,0.00f,0.00f,  -\/100,   0.027f,     0.00f,0.00f,0.00f,  0.250f, 0.070f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_CUPBOARD \(\backslash\)}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{    \{ 26,   1.7f,   0.630f,  -\/1200, -\/200,   -\/600,   0.49f,  0.65f,  1.31f,  200,    0.010f, 0.00f,0.00f,0.00f,  600,    0.032f,     0.00f,0.00f,0.00f,  0.107f, 0.070f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_COURTYARD \(\backslash\)}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{    \{ 26,   1.7f,   0.570f,  -\/1000, -\/1000,  -\/400,   2.32f,  0.29f,  0.56f,  -\/1300,  0.140f, 0.00f,0.00f,0.00f,  -\/800,   0.039f,     0.00f,0.00f,0.00f,  0.250f, 0.290f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define REVERB\_PRESET\_FACTORY\_SMALLROOM \(\backslash\)}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{    \{ 26,   1.8f,   0.820f,  -\/1000, -\/200,   -\/600,   1.72f,  0.65f,  1.31f,  -\/300,   0.010f, 0.00f,0.00f,0.00f,  500,    0.024f,     0.00f,0.00f,0.00f,  0.119f, 0.070f, 0.250f, 0.000f, -\/5.0f,  3762.6f,    362.5f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{comment}{// ICE PALACE PRESETS}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_ALCOVE \(\backslash\)}}
+\DoxyCodeLine{250 \textcolor{preprocessor}{    \{ 26,   2.7f,   0.840f, -\/1000,  -\/500,   -\/1100,  2.76f,  1.46f,  0.28f,  100,    0.010f, 0.00f,0.00f,0.00f,  -\/100,   0.030f,     0.00f,0.00f,0.00f,  0.161f, 0.090f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{251 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_SHORTPASSAGE \(\backslash\)}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{    \{ 26,   2.7f,   0.750f, -\/1000,  -\/500,   -\/1100,  1.79f,  1.46f,  0.28f,  -\/600,   0.010f, 0.00f,0.00f,0.00f,  100,        0.019f,     0.00f,0.00f,0.00f,  0.177f, 0.090f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_MEDIUMROOM \(\backslash\)}}
+\DoxyCodeLine{254 \textcolor{preprocessor}{    \{ 26,   2.7f,   0.870f, -\/1000,  -\/500,   -\/700,   2.22f,  1.53f,  0.32f,  -\/800,   0.039f, 0.00f,0.00f,0.00f,  100,    0.027f,     0.00f,0.00f,0.00f,  0.186f, 0.120f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_LONGPASSAGE \(\backslash\)}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{    \{ 26,   2.7f,   0.770f, -\/1000,  -\/500,   -\/800,   3.01f,  1.46f,  0.28f,  -\/200,   0.012f, 0.00f,0.00f,0.00f,  200,    0.025f,     0.00f,0.00f,0.00f,  0.186f, 0.040f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_LARGEROOM \(\backslash\)}}
+\DoxyCodeLine{258 \textcolor{preprocessor}{    \{ 26,   2.9f,   0.810f, -\/1000,  -\/500,   -\/700,   3.14f,  1.53f,  0.32f,  -\/1200,  0.039f, 0.00f,0.00f,0.00f,  000,    0.027f,     0.00f,0.00f,0.00f,  0.214f, 0.110f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_HALL \(\backslash\)}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{    \{ 26,   2.9f,   0.760f, -\/1000,  -\/700,   -\/500,   5.49f,  1.53f,  0.38f,  -\/1900,  0.054f, 0.00f,0.00f,0.00f,  -\/400,   0.052f,     0.00f,0.00f,0.00f,  0.226f, 0.110f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_CUPBOARD \(\backslash\)}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{    \{ 26,   2.7f,   0.830f, -\/1000,  -\/600,   -\/1300,  0.76f,  1.53f,  0.26f,  100,    0.012f, 0.00f,0.00f,0.00f,  600,    0.016f,     0.00f,0.00f,0.00f,  0.143f, 0.080f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_COURTYARD \(\backslash\)}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{    \{ 26,   2.9f,   0.590f, -\/1000,  -\/1100,  -\/1000,  2.04f,  1.20f,  0.38f,  -\/1000,  0.173f, 0.00f,0.00f,0.00f,  -\/1000,  0.043f,     0.00f,0.00f,0.00f,  0.235f, 0.480f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#define REVERB\_PRESET\_ICEPALACE\_SMALLROOM \(\backslash\)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{    \{ 26,   2.7f,   0.840f, -\/1000,  -\/500,   -\/1100,  1.51f,  1.53f,  0.27f,  -\/100,   0.010f, 0.00f,0.00f,0.00f,  300,    0.011f,     0.00f,0.00f,0.00f,  0.164f, 0.140f, 0.250f, 0.000f, -\/5.0f,  12428.5f,   99.6f,  0.00f,  0x20 \}}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{comment}{// SPACE STATION PRESETS}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_ALCOVE \(\backslash\)}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{    \{ 26,   1.5f,   0.780f, -\/1000,  -\/300,   -\/100,   1.16f,  0.81f,  0.55f,  300,    0.007f, 0.00f,0.00f,0.00f,  000,    0.018f,     0.00f,0.00f,0.00f,  0.192f, 0.210f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_MEDIUMROOM \(\backslash\)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{    \{ 26,   1.5f,   0.750f, -\/1000,  -\/400,   -\/100,   3.01f,  0.50f,  0.55f,  -\/800,   0.034f, 0.00f,0.00f,0.00f,  100,        0.035f,     0.00f,0.00f,0.00f,  0.209f, 0.310f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_SHORTPASSAGE \(\backslash\)}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{    \{ 26,   1.5f,   0.870f, -\/1000,  -\/400,   -\/100,   3.57f,  0.50f,  0.55f,  0,      0.012f, 0.00f,0.00f,0.00f,  100,        0.016f,     0.00f,0.00f,0.00f,  0.172f, 0.200f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_LONGPASSAGE \(\backslash\)}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{    \{ 26,   1.9f,   0.820f, -\/1000,  -\/400,   -\/100,   4.62f,  0.62f,  0.55f,  0,      0.012f, 0.00f,0.00f,0.00f,  200,        0.031f,     0.00f,0.00f,0.00f,  0.250f, 0.230f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_LARGEROOM \(\backslash\)}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{    \{ 26,   1.8f,   0.810f, -\/1000,  -\/400,   -\/100,   3.89f,  0.38f,  0.61f,  -\/1000,  0.056f, 0.00f,0.00f,0.00f,  -\/100,   0.035f,     0.00f,0.00f,0.00f,  0.233f, 0.280f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_HALL \(\backslash\)}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{    \{ 26,   1.9f,   0.870f, -\/1000,  -\/400,   -\/100,   7.11f,  0.38f,  0.61f,  -\/1500,  0.100f, 0.00f,0.00f,0.00f,  -\/400,   0.047f,     0.00f,0.00f,0.00f,  0.250f, 0.250f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_CUPBOARD \(\backslash\)}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{    \{ 26,   1.4f,   0.560f, -\/1000,  -\/300,   -\/100,   0.79f,  0.81f,  0.55f,  300,    0.007f, 0.00f,0.00f,0.00f,  500,    0.018f,     0.00f,0.00f,0.00f,  0.181f, 0.310f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPACESTATION\_SMALLROOM \(\backslash\)}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{    \{ 26,   1.5f,   0.700f, -\/1000,  -\/300,   -\/100,   1.72f,  0.82f,  0.55f,  -\/200,   0.007f, 0.00f,0.00f,0.00f,  300,    0.013f,     0.00f,0.00f,0.00f,  0.188f, 0.260f, 0.250f, 0.000f, -\/5.0f,  3316.1f,    458.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{// WOODEN GALLEON PRESETS}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_ALCOVE \(\backslash\)}}
+\DoxyCodeLine{294 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/1800,  -\/1000,  1.22f,  0.62f,  0.91f,  100,    0.012f, 0.00f,0.00f,0.00f,  -\/300,   0.024f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_SHORTPASSAGE \(\backslash\)}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/1800,  -\/1000,  1.75f,  0.50f,  0.87f,  -\/100,   0.012f, 0.00f,0.00f,0.00f,  -\/400,   0.024f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_MEDIUMROOM \(\backslash\)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/2000,  -\/1100,  1.47f,  0.42f,  0.82f,  -\/100,   0.049f, 0.00f,0.00f,0.00f,  -\/100,   0.029f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_LONGPASSAGE \(\backslash\)}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/2000,  -\/1000,  1.99f,  0.40f,  0.79f,  000,    0.020f, 0.00f,0.00f,0.00f,  -\/700,   0.036f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_LARGEROOM \(\backslash\)}}
+\DoxyCodeLine{302 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/2100,  -\/1100,  2.65f,  0.33f,  0.82f,  -\/100,   0.066f, 0.00f,0.00f,0.00f,  -\/200,   0.049f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_HALL \(\backslash\)}}
+\DoxyCodeLine{304 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/2200,  -\/1100,  3.45f,  0.30f,  0.82f,  -\/100,   0.088f, 0.00f,0.00f,0.00f,  -\/200,   0.063f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_CUPBOARD \(\backslash\)}}
+\DoxyCodeLine{306 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/1700,  -\/1000,  0.56f,  0.46f,  0.91f,  100,    0.012f, 0.00f,0.00f,0.00f,  100,    0.028f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_SMALLROOM \(\backslash\)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{    \{ 26,   7.5f,   1.000f, -\/1000,  -\/1900,  -\/1000,  0.79f,  0.32f,  0.87f,  00,     0.032f, 0.00f,0.00f,0.00f,  -\/100,   0.029f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define REVERB\_PRESET\_WOODEN\_COURTYARD \(\backslash\)}}
+\DoxyCodeLine{310 \textcolor{preprocessor}{    \{ 26,   7.5f,   0.650f, -\/1000,  -\/2200,  -\/1000,  1.79f,  0.35f,  0.79f,  -\/500,   0.123f, 0.00f,0.00f,0.00f,  -\/2000,  0.032f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  4705.0f,    99.6f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{comment}{// SPORTS PRESETS}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_EMPTYSTADIUM \(\backslash\)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{    \{ 26,   7.2f,   1.000f, -\/1000,  -\/700,   -\/200,   6.26f,  0.51f,  1.10f,  -\/2400,  0.183f, 0.00f,0.00f,0.00f,  -\/800,   0.038f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_SQUASHCOURT \(\backslash\)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{    \{ 26,   7.5f,   0.750f, -\/1000,  -\/1000,  -\/200,   2.22f,  0.91f,  1.16f,  -\/700,   0.007f, 0.00f,0.00f,0.00f,  -\/200,   0.011f,     0.00f,0.00f,0.00f,  0.126f, 0.190f, 0.250f, 0.000f, -\/5.0f,  7176.9f,    211.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{320 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_SMALLSWIMMINGPOOL \(\backslash\)}}
+\DoxyCodeLine{321 \textcolor{preprocessor}{    \{ 26,  36.2f,   0.700f, -\/1000,  -\/200,   -\/100,   2.76f,  1.25f,  1.14f,  -\/400,   0.020f, 0.00f,0.00f,0.00f,  -\/200,   0.030f,     0.00f,0.00f,0.00f,  0.179f, 0.150f, 0.895f, 0.190f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_LARGESWIMMINGPOOL\(\backslash\)}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{    \{ 26,  36.2f,   0.820f, -\/1000,  -\/200,   0,      5.49f,  1.31f,  1.14f,  -\/700,   0.039f, 0.00f,0.00f,0.00f,  -\/600,   0.049f,     0.00f,0.00f,0.00f,  0.222f, 0.550f, 1.159f, 0.210f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_GYMNASIUM \(\backslash\)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{    \{ 26,   7.5f,   0.810f, -\/1000,  -\/700,   -\/100,   3.14f,  1.06f,  1.35f,  -\/800,   0.029f, 0.00f,0.00f,0.00f,  -\/500,   0.045f,     0.00f,0.00f,0.00f,  0.146f, 0.140f, 0.250f, 0.000f, -\/5.0f,  7176.9f,    211.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{326 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_FULLSTADIUM \(\backslash\)}}
+\DoxyCodeLine{327 \textcolor{preprocessor}{    \{ 26,   7.2f,   1.000f, -\/1000,  -\/2300,  -\/200,   5.25f,  0.17f,  0.80f,  -\/2000,  0.188f, 0.00f,0.00f,0.00f,  -\/1100,  0.038f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SPORT\_STADIUMTANNOY \(\backslash\)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{    \{ 26,   3.0f,   0.780f, -\/1000,   -\/500,   -\/600,  2.53f,  0.88f,  0.68f,  -\/1100,  0.230f, 0.00f,0.00f,0.00f,  -\/600,   0.063f,     0.00f,0.00f,0.00f,  0.250f, 0.200f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332 \textcolor{comment}{// PREFAB PRESETS}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PREFAB\_WORKSHOP \(\backslash\)}}
+\DoxyCodeLine{336 \textcolor{preprocessor}{    \{ 26,   1.9f,   1.000f, -\/1000,  -\/1700,  -\/800,   0.76f,  1.00f,  1.00f,  0,      0.012f, 0.00f,0.00f,0.00f,  100,        0.012f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PREFAB\_SCHOOLROOM \(\backslash\)}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{    \{ 26,   1.86f,  0.690f, -\/1000,  -\/400,   -\/600,   0.98f,  0.45f,  0.18f,  300,    0.017f, 0.00f,0.00f,0.00f,  300,    0.015f,     0.00f,0.00f,0.00f,  0.095f, 0.140f, 0.250f, 0.000f, -\/5.0f,  7176.9f,    211.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PREFAB\_PRACTISEROOM \(\backslash\)}}
+\DoxyCodeLine{340 \textcolor{preprocessor}{    \{ 26,   1.86f,  0.870f, -\/1000,  -\/800,   -\/600,   1.12f,  0.56f,  0.18f,  200,    0.010f, 0.00f,0.00f,0.00f,  300,    0.011f,     0.00f,0.00f,0.00f,  0.095f, 0.140f, 0.250f, 0.000f, -\/5.0f,  7176.9f,    211.2f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PREFAB\_OUTHOUSE \(\backslash\)}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.820f, -\/1000,  -\/1900,  -\/1600,  1.38f,  0.38f,  0.35f,  -\/100,   0.024f, 0.00f,0.00f,-\/0.00f, -\/400,   0.044f,     0.00f,0.00f,0.00f,  0.121f, 0.170f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    107.5f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PREFAB\_CARAVAN \(\backslash\)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{    \{ 26,   8.3f,   1.000f, -\/1000,  -\/2100,  -\/1800,  0.43f,  1.50f,  1.00f,  0,      0.012f, 0.00f,0.00f,0.00f,  600,    0.012f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x1f \}}}
+\DoxyCodeLine{345             \textcolor{comment}{// for US developers, a caravan is the same as a trailer =o)}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348 \textcolor{comment}{// DOME AND PIPE PRESETS}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DOME\_TOMB \(\backslash\)}}
+\DoxyCodeLine{352 \textcolor{preprocessor}{    \{ 26,  51.8f,   0.790f, -\/1000,  -\/900,   -\/1300,  4.18f,  0.21f,  0.10f,  -\/825,   0.030f, 0.00f,0.00f,0.00f,  450,    0.022f,     0.00f,0.00f,0.00f,  0.177f, 0.190f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    20.0f,  0.00f,  0x0 \}}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PIPE\_SMALL \(\backslash\)}}
+\DoxyCodeLine{354 \textcolor{preprocessor}{    \{ 26,  50.3f,   1.000f, -\/1000,  -\/900,   -\/1300,  5.04f,  0.10f,  0.10f,  -\/600,   0.032f, 0.00f,0.00f,0.00f,  800,    0.015f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    20.0f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DOME\_SAINTPAULS \(\backslash\)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{    \{ 26,  50.3f,   0.870f, -\/1000,  -\/900,   -\/1300,  10.48f, 0.19f,  0.10f,  -\/1500,  0.090f, 0.00f,0.00f,0.00f,  200,    0.042f,     0.00f,0.00f,0.00f,  0.250f, 0.120f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    20.0f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{357 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PIPE\_LONGTHIN \(\backslash\)}}
+\DoxyCodeLine{358 \textcolor{preprocessor}{    \{ 26,   1.6f,   0.910f, -\/1000,  -\/700,   -\/1100,  9.21f,  0.18f,  0.10f,  -\/300,   0.010f, 0.00f,0.00f,0.00f,  -\/300,   0.022f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    20.0f,  0.00f,  0x0 \}}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PIPE\_LARGE \(\backslash\)}}
+\DoxyCodeLine{360 \textcolor{preprocessor}{    \{ 26,  50.3f,   1.000f, -\/1000,  -\/900,   -\/1300,  8.45f,  0.10f,  0.10f,  -\/800,   0.046f, 0.00f,0.00f,0.00f,  400,    0.032f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    20.0f,  0.00f,  0x3f \}}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define REVERB\_PRESET\_PIPE\_RESONANT \(\backslash\)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{    \{ 26,   1.3f,   0.910f, -\/1000,  -\/700,   -\/1100,  6.81f,  0.18f,  0.10f,  -\/300,   0.010f, 0.00f,0.00f,0.00f,  00,     0.022f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    20.0f,  0.00f,  0x0 \}}}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365 \textcolor{comment}{// OUTDOORS PRESETS}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{368 \textcolor{preprocessor}{\#define REVERB\_PRESET\_OUTDOORS\_BACKYARD \(\backslash\)}}
+\DoxyCodeLine{369 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.450f, -\/1000,  -\/1200,  -\/600,   1.12f,  0.34f,  0.46f,  -\/700,   0.069f, 0.00f,0.00f,-\/0.00f, -\/300,   0.023f,     0.00f,0.00f,0.00f,  0.218f, 0.340f, 0.250f, 0.000f, -\/5.0f,  4399.1f,    242.9f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{370 \textcolor{preprocessor}{\#define REVERB\_PRESET\_OUTDOORS\_ROLLINGPLAINS \(\backslash\)}}
+\DoxyCodeLine{371 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.000f, -\/1000,  -\/3900,  -\/400,   2.13f,  0.21f,  0.46f,  -\/1500,  0.300f, 0.00f,0.00f,-\/0.00f, -\/700,   0.019f,     0.00f,0.00f,0.00f,  0.250f, 1.000f, 0.250f, 0.000f, -\/5.0f,  4399.1f,    242.9f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#define REVERB\_PRESET\_OUTDOORS\_DEEPCANYON \(\backslash\)}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.740f, -\/1000,  -\/1500,  -\/400,   3.89f,  0.21f,  0.46f,  -\/1000,  0.223f, 0.00f,0.00f,-\/0.00f, -\/900,   0.019f,     0.00f,0.00f,0.00f,  0.250f, 1.000f, 0.250f, 0.000f, -\/5.0f,  4399.1f,    242.9f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#define REVERB\_PRESET\_OUTDOORS\_CREEK \(\backslash\)}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.350f, -\/1000,  -\/1500,  -\/600,   2.13f,  0.21f,  0.46f,  -\/800,   0.115f, 0.00f,0.00f,-\/0.00f, -\/1400,  0.031f,     0.00f,0.00f,0.00f,  0.218f, 0.340f, 0.250f, 0.000f, -\/5.0f,  4399.1f,    242.9f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define REVERB\_PRESET\_OUTDOORS\_VALLEY \(\backslash\)}}
+\DoxyCodeLine{377 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.280f, -\/1000,  -\/3100,  -\/1600,  2.88f,  0.26f,  0.35f,  -\/1700,  0.263f, 0.00f,0.00f,-\/0.00f, -\/800,   0.100f,     0.00f,0.00f,0.00f,  0.250f, 0.340f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    107.5f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380 \textcolor{comment}{// MOOD PRESETS}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{383 \textcolor{preprocessor}{\#define REVERB\_PRESET\_MOOD\_HEAVEN \(\backslash\)}}
+\DoxyCodeLine{384 \textcolor{preprocessor}{    \{ 26,  19.6f,   0.940f,  -\/1000, -\/200,   -\/700,   5.04f,  1.12f,  0.56f,  -\/1230,  0.020f, 0.00f,0.00f,0.00f,  200,    0.029f,     0.00f,0.00f,0.00f,  0.250f, 0.080f, 2.742f, 0.050f, -\/2.0f,  5000.0f,    250.0f,  0.00f, 0x3f \}}}
+\DoxyCodeLine{385 \textcolor{preprocessor}{\#define REVERB\_PRESET\_MOOD\_HELL \(\backslash\)}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{    \{ 26, 100.0f,   0.570f,  -\/1000, -\/900,   -\/700,   3.57f,  0.49f,  2.00f,  -\/10000, 0.020f, 0.00f,0.00f,0.00f,  300,    0.030f,     0.00f,0.00f,0.00f,  0.110f, 0.040f, 2.109f, 0.520f, -\/5.0f,  5000.0f,    139.5f,  0.00f, 0x40 \}}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define REVERB\_PRESET\_MOOD\_MEMORY \(\backslash\)}}
+\DoxyCodeLine{388 \textcolor{preprocessor}{    \{ 26,   8.0f,   0.850f,  -\/1000, -\/400,   -\/900,   4.06f,  0.82f,  0.56f,  -\/2800,  0.000f, 0.00f,0.00f,0.00f,  100,    0.000f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.474f, 0.450f, -\/10.0f,  5000.0f,   250.0f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{389 }
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391 \textcolor{comment}{// DRIVING SIMULATION PRESETS}}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{393 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{394 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_COMMENTATOR \(\backslash\)}}
+\DoxyCodeLine{395 \textcolor{preprocessor}{    \{ 26,   3.0f,   0.000f, -\/1000,  -\/500,   -\/600,   2.42f,  0.88f,  0.68f,  -\/1400,  0.093f, 0.00f,0.00f,0.00f,  -\/1200,  0.017f,     0.00f,0.00f,0.00f,  0.250f, 1.000f, 0.250f, 0.000f, -\/10.0f,  5000.0f,   250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{396 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_PITGARAGE \(\backslash\)}}
+\DoxyCodeLine{397 \textcolor{preprocessor}{    \{ 26,   1.9f,   0.590f, -\/1000,  -\/300,   -\/500,   1.72f,  0.93f,  0.87f,  -\/500,   0.000f, 0.00f,0.00f,0.00f,  200,        0.016f,     0.00f,0.00f,0.00f,  0.250f, 0.110f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{398 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_INCAR\_RACER \(\backslash\)}}
+\DoxyCodeLine{399 \textcolor{preprocessor}{    \{ 26,   1.1f,   0.800f, -\/1000,   0,     -\/200,   0.17f,  2.00f,  0.41f,  500,    0.007f, 0.00f,0.00f,0.00f,  -\/300,   0.015f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  10268.2f,   251.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{400 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_INCAR\_SPORTS \(\backslash\)}}
+\DoxyCodeLine{401 \textcolor{preprocessor}{    \{ 26,   1.1f,   0.800f, -\/1000,  -\/400,   0,      0.17f,  0.75f,  0.41f,  0,      0.010f, 0.00f,0.00f,0.00f,  -\/500,   0.000f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  10268.2f,   251.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_INCAR\_LUXURY \(\backslash\)}}
+\DoxyCodeLine{403 \textcolor{preprocessor}{    \{ 26,   1.6f,   1.000f, -\/1000,  -\/2000,  -\/600,   0.13f,  0.41f,  0.46f,  -\/200,   0.010f, 0.00f,0.00f,0.00f,  400,    0.010f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  10268.2f,   251.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_FULLGRANDSTAND \(\backslash\)}}
+\DoxyCodeLine{405 \textcolor{preprocessor}{    \{ 26,   8.3f,   1.000f, -\/1000,  -\/1100,  -\/400,   3.01f,  1.37f,  1.28f,  -\/900,   0.090f, 0.00f,0.00f,0.00f,  -\/1500,  0.049f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  10420.2f,   250.0f,  0.00f, 0x1f \}}}
+\DoxyCodeLine{406 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_EMPTYGRANDSTAND \(\backslash\)}}
+\DoxyCodeLine{407 \textcolor{preprocessor}{    \{ 26,   8.3f,   1.000f, -\/1000,   0,     -\/200,   4.62f,  1.75f,  1.40f,  -\/1363,  0.090f, 0.00f,0.00f,0.00f,  -\/1200,  0.049f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.000f, -\/5.0f,  10420.2f,   250.0f,  0.00f, 0x1f \}}}
+\DoxyCodeLine{408 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DRIVING\_TUNNEL \(\backslash\)}}
+\DoxyCodeLine{409 \textcolor{preprocessor}{    \{ 26,   3.1f,   0.810f, -\/1000,   -\/800,  -\/100,   3.42f,  0.94f,  1.31f,  -\/300,   0.051f, 0.00f,0.00f,0.00f,  -\/300,   0.047f,     0.00f,0.00f,0.00f,  0.214f, 0.050f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    155.3f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412 \textcolor{comment}{// CITY PRESETS}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{415 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY\_STREETS \(\backslash\)}}
+\DoxyCodeLine{416 \textcolor{preprocessor}{    \{ 26,   3.0f,   0.780f, -\/1000,  -\/300,   -\/100,   1.79f,  1.12f,  0.91f,  -\/1100,  0.046f, 0.00f,0.00f,0.00f,  -\/1400,  0.028f,     0.00f,0.00f,0.00f,  0.250f, 0.200f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{417 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY\_SUBWAY \(\backslash\)}}
+\DoxyCodeLine{418 \textcolor{preprocessor}{    \{ 26,   3.0f,   0.740f, -\/1000,  -\/300,   -\/100,   3.01f,  1.23f,  0.91f,   -\/300,  0.046f, 0.00f,0.00f,0.00f,  200,    0.028f,     0.00f,0.00f,0.00f,  0.125f, 0.210f, 0.250f, 0.000f, -\/5.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY\_MUSEUM \(\backslash\)}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.820f, -\/1000,  -\/1500,  -\/1500,  3.28f,  1.40f,  0.57f,  -\/1200,  0.039f, 0.00f,0.00f,-\/0.00f, -\/100,   0.034f,     0.00f,0.00f,0.00f,  0.130f, 0.170f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    107.5f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{421 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY\_LIBRARY \(\backslash\)}}
+\DoxyCodeLine{422 \textcolor{preprocessor}{    \{ 26,  80.3f,   0.820f, -\/1000,  -\/1100,  -\/2100,  2.76f,  0.89f,  0.41f,  -\/900,   0.029f, 0.00f,0.00f,-\/0.00f, -\/100,   0.020f,     0.00f,0.00f,0.00f,  0.130f, 0.170f, 0.250f, 0.000f, -\/5.0f,  2854.4f,    107.5f,  0.00f, 0x0 \}}}
+\DoxyCodeLine{423 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY\_UNDERPASS \(\backslash\)}}
+\DoxyCodeLine{424 \textcolor{preprocessor}{    \{ 26,   3.0f,   0.820f, -\/1000,  -\/700,   -\/100,   3.57f,  1.12f,  0.91f,  -\/800,   0.059f, 0.00f,0.00f,0.00f,  -\/100,   0.037f,     0.00f,0.00f,0.00f,  0.250f, 0.140f, 0.250f, 0.000f, -\/7.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CITY\_ABANDONED \(\backslash\)}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{    \{ 26,   3.0f,   0.690f, -\/1000,  -\/200,   -\/100,   3.28f,  1.17f,  0.91f,  -\/700,   0.044f, 0.00f,0.00f,0.00f,  -\/1100,  0.024f,     0.00f,0.00f,0.00f,  0.250f, 0.200f, 0.250f, 0.000f, -\/3.0f,  5000.0f,    250.0f,  0.00f, 0x20 \}}}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 \textcolor{comment}{// MISC ROOMS}}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431 \textcolor{comment}{//  Env     Size    Diffus  Room    RoomHF  RoomLF  DecTm   DcHF    DcLF    Refl    RefDel  Ref Pan             Revb    RevDel      Rev Pan             EchTm   EchDp   ModTm   ModDp   AirAbs  HFRef       LFRef   RRlOff  FLAGS}}
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define REVERB\_PRESET\_DUSTYROOM  \(\backslash\)}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{    \{ 26,   1.8f,   0.560f, -\/1000,  -\/200,   -\/300,   1.79f,  0.38f,  0.21f,  -\/600,   0.002f, 0.00f,0.00f,0.00f,  200,    0.006f,     0.00f,0.00f,0.00f,  0.202f, 0.050f, 0.250f, 0.000f, -\/10.0f,  13046.0f,  163.3f, 0.00f,  0x20 \}}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{\#define REVERB\_PRESET\_CHAPEL \(\backslash\)}}
+\DoxyCodeLine{435 \textcolor{preprocessor}{    \{ 26,  19.6f,   0.840f, -\/1000,  -\/500,   0,      4.62f,  0.64f,  1.23f,  -\/700,   0.032f, 0.00f,0.00f,0.00f,  -\/200,   0.049f,     0.00f,0.00f,0.00f,  0.250f, 0.000f, 0.250f, 0.110f, -\/5.0f,  5000.0f,    250.0f, 0.00f,  0x3f \}}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define REVERB\_PRESET\_SMALLWATERROOM \(\backslash\)}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{    \{ 26,  36.2f,   0.700f, -\/1000,  -\/698,   0,      1.51f,  1.25f,  1.14f,  -\/100,   0.020f, 0.00f,0.00f,0.00f,  300,    0.030f,     0.00f,0.00f,0.00f,  0.179f, 0.150f, 0.895f, 0.190f, -\/7.0f,  5000.0f,    250.0f, 0.00f, 0x0 \}}}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#pragma pack(pop)}}
+\DoxyCodeLine{441 }
+\DoxyCodeLine{442 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{443 \}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// EFX-\/UTIL\_H\_INCLUDED}}
+
+\end{DoxyCode}

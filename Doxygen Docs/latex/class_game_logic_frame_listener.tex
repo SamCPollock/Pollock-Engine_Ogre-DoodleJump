@@ -1,0 +1,79 @@
+\hypertarget{class_game_logic_frame_listener}{}\doxysection{Game\+Logic\+Frame\+Listener Class Reference}
+\label{class_game_logic_frame_listener}\index{GameLogicFrameListener@{GameLogicFrameListener}}
+Inheritance diagram for Game\+Logic\+Frame\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_logic_frame_listener}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_logic_frame_listener_aeeaaaa5cf990a4655fef68e5016bb937}\label{class_game_logic_frame_listener_aeeaaaa5cf990a4655fef68e5016bb937}} 
+bool {\bfseries frame\+Started} (const Ogre\+::\+Frame\+Event \&evt)
+\begin{DoxyCompactList}\small\item\em Every frame, this runs the Game Logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_logic_frame_listener_a7c7aaca9f75f6b3a5333b8903152487c}{Collision\+Check}} ()
+\item 
+void \mbox{\hyperlink{class_game_logic_frame_listener_aa6d9548f45f8d9cc6254a53cc1d24fbc}{Move\+Platforms}} ()
+\item 
+void \mbox{\hyperlink{class_game_logic_frame_listener_adcf83de4ace61625d5b6c53988d89fbf}{Camera\+Follow}} ()
+\item 
+void \mbox{\hyperlink{class_game_logic_frame_listener_a8bd4fe22ddc041c76441e79fa833c3cb}{Check\+For\+Player\+Fall}} ()
+\item 
+void \mbox{\hyperlink{class_game_logic_frame_listener_affcdf3a5b0cc1e61e89493548d8e33aa}{Check\+For\+Player\+Wins}} ()
+\item 
+\mbox{\Hypertarget{class_game_logic_frame_listener_a248dbb85ef1e77a3bc9c81f2607c5e0d}\label{class_game_logic_frame_listener_a248dbb85ef1e77a3bc9c81f2607c5e0d}} 
+void {\bfseries Game\+Logic} ()
+\begin{DoxyCompactList}\small\item\em This is used to call each of the other functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the \mbox{\hyperlink{class_game_logic_frame_listener}{Game\+Logic\+Frame\+Listener}} class.
+
+This ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_logic_frame_listener_adcf83de4ace61625d5b6c53988d89fbf}\label{class_game_logic_frame_listener_adcf83de4ace61625d5b6c53988d89fbf}} 
+\index{GameLogicFrameListener@{GameLogicFrameListener}!CameraFollow@{CameraFollow}}
+\index{CameraFollow@{CameraFollow}!GameLogicFrameListener@{GameLogicFrameListener}}
+\doxysubsubsection{\texorpdfstring{CameraFollow()}{CameraFollow()}}
+{\footnotesize\ttfamily void Game\+Logic\+Frame\+Listener\+::\+Camera\+Follow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Move camera up to follow player As the player position gets above the middle of the camera, this moves the camera up to follow. \begin{DoxyNote}{Note}
+it does not move the camera down, so as to keep moving the gameplay upwards. ~\newline
+ 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_game_logic_frame_listener_a8bd4fe22ddc041c76441e79fa833c3cb}\label{class_game_logic_frame_listener_a8bd4fe22ddc041c76441e79fa833c3cb}} 
+\index{GameLogicFrameListener@{GameLogicFrameListener}!CheckForPlayerFall@{CheckForPlayerFall}}
+\index{CheckForPlayerFall@{CheckForPlayerFall}!GameLogicFrameListener@{GameLogicFrameListener}}
+\doxysubsubsection{\texorpdfstring{CheckForPlayerFall()}{CheckForPlayerFall()}}
+{\footnotesize\ttfamily void Game\+Logic\+Frame\+Listener\+::\+Check\+For\+Player\+Fall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Player fall off screen. This checks if the player y position is off the bottom of the camera. If they are off the screen, it removes a life and plays the death sound. If the player has lives left, it moves them up to the top of the screen again. If they don\textquotesingle{}t have lives left, it closes the game. ~\newline
+ \mbox{\Hypertarget{class_game_logic_frame_listener_affcdf3a5b0cc1e61e89493548d8e33aa}\label{class_game_logic_frame_listener_affcdf3a5b0cc1e61e89493548d8e33aa}} 
+\index{GameLogicFrameListener@{GameLogicFrameListener}!CheckForPlayerWins@{CheckForPlayerWins}}
+\index{CheckForPlayerWins@{CheckForPlayerWins}!GameLogicFrameListener@{GameLogicFrameListener}}
+\doxysubsubsection{\texorpdfstring{CheckForPlayerWins()}{CheckForPlayerWins()}}
+{\footnotesize\ttfamily void Game\+Logic\+Frame\+Listener\+::\+Check\+For\+Player\+Wins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Player wins! This checks if the player has reached the top of the stage. If they have, it repeatedly plays a \char`\"{}\+You win!\char`\"{} sound effect \mbox{\Hypertarget{class_game_logic_frame_listener_a7c7aaca9f75f6b3a5333b8903152487c}\label{class_game_logic_frame_listener_a7c7aaca9f75f6b3a5333b8903152487c}} 
+\index{GameLogicFrameListener@{GameLogicFrameListener}!CollisionCheck@{CollisionCheck}}
+\index{CollisionCheck@{CollisionCheck}!GameLogicFrameListener@{GameLogicFrameListener}}
+\doxysubsubsection{\texorpdfstring{CollisionCheck()}{CollisionCheck()}}
+{\footnotesize\ttfamily void Game\+Logic\+Frame\+Listener\+::\+Collision\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Check for collisions between player and platforms This loops through each platform in the platform vector to check them against the player for collision. If it finds a collision, it calls the On\+Collision\+Enter function in the player, which is used for physics. \mbox{\Hypertarget{class_game_logic_frame_listener_aa6d9548f45f8d9cc6254a53cc1d24fbc}\label{class_game_logic_frame_listener_aa6d9548f45f8d9cc6254a53cc1d24fbc}} 
+\index{GameLogicFrameListener@{GameLogicFrameListener}!MovePlatforms@{MovePlatforms}}
+\index{MovePlatforms@{MovePlatforms}!GameLogicFrameListener@{GameLogicFrameListener}}
+\doxysubsubsection{\texorpdfstring{MovePlatforms()}{MovePlatforms()}}
+{\footnotesize\ttfamily void Game\+Logic\+Frame\+Listener\+::\+Move\+Platforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Move platforms that go off screen This function checks each platform to see if they are at the bottom of the camera view. If they are at the bottom of the camera view, it moves them up to the top. When it moves them to the top, it also sets a new random x position for them. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Pollock-\/\+Assignment2-\/\+Doodle.\+cpp\end{DoxyCompactItemize}

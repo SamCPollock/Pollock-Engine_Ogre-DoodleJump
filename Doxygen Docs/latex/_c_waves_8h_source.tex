@@ -1,0 +1,118 @@
+\hypertarget{_c_waves_8h_source}{}\doxysection{CWaves.\+h}
+\label{_c_waves_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/CWaves.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/CWaves.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Waves.h: interface for the CWaves class.}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef \_CWAVES\_H\_}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define \_CWAVES\_H\_}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define MAX\_NUM\_WAVEID          1024}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{enum} WAVEFILETYPE}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     WF\_EX  = 1,}
+\DoxyCodeLine{16     WF\_EXT = 2}
+\DoxyCodeLine{17 \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{enum} WAVERESULT}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     WR\_OK = 0,}
+\DoxyCodeLine{22     WR\_INVALIDFILENAME                  = -\/ 1,}
+\DoxyCodeLine{23     WR\_BADWAVEFILE                      = -\/ 2,}
+\DoxyCodeLine{24     WR\_INVALIDPARAM                     = -\/ 3,}
+\DoxyCodeLine{25     WR\_INVALIDWAVEID                    = -\/ 4,}
+\DoxyCodeLine{26     WR\_NOTSUPPORTEDYET                  = -\/ 5,}
+\DoxyCodeLine{27     WR\_WAVEMUSTBEMONO                   = -\/ 6,}
+\DoxyCodeLine{28     WR\_WAVEMUSTBEWAVEFORMATPCM          = -\/ 7,}
+\DoxyCodeLine{29     WR\_WAVESMUSTHAVESAMEBITRESOLUTION   = -\/ 8,}
+\DoxyCodeLine{30     WR\_WAVESMUSTHAVESAMEFREQUENCY       = -\/ 9,}
+\DoxyCodeLine{31     WR\_WAVESMUSTHAVESAMEBITRATE         = -\/10,}
+\DoxyCodeLine{32     WR\_WAVESMUSTHAVESAMEBLOCKALIGNMENT  = -\/11,}
+\DoxyCodeLine{33     WR\_OFFSETOUTOFDATARANGE             = -\/12,}
+\DoxyCodeLine{34     WR\_FILEERROR                        = -\/13,}
+\DoxyCodeLine{35     WR\_OUTOFMEMORY                      = -\/14,}
+\DoxyCodeLine{36     WR\_INVALIDSPEAKERPOS                = -\/15,}
+\DoxyCodeLine{37     WR\_INVALIDWAVEFILETYPE              = -\/16,}
+\DoxyCodeLine{38     WR\_NOTWAVEFORMATEXTENSIBLEFORMAT    = -\/17}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#ifndef \_WAVEFORMATEX\_}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define \_WAVEFORMATEX\_}}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structt_w_a_v_e_f_o_r_m_a_t_e_x}{tWAVEFORMATEX}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     WORD    wFormatTag;}
+\DoxyCodeLine{46     WORD    nChannels;}
+\DoxyCodeLine{47     DWORD   nSamplesPerSec;}
+\DoxyCodeLine{48     DWORD   nAvgBytesPerSec;}
+\DoxyCodeLine{49     WORD    nBlockAlign;}
+\DoxyCodeLine{50     WORD    wBitsPerSample;}
+\DoxyCodeLine{51     WORD    cbSize;}
+\DoxyCodeLine{52 \} \mbox{\hyperlink{structt_w_a_v_e_f_o_r_m_a_t_e_x}{WAVEFORMATEX}};}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_WAVEFORMATEX\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifndef \_WAVEFORMATEXTENSIBLE\_}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define \_WAVEFORMATEXTENSIBLE\_}}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{58     \mbox{\hyperlink{structt_w_a_v_e_f_o_r_m_a_t_e_x}{WAVEFORMATEX}}    Format;}
+\DoxyCodeLine{59     \textcolor{keyword}{union }\{}
+\DoxyCodeLine{60         WORD wValidBitsPerSample;       \textcolor{comment}{/* bits of precision  */}}
+\DoxyCodeLine{61         WORD wSamplesPerBlock;          \textcolor{comment}{/* valid if wBitsPerSample==0 */}}
+\DoxyCodeLine{62         WORD wReserved;                 \textcolor{comment}{/* If neither applies, set to zero. */}}
+\DoxyCodeLine{63     \} Samples;}
+\DoxyCodeLine{64     DWORD           dwChannelMask;      \textcolor{comment}{/* which channels are */}}
+\DoxyCodeLine{65                                         \textcolor{comment}{/* present in stream  */}}
+\DoxyCodeLine{66     GUID            SubFormat;}
+\DoxyCodeLine{67 \} \mbox{\hyperlink{struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e}{WAVEFORMATEXTENSIBLE}}, *\mbox{\hyperlink{struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e}{PWAVEFORMATEXTENSIBLE}};}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !\_WAVEFORMATEXTENSIBLE\_}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{71 \{}
+\DoxyCodeLine{72     WAVEFILETYPE    wfType;}
+\DoxyCodeLine{73     \mbox{\hyperlink{struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e}{WAVEFORMATEXTENSIBLE}} wfEXT;     \textcolor{comment}{// For non-\/WAVEFORMATEXTENSIBLE wavefiles, the header is stored in the Format member of wfEXT}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{char}            *pData;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}   ulDataSize;}
+\DoxyCodeLine{76     FILE            *pFile;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}   ulDataOffset;}
+\DoxyCodeLine{78 \} \mbox{\hyperlink{struct_w_a_v_e_f_i_l_e_i_n_f_o}{WAVEFILEINFO}}, *\mbox{\hyperlink{struct_w_a_v_e_f_i_l_e_i_n_f_o}{LPWAVEFILEINFO}};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{typedef} int (\_\_cdecl *PFNALGETENUMVALUE)( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *szEnumName );}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} WAVEID;}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_waves}{CWaves}}  }
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85 \textcolor{keyword}{public}:}
+\DoxyCodeLine{86     \mbox{\hyperlink{class_c_waves}{CWaves}}();}
+\DoxyCodeLine{87     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_c_waves}{\string~CWaves}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     WAVERESULT LoadWaveFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *szFilename, WAVEID *WaveID);}
+\DoxyCodeLine{90     WAVERESULT OpenWaveFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *szFilename, WAVEID *WaveID);}
+\DoxyCodeLine{91     WAVERESULT ReadWaveData(WAVEID WaveID, \textcolor{keywordtype}{void} *pData, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulDataSize, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *pulBytesWritten);}
+\DoxyCodeLine{92     WAVERESULT SetWaveDataOffset(WAVEID WaveID, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ulOffset);}
+\DoxyCodeLine{93     WAVERESULT GetWaveDataOffset(WAVEID WaveID, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *pulOffset);}
+\DoxyCodeLine{94     WAVERESULT GetWaveType(WAVEID WaveID, WAVEFILETYPE *pwfType);}
+\DoxyCodeLine{95     WAVERESULT GetWaveFormatExHeader(WAVEID WaveID, \mbox{\hyperlink{structt_w_a_v_e_f_o_r_m_a_t_e_x}{WAVEFORMATEX}} *pWFEX);}
+\DoxyCodeLine{96     WAVERESULT GetWaveFormatExtensibleHeader(WAVEID WaveID, \mbox{\hyperlink{struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e}{WAVEFORMATEXTENSIBLE}} *pWFEXT);}
+\DoxyCodeLine{97     WAVERESULT GetWaveData(WAVEID WaveID, \textcolor{keywordtype}{void} **ppAudioData);}
+\DoxyCodeLine{98     WAVERESULT GetWaveSize(WAVEID WaveID, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *pulDataSize);}
+\DoxyCodeLine{99     WAVERESULT GetWaveFrequency(WAVEID WaveID, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *pulFrequency);}
+\DoxyCodeLine{100     WAVERESULT GetWaveALBufferFormat(WAVEID WaveID, PFNALGETENUMVALUE pfnGetEnumValue, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *pulFormat);}
+\DoxyCodeLine{101     WAVERESULT DeleteWaveFile(WAVEID WaveID);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{char} *GetErrorString(WAVERESULT wr, \textcolor{keywordtype}{char} *szErrorString, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} nSizeOfErrorString);}
+\DoxyCodeLine{104     \textcolor{keywordtype}{bool} IsWaveID(WAVEID WaveID);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{private}:}
+\DoxyCodeLine{107     WAVERESULT ParseFile(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *szFilename, \mbox{\hyperlink{struct_w_a_v_e_f_i_l_e_i_n_f_o}{LPWAVEFILEINFO}} pWaveInfo);}
+\DoxyCodeLine{108     WAVEID InsertWaveID(\mbox{\hyperlink{struct_w_a_v_e_f_i_l_e_i_n_f_o}{LPWAVEFILEINFO}} pWaveFileInfo);}
+\DoxyCodeLine{109     }
+\DoxyCodeLine{110     \mbox{\hyperlink{struct_w_a_v_e_f_i_l_e_i_n_f_o}{LPWAVEFILEINFO}}    m\_WaveIDs[MAX\_NUM\_WAVEID];}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_CWAVES\_H\_}}
+
+\end{DoxyCode}

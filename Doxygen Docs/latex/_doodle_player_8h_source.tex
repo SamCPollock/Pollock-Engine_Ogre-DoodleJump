@@ -1,0 +1,30 @@
+\hypertarget{_doodle_player_8h_source}{}\doxysection{Doodle\+Player.\+h}
+\label{_doodle_player_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OrgreTemplateV2/DoodlePlayer.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OrgreTemplateV2/DoodlePlayer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}GameObject.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}SoundManager.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_doodle_player}{DoodlePlayer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_game_object}{GameObject}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{public}:}
+\DoxyCodeLine{9     Ogre::SceneNode* PlayerNode;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keywordtype}{float} jumpForce;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{float} moveSpeed;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_doodle_player_a4bd04cc438238cb3395a3ee5a954e6a9}{DoodlePlayer}}(Ogre::SceneManager* scnMgr, Ogre::SceneNode* playerNode);}
+\DoxyCodeLine{16     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_doodle_player_a61f47a21e05caaa2271d147c215b8a4c}{frameStarted}}(\textcolor{keyword}{const} Ogre::FrameEvent\& evt);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doodle_player_ad23ab0522e522229b38b6b3fa148ad94}{PhysicsSimulate}}(\textcolor{keyword}{const} Ogre::FrameEvent\& evt);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doodle_player_aca7197d4b8a9b9b9dfc840cd81097ce3}{OnCollisionEnter}}(Ogre::SceneNode* other, \mbox{\hyperlink{class_sound_manager}{SoundManager}}* sm);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doodle_player_a57003de31324f02a441d1436e4c2e805}{Bounce}}();}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+
+\end{DoxyCode}

@@ -1,0 +1,170 @@
+\hypertarget{_load_o_a_l_8h_source}{}\doxysection{Load\+OAL.\+h}
+\label{_load_o_a_l_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/LoadOAL.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/LoadOAL.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <al.h>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <alc.h>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// Open AL Function table definition}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef \_OPENALFNTABLE}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_OPENALFNTABLE}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{// AL 1.0 did not define the ALchar and ALCchar types, so define them here}}
+\DoxyCodeLine{10 \textcolor{comment}{// if they don't exist}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef ALchar}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define ALchar char}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef ALCchar}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define ALCchar char}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// Complete list of functions available in AL 1.0 implementations}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALENABLE)( ALenum capability );}
+\DoxyCodeLine{23 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALDISABLE)( ALenum capability ); }
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} ALboolean      (ALAPIENTRY *LPALISENABLED)( ALenum capability ); }
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} \textcolor{keyword}{const} ALchar*  (ALAPIENTRY *LPALGETSTRING)( ALenum param );}
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETBOOLEANV)( ALenum param, ALboolean* data );}
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETINTEGERV)( ALenum param, ALint* data );}
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETFLOATV)( ALenum param, ALfloat* data );}
+\DoxyCodeLine{29 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETDOUBLEV)( ALenum param, ALdouble* data );}
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} ALboolean      (ALAPIENTRY *LPALGETBOOLEAN)( ALenum param );}
+\DoxyCodeLine{31 \textcolor{keyword}{typedef} ALint          (ALAPIENTRY *LPALGETINTEGER)( ALenum param );}
+\DoxyCodeLine{32 \textcolor{keyword}{typedef} ALfloat        (ALAPIENTRY *LPALGETFLOAT)( ALenum param );}
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} ALdouble       (ALAPIENTRY *LPALGETDOUBLE)( ALenum param );}
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} ALenum         (ALAPIENTRY *LPALGETERROR)( void );}
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} ALboolean      (ALAPIENTRY *LPALISEXTENSIONPRESENT)(\textcolor{keyword}{const} ALchar* extname );}
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}*          (ALAPIENTRY *LPALGETPROCADDRESS)( \textcolor{keyword}{const} ALchar* fname );}
+\DoxyCodeLine{37 \textcolor{keyword}{typedef} ALenum         (ALAPIENTRY *LPALGETENUMVALUE)( \textcolor{keyword}{const} ALchar* ename );}
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALLISTENERF)( ALenum param, ALfloat value );}
+\DoxyCodeLine{39 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALLISTENER3F)( ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALLISTENERFV)( ALenum param, \textcolor{keyword}{const} ALfloat* values );}
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALLISTENERI)( ALenum param, ALint value );}
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETLISTENERF)( ALenum param, ALfloat* value );}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETLISTENER3F)( ALenum param, ALfloat *value1, ALfloat *value2, ALfloat *value3 );}
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETLISTENERFV)( ALenum param, ALfloat* values );}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETLISTENERI)( ALenum param, ALint* value );}
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGENSOURCES)( ALsizei n, ALuint* sources ); }
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALDELETESOURCES)( ALsizei n, \textcolor{keyword}{const} ALuint* sources );}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} ALboolean      (ALAPIENTRY *LPALISSOURCE)( ALuint sid ); }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEF)( ALuint sid, ALenum param, ALfloat value); }
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCE3F)( ALuint sid, ALenum param, ALfloat value1, ALfloat value2, ALfloat value3 );}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEFV)( ALuint sid, ALenum param, \textcolor{keyword}{const} ALfloat* values );}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEI)( ALuint sid, ALenum param, ALint value); }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETSOURCEF)( ALuint sid, ALenum param, ALfloat* value );}
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETSOURCE3F)( ALuint sid, ALenum param, ALfloat* value1, ALfloat* value2, ALfloat* value3);}
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETSOURCEFV)( ALuint sid, ALenum param, ALfloat* values );}
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETSOURCEI)( ALuint sid, ALenum param, ALint* value );}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEPLAYV)( ALsizei ns, \textcolor{keyword}{const} ALuint *sids );}
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCESTOPV)( ALsizei ns, \textcolor{keyword}{const} ALuint *sids );}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEREWINDV)( ALsizei ns, \textcolor{keyword}{const} ALuint *sids );}
+\DoxyCodeLine{60 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEPAUSEV)( ALsizei ns, \textcolor{keyword}{const} ALuint *sids );}
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEPLAY)( ALuint sid );}
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCESTOP)( ALuint sid );}
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEREWIND)( ALuint sid );}
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEPAUSE)( ALuint sid );}
+\DoxyCodeLine{65 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEQUEUEBUFFERS)(ALuint sid, ALsizei numEntries, \textcolor{keyword}{const} ALuint *bids );}
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALSOURCEUNQUEUEBUFFERS)(ALuint sid, ALsizei numEntries, ALuint *bids );}
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGENBUFFERS)( ALsizei n, ALuint* buffers );}
+\DoxyCodeLine{68 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALDELETEBUFFERS)( ALsizei n, \textcolor{keyword}{const} ALuint* buffers );}
+\DoxyCodeLine{69 \textcolor{keyword}{typedef} ALboolean      (ALAPIENTRY *LPALISBUFFER)( ALuint bid );}
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALBUFFERDATA)( ALuint bid, ALenum format, \textcolor{keyword}{const} ALvoid* data, ALsizei size, ALsizei freq );}
+\DoxyCodeLine{71 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETBUFFERF)( ALuint bid, ALenum param, ALfloat* value );}
+\DoxyCodeLine{72 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALGETBUFFERI)( ALuint bid, ALenum param, ALint* value );}
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALDOPPLERFACTOR)( ALfloat value );}
+\DoxyCodeLine{74 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALDOPPLERVELOCITY)( ALfloat value );}
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} void           (ALAPIENTRY *LPALDISTANCEMODEL)( ALenum distanceModel );}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} ALCcontext *   (ALCAPIENTRY *LPALCCREATECONTEXT) (ALCdevice *device, \textcolor{keyword}{const} ALCint *attrlist);}
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} ALCboolean     (ALCAPIENTRY *LPALCMAKECONTEXTCURRENT)( ALCcontext *context );}
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} void           (ALCAPIENTRY *LPALCPROCESSCONTEXT)( ALCcontext *context );}
+\DoxyCodeLine{80 \textcolor{keyword}{typedef} void           (ALCAPIENTRY *LPALCSUSPENDCONTEXT)( ALCcontext *context );}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} void           (ALCAPIENTRY *LPALCDESTROYCONTEXT)( ALCcontext *context );}
+\DoxyCodeLine{82 \textcolor{keyword}{typedef} ALCcontext *   (ALCAPIENTRY *LPALCGETCURRENTCONTEXT)( ALCvoid );}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} ALCdevice *    (ALCAPIENTRY *LPALCGETCONTEXTSDEVICE)( ALCcontext *context );}
+\DoxyCodeLine{84 \textcolor{keyword}{typedef} ALCdevice *    (ALCAPIENTRY *LPALCOPENDEVICE)( \textcolor{keyword}{const} ALCchar *devicename );}
+\DoxyCodeLine{85 \textcolor{keyword}{typedef} ALCboolean     (ALCAPIENTRY *LPALCCLOSEDEVICE)( ALCdevice *device );}
+\DoxyCodeLine{86 \textcolor{keyword}{typedef} ALCenum        (ALCAPIENTRY *LPALCGETERROR)( ALCdevice *device );}
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} ALCboolean     (ALCAPIENTRY *LPALCISEXTENSIONPRESENT)( ALCdevice *device, \textcolor{keyword}{const} ALCchar *extname );}
+\DoxyCodeLine{88 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} *         (ALCAPIENTRY *LPALCGETPROCADDRESS)(ALCdevice *device, \textcolor{keyword}{const} ALCchar *funcname );}
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} ALCenum        (ALCAPIENTRY *LPALCGETENUMVALUE)(ALCdevice *device, \textcolor{keyword}{const} ALCchar *enumname );}
+\DoxyCodeLine{90 \textcolor{keyword}{typedef} \textcolor{keyword}{const} ALCchar* (ALCAPIENTRY *LPALCGETSTRING)( ALCdevice *device, ALCenum param );}
+\DoxyCodeLine{91 \textcolor{keyword}{typedef} void           (ALCAPIENTRY *LPALCGETINTEGERV)( ALCdevice *device, ALCenum param, ALCsizei size, ALCint *dest );}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{94 \{}
+\DoxyCodeLine{95     LPALENABLE                  alEnable;}
+\DoxyCodeLine{96     LPALDISABLE                 alDisable;}
+\DoxyCodeLine{97     LPALISENABLED               alIsEnabled;}
+\DoxyCodeLine{98     LPALGETBOOLEAN              alGetBoolean;}
+\DoxyCodeLine{99     LPALGETINTEGER              alGetInteger;}
+\DoxyCodeLine{100     LPALGETFLOAT                alGetFloat;}
+\DoxyCodeLine{101     LPALGETDOUBLE               alGetDouble;}
+\DoxyCodeLine{102     LPALGETBOOLEANV             alGetBooleanv;}
+\DoxyCodeLine{103     LPALGETINTEGERV             alGetIntegerv;}
+\DoxyCodeLine{104     LPALGETFLOATV               alGetFloatv;}
+\DoxyCodeLine{105     LPALGETDOUBLEV              alGetDoublev;}
+\DoxyCodeLine{106     LPALGETSTRING               alGetString;}
+\DoxyCodeLine{107     LPALGETERROR                alGetError;}
+\DoxyCodeLine{108     LPALISEXTENSIONPRESENT      alIsExtensionPresent;}
+\DoxyCodeLine{109     LPALGETPROCADDRESS          alGetProcAddress;}
+\DoxyCodeLine{110     LPALGETENUMVALUE            alGetEnumValue;}
+\DoxyCodeLine{111     LPALLISTENERI               alListeneri;}
+\DoxyCodeLine{112     LPALLISTENERF               alListenerf;}
+\DoxyCodeLine{113     LPALLISTENER3F              alListener3f;}
+\DoxyCodeLine{114     LPALLISTENERFV              alListenerfv;}
+\DoxyCodeLine{115     LPALGETLISTENERI            alGetListeneri;}
+\DoxyCodeLine{116     LPALGETLISTENERF            alGetListenerf;}
+\DoxyCodeLine{117     LPALGETLISTENER3F           alGetListener3f;}
+\DoxyCodeLine{118     LPALGETLISTENERFV           alGetListenerfv;}
+\DoxyCodeLine{119     LPALGENSOURCES              alGenSources;}
+\DoxyCodeLine{120     LPALDELETESOURCES           alDeleteSources;}
+\DoxyCodeLine{121     LPALISSOURCE                alIsSource;}
+\DoxyCodeLine{122     LPALSOURCEI                 alSourcei;}
+\DoxyCodeLine{123     LPALSOURCEF                 alSourcef;}
+\DoxyCodeLine{124     LPALSOURCE3F                alSource3f;}
+\DoxyCodeLine{125     LPALSOURCEFV                alSourcefv;}
+\DoxyCodeLine{126     LPALGETSOURCEI              alGetSourcei;}
+\DoxyCodeLine{127     LPALGETSOURCEF              alGetSourcef;}
+\DoxyCodeLine{128     LPALGETSOURCEFV             alGetSourcefv;}
+\DoxyCodeLine{129     LPALSOURCEPLAYV             alSourcePlayv;}
+\DoxyCodeLine{130     LPALSOURCESTOPV             alSourceStopv;}
+\DoxyCodeLine{131     LPALSOURCEPLAY              alSourcePlay;}
+\DoxyCodeLine{132     LPALSOURCEPAUSE             alSourcePause;}
+\DoxyCodeLine{133     LPALSOURCESTOP              alSourceStop;}
+\DoxyCodeLine{134     LPALGENBUFFERS              alGenBuffers;}
+\DoxyCodeLine{135     LPALDELETEBUFFERS           alDeleteBuffers;}
+\DoxyCodeLine{136     LPALISBUFFER                alIsBuffer;}
+\DoxyCodeLine{137     LPALBUFFERDATA              alBufferData;}
+\DoxyCodeLine{138     LPALGETBUFFERI              alGetBufferi;}
+\DoxyCodeLine{139     LPALGETBUFFERF              alGetBufferf;}
+\DoxyCodeLine{140     LPALSOURCEQUEUEBUFFERS      alSourceQueueBuffers;}
+\DoxyCodeLine{141     LPALSOURCEUNQUEUEBUFFERS    alSourceUnqueueBuffers;}
+\DoxyCodeLine{142     LPALDISTANCEMODEL           alDistanceModel;}
+\DoxyCodeLine{143     LPALDOPPLERFACTOR           alDopplerFactor;}
+\DoxyCodeLine{144     LPALDOPPLERVELOCITY         alDopplerVelocity;}
+\DoxyCodeLine{145     LPALCGETSTRING              alcGetString;}
+\DoxyCodeLine{146     LPALCGETINTEGERV            alcGetIntegerv;}
+\DoxyCodeLine{147     LPALCOPENDEVICE             alcOpenDevice;}
+\DoxyCodeLine{148     LPALCCLOSEDEVICE            alcCloseDevice;}
+\DoxyCodeLine{149     LPALCCREATECONTEXT          alcCreateContext;}
+\DoxyCodeLine{150     LPALCMAKECONTEXTCURRENT     alcMakeContextCurrent;}
+\DoxyCodeLine{151     LPALCPROCESSCONTEXT         alcProcessContext;}
+\DoxyCodeLine{152     LPALCGETCURRENTCONTEXT      alcGetCurrentContext;}
+\DoxyCodeLine{153     LPALCGETCONTEXTSDEVICE      alcGetContextsDevice;}
+\DoxyCodeLine{154     LPALCSUSPENDCONTEXT         alcSuspendContext;}
+\DoxyCodeLine{155     LPALCDESTROYCONTEXT         alcDestroyContext;}
+\DoxyCodeLine{156     LPALCGETERROR               alcGetError;}
+\DoxyCodeLine{157     LPALCISEXTENSIONPRESENT     alcIsExtensionPresent;}
+\DoxyCodeLine{158     LPALCGETPROCADDRESS         alcGetProcAddress;}
+\DoxyCodeLine{159     LPALCGETENUMVALUE           alcGetEnumValue;}
+\DoxyCodeLine{160 \} \mbox{\hyperlink{struct_o_p_e_n_a_l_f_n_t_a_b_l_e}{OPENALFNTABLE}}, *\mbox{\hyperlink{struct_o_p_e_n_a_l_f_n_t_a_b_l_e}{LPOPENALFNTABLE}};}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 ALboolean LoadOAL10Library(\textcolor{keywordtype}{char} *szOALFullPathName, \mbox{\hyperlink{struct_o_p_e_n_a_l_f_n_t_a_b_l_e}{LPOPENALFNTABLE}} lpOALFnTable);}
+\DoxyCodeLine{164 ALvoid UnloadOAL10Library();}
+
+\end{DoxyCode}

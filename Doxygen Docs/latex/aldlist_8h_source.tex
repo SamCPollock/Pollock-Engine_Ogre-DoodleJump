@@ -1,0 +1,55 @@
+\hypertarget{aldlist_8h_source}{}\doxysection{aldlist.\+h}
+\label{aldlist_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/aldlist.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/aldlist.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ALDEVICELIST\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ALDEVICELIST\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma warning(disable: 4786)  }\textcolor{comment}{//disable warning "{}identifier was truncated to '255' characters in the browser information"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}LoadOAL.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keywordtype}{string}          strDeviceName;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int}             iMajorVersion;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int}             iMinorVersion;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}    uiSourceCount;}
+\DoxyCodeLine{17     vector<string>  *pvstrExtensions;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{bool}            bSelected;}
+\DoxyCodeLine{19 \} \mbox{\hyperlink{struct_a_l_d_e_v_i_c_e_i_n_f_o}{ALDEVICEINFO}}, *\mbox{\hyperlink{struct_a_l_d_e_v_i_c_e_i_n_f_o}{LPALDEVICEINFO}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_a_l_device_list}{ALDeviceList}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{struct_o_p_e_n_a_l_f_n_t_a_b_l_e}{OPENALFNTABLE}}  ALFunction;}
+\DoxyCodeLine{25     vector<ALDEVICEINFO> vDeviceInfo;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} defaultDeviceIndex;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} filterIndex;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_a_l_device_list}{ALDeviceList}} ();}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_a_l_device_list}{\string~ALDeviceList}} ();}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} GetNumDevices();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{char} *GetDeviceName(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} GetDeviceVersion(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} *major, \textcolor{keywordtype}{int} *minor);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetMaxNumSources(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} IsExtensionSupported(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{char} *szExtName);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} GetDefaultDevice();}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} FilterDevicesMinVer(\textcolor{keywordtype}{int} major, \textcolor{keywordtype}{int} minor);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} FilterDevicesMaxVer(\textcolor{keywordtype}{int} major, \textcolor{keywordtype}{int} minor);}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} FilterDevicesExtension(\textcolor{keywordtype}{char} *szExtName);}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} ResetFilters();}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} GetFirstFilteredDevice();}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} GetNextFilteredDevice();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{private}:}
+\DoxyCodeLine{46     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetMaxNumSources();}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ALDEVICELIST\_H}}
+
+\end{DoxyCode}

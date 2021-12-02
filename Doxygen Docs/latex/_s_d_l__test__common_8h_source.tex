@@ -1,0 +1,156 @@
+\hypertarget{_s_d_l__test__common_8h_source}{}\doxysection{SDL\+\_\+test\+\_\+common.\+h}
+\label{_s_d_l__test__common_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_test\_common.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_test\_common.h}}
+\mbox{\hyperlink{_s_d_l__test__common_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2021 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{30 \textcolor{comment}{/* Ported from original test\(\backslash\)common.h file. */}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifndef SDL\_test\_common\_h\_}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define SDL\_test\_common\_h\_}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l_8h}{SDL.h}}"{}}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if defined(\_\_PSP\_\_)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define DEFAULT\_WINDOW\_WIDTH  480}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define DEFAULT\_WINDOW\_HEIGHT 272}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#elif defined(\_\_VITA\_\_)}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define DEFAULT\_WINDOW\_WIDTH  960}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define DEFAULT\_WINDOW\_HEIGHT 544}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define DEFAULT\_WINDOW\_WIDTH  640}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define DEFAULT\_WINDOW\_HEIGHT 480}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define VERBOSE\_VIDEO   0x00000001}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define VERBOSE\_MODES   0x00000002}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define VERBOSE\_RENDER  0x00000004}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define VERBOSE\_EVENT   0x00000008}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define VERBOSE\_AUDIO   0x00000010}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{55 \{}
+\DoxyCodeLine{56     \textcolor{comment}{/* SDL init flags */}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{char} **argv;}
+\DoxyCodeLine{58     Uint32 flags;}
+\DoxyCodeLine{59     Uint32 verbose;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{/* Video info */}}
+\DoxyCodeLine{62     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *videodriver;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} display;}
+\DoxyCodeLine{64     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *window\_title;}
+\DoxyCodeLine{65     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *window\_icon;}
+\DoxyCodeLine{66     Uint32 window\_flags;}
+\DoxyCodeLine{67     SDL\_bool flash\_on\_focus\_loss;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} window\_x;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} window\_y;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} window\_w;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{int} window\_h;}
+\DoxyCodeLine{72     \textcolor{keywordtype}{int} window\_minW;}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} window\_minH;}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} window\_maxW;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} window\_maxH;}
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} logical\_w;}
+\DoxyCodeLine{77     \textcolor{keywordtype}{int} logical\_h;}
+\DoxyCodeLine{78     \textcolor{keywordtype}{float} scale;}
+\DoxyCodeLine{79     \textcolor{keywordtype}{int} depth;}
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} refresh\_rate;}
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} num\_windows;}
+\DoxyCodeLine{82     \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} **windows;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{/* Renderer info */}}
+\DoxyCodeLine{85     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *renderdriver;}
+\DoxyCodeLine{86     Uint32 render\_flags;}
+\DoxyCodeLine{87     SDL\_bool skip\_renderer;}
+\DoxyCodeLine{88     SDL\_Renderer **renderers;}
+\DoxyCodeLine{89     SDL\_Texture **targets;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{comment}{/* Audio info */}}
+\DoxyCodeLine{92     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *audiodriver;}
+\DoxyCodeLine{93     \mbox{\hyperlink{struct_s_d_l___audio_spec}{SDL\_AudioSpec}} audiospec;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{/* GL settings */}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int} gl\_red\_size;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{int} gl\_green\_size;}
+\DoxyCodeLine{98     \textcolor{keywordtype}{int} gl\_blue\_size;}
+\DoxyCodeLine{99     \textcolor{keywordtype}{int} gl\_alpha\_size;}
+\DoxyCodeLine{100     \textcolor{keywordtype}{int} gl\_buffer\_size;}
+\DoxyCodeLine{101     \textcolor{keywordtype}{int} gl\_depth\_size;}
+\DoxyCodeLine{102     \textcolor{keywordtype}{int} gl\_stencil\_size;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} gl\_double\_buffer;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{int} gl\_accum\_red\_size;}
+\DoxyCodeLine{105     \textcolor{keywordtype}{int} gl\_accum\_green\_size;}
+\DoxyCodeLine{106     \textcolor{keywordtype}{int} gl\_accum\_blue\_size;}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} gl\_accum\_alpha\_size;}
+\DoxyCodeLine{108     \textcolor{keywordtype}{int} gl\_stereo;}
+\DoxyCodeLine{109     \textcolor{keywordtype}{int} gl\_multisamplebuffers;}
+\DoxyCodeLine{110     \textcolor{keywordtype}{int} gl\_multisamplesamples;}
+\DoxyCodeLine{111     \textcolor{keywordtype}{int} gl\_retained\_backing;}
+\DoxyCodeLine{112     \textcolor{keywordtype}{int} gl\_accelerated;}
+\DoxyCodeLine{113     \textcolor{keywordtype}{int} gl\_major\_version;}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} gl\_minor\_version;}
+\DoxyCodeLine{115     \textcolor{keywordtype}{int} gl\_debug;}
+\DoxyCodeLine{116     \textcolor{keywordtype}{int} gl\_profile\_mask;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{/* Additional fields added in 2.0.18 */}}
+\DoxyCodeLine{119     \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} confine;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \} \mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{124 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{126 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/* Function prototypes */}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{139 \mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} *\mbox{\hyperlink{_s_d_l__test__common_8h_a5a4834fbafe98dbe44df0c56b1848132}{SDLTest\_CommonCreateState}}(\textcolor{keywordtype}{char} **argv, Uint32 flags);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{149 \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__test__common_8h_a6ffe001ae2299720a92b80812dbc48b9}{SDLTest\_CommonArg}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state, \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{164 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__common_8h_aa048e9175cca826d9dbd6c5d72284e38}{SDLTest\_CommonLogUsage}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *argv0, \textcolor{keyword}{const} \textcolor{keywordtype}{char} **options);}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{177 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{_s_d_l__test__common_8h_ad5d87db3b58b35581f99e41540512c69}{SDLTest\_CommonUsage}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{186 SDL\_bool \mbox{\hyperlink{_s_d_l__test__common_8h_a7405405819a77e317a1edda6be974187}{SDLTest\_CommonInit}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state);}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{197 SDL\_bool \mbox{\hyperlink{_s_d_l__test__common_8h_a39a960ca01f07491d42008a137db6f1c}{SDLTest\_CommonDefaultArgs}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state, \textcolor{keyword}{const} \textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv);}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{207 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__common_8h_a5fb0eb864d62d6d9f6d932c9abccd1f4}{SDLTest\_CommonEvent}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state, \mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} * event, \textcolor{keywordtype}{int} *done);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{215 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__common_8h_a2d24c255140a7e90c753eb363ef4d96e}{SDLTest\_CommonQuit}}(\mbox{\hyperlink{struct_s_d_l_test___common_state}{SDLTest\_CommonState}} * state);}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{225 \textcolor{keywordtype}{void} \mbox{\hyperlink{_s_d_l__test__common_8h_a2ec5c6d6329602f002d441de8edfdad2}{SDLTest\_CommonDrawWindowInfo}}(SDL\_Renderer * renderer, \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * window, \textcolor{keywordtype}{int} * usedHeight);}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{229 \}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_test\_common\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

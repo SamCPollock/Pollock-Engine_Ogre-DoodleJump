@@ -1,0 +1,96 @@
+\hypertarget{_framework_8h_source}{}\doxysection{Framework.\+h}
+\label{_framework_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/Framework.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/framework/Win32/Framework.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_FRAMEWORK\_H\_ }\textcolor{comment}{// Win32 version}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_FRAMEWORK\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// Get some classic includes}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include<Windows.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include<stdio.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include<io.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include<fcntl.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include<conio.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include"{}al.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include"{}alc.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include"{}efx.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include"{}efx-\/creative.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include"{}xram.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// Initialization and shutdown}}
+\DoxyCodeLine{17 \textcolor{keywordtype}{void} ALFWInit();}
+\DoxyCodeLine{18 \textcolor{keywordtype}{void} ALFWShutdown();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// OpenAL initialization and shutdown}}
+\DoxyCodeLine{21 ALboolean ALFWInitOpenAL();}
+\DoxyCodeLine{22 ALboolean ALFWShutdownOpenAL();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// File loading functions}}
+\DoxyCodeLine{25 ALboolean ALFWLoadWaveToBuffer(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *szWaveFile, ALuint uiBufferID, ALenum eXRAMBufferMode = 0);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{// Extension Queries }}
+\DoxyCodeLine{28 ALboolean ALFWIsXRAMSupported();}
+\DoxyCodeLine{29 ALboolean ALFWIsEFXSupported();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// Utilities}}
+\DoxyCodeLine{33 ALvoid ALFWprintf( \textcolor{keyword}{const} ALchar * x, ... );}
+\DoxyCodeLine{34 ALchar *ALFWaddMediaPath(\textcolor{keyword}{const} ALchar *filename);}
+\DoxyCodeLine{35 ALint ALFWKeyPress(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{// EFX Extension function pointer variables}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// Effect objects}}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} LPALGENEFFECTS alGenEffects;}
+\DoxyCodeLine{41 \textcolor{keyword}{extern} LPALDELETEEFFECTS alDeleteEffects;}
+\DoxyCodeLine{42 \textcolor{keyword}{extern} LPALISEFFECT alIsEffect;}
+\DoxyCodeLine{43 \textcolor{keyword}{extern} LPALEFFECTI alEffecti;}
+\DoxyCodeLine{44 \textcolor{keyword}{extern} LPALEFFECTIV alEffectiv;}
+\DoxyCodeLine{45 \textcolor{keyword}{extern} LPALEFFECTF alEffectf;}
+\DoxyCodeLine{46 \textcolor{keyword}{extern} LPALEFFECTFV alEffectfv;}
+\DoxyCodeLine{47 \textcolor{keyword}{extern} LPALGETEFFECTI alGetEffecti;}
+\DoxyCodeLine{48 \textcolor{keyword}{extern} LPALGETEFFECTIV alGetEffectiv;}
+\DoxyCodeLine{49 \textcolor{keyword}{extern} LPALGETEFFECTF alGetEffectf;}
+\DoxyCodeLine{50 \textcolor{keyword}{extern} LPALGETEFFECTFV alGetEffectfv;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{// Filter objects}}
+\DoxyCodeLine{53 \textcolor{keyword}{extern} LPALGENFILTERS alGenFilters;}
+\DoxyCodeLine{54 \textcolor{keyword}{extern} LPALDELETEFILTERS alDeleteFilters;}
+\DoxyCodeLine{55 \textcolor{keyword}{extern} LPALISFILTER alIsFilter;}
+\DoxyCodeLine{56 \textcolor{keyword}{extern} LPALFILTERI alFilteri;}
+\DoxyCodeLine{57 \textcolor{keyword}{extern} LPALFILTERIV alFilteriv;}
+\DoxyCodeLine{58 \textcolor{keyword}{extern} LPALFILTERF alFilterf;}
+\DoxyCodeLine{59 \textcolor{keyword}{extern} LPALFILTERFV alFilterfv;}
+\DoxyCodeLine{60 \textcolor{keyword}{extern} LPALGETFILTERI alGetFilteri;}
+\DoxyCodeLine{61 \textcolor{keyword}{extern} LPALGETFILTERIV alGetFilteriv;}
+\DoxyCodeLine{62 \textcolor{keyword}{extern} LPALGETFILTERF alGetFilterf;}
+\DoxyCodeLine{63 \textcolor{keyword}{extern} LPALGETFILTERFV alGetFilterfv;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{// Auxiliary slot object}}
+\DoxyCodeLine{66 \textcolor{keyword}{extern} LPALGENAUXILIARYEFFECTSLOTS alGenAuxiliaryEffectSlots;}
+\DoxyCodeLine{67 \textcolor{keyword}{extern} LPALDELETEAUXILIARYEFFECTSLOTS alDeleteAuxiliaryEffectSlots;}
+\DoxyCodeLine{68 \textcolor{keyword}{extern} LPALISAUXILIARYEFFECTSLOT alIsAuxiliaryEffectSlot;}
+\DoxyCodeLine{69 \textcolor{keyword}{extern} LPALAUXILIARYEFFECTSLOTI alAuxiliaryEffectSloti;}
+\DoxyCodeLine{70 \textcolor{keyword}{extern} LPALAUXILIARYEFFECTSLOTIV alAuxiliaryEffectSlotiv;}
+\DoxyCodeLine{71 \textcolor{keyword}{extern} LPALAUXILIARYEFFECTSLOTF alAuxiliaryEffectSlotf;}
+\DoxyCodeLine{72 \textcolor{keyword}{extern} LPALAUXILIARYEFFECTSLOTFV alAuxiliaryEffectSlotfv;}
+\DoxyCodeLine{73 \textcolor{keyword}{extern} LPALGETAUXILIARYEFFECTSLOTI alGetAuxiliaryEffectSloti;}
+\DoxyCodeLine{74 \textcolor{keyword}{extern} LPALGETAUXILIARYEFFECTSLOTIV alGetAuxiliaryEffectSlotiv;}
+\DoxyCodeLine{75 \textcolor{keyword}{extern} LPALGETAUXILIARYEFFECTSLOTF alGetAuxiliaryEffectSlotf;}
+\DoxyCodeLine{76 \textcolor{keyword}{extern} LPALGETAUXILIARYEFFECTSLOTFV alGetAuxiliaryEffectSlotfv;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{// XRAM Extension function pointer variables and enum values}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{keyword}{typedef} ALboolean (\_\_cdecl *LPEAXSETBUFFERMODE)(ALsizei n, ALuint *buffers, ALint value);}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} ALenum    (\_\_cdecl *LPEAXGETBUFFERMODE)(ALuint buffer, ALint *value);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{extern} LPEAXSETBUFFERMODE eaxSetBufferMode;}
+\DoxyCodeLine{84 \textcolor{keyword}{extern} LPEAXGETBUFFERMODE eaxGetBufferMode;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{comment}{// X-\/RAM Enum values}}
+\DoxyCodeLine{87 \textcolor{keyword}{extern} ALenum eXRAMSize, eXRAMFree;}
+\DoxyCodeLine{88 \textcolor{keyword}{extern} ALenum eXRAMAuto, eXRAMHardware, eXRAMAccessible;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif \_FRAMEWORK\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,100 @@
+\hypertarget{class_doodle_player}{}\doxysection{Doodle\+Player Class Reference}
+\label{class_doodle_player}\index{DoodlePlayer@{DoodlePlayer}}
+Inheritance diagram for Doodle\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_doodle_player}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_doodle_player_a4bd04cc438238cb3395a3ee5a954e6a9}{Doodle\+Player}} (Ogre\+::\+Scene\+Manager $\ast$scn\+Mgr, Ogre\+::\+Scene\+Node $\ast$player\+Node)
+\begin{DoxyCompactList}\small\item\em This is the \mbox{\hyperlink{class_doodle_player}{Doodle\+Player}} constructor \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_doodle_player_a61f47a21e05caaa2271d147c215b8a4c}{frame\+Started}} (const Ogre\+::\+Frame\+Event \&evt)
+\begin{DoxyCompactList}\small\item\em The frame started function/ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_doodle_player_ad23ab0522e522229b38b6b3fa148ad94}{Physics\+Simulate}} (const Ogre\+::\+Frame\+Event \&evt)
+\begin{DoxyCompactList}\small\item\em This is the Physics\+Simulate function This uses a simple physics formula to determine the velocity and acceleration of the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_doodle_player_aca7197d4b8a9b9b9dfc840cd81097ce3}{On\+Collision\+Enter}} (Ogre\+::\+Scene\+Node $\ast$other, \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} $\ast$sm)
+\begin{DoxyCompactList}\small\item\em This is the On\+Player\+Enter function This takes in the Scene\+Node of the other object colliding It also takes in the soundmanager, which it uses to play sound effects on collision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_doodle_player_a57003de31324f02a441d1436e4c2e805}\label{class_doodle_player_a57003de31324f02a441d1436e4c2e805}} 
+void {\bfseries Bounce} ()
+\begin{DoxyCompactList}\small\item\em This is the bounce function. It changes the player\textquotesingle{}s y velocity to be equal to their jump\+Force variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_doodle_player_ad24dc37106f3a4a7bc7ba3ecfe1acac4}\label{class_doodle_player_ad24dc37106f3a4a7bc7ba3ecfe1acac4}} 
+Ogre\+::\+Scene\+Node $\ast$ {\bfseries Player\+Node}
+\item 
+\mbox{\Hypertarget{class_doodle_player_a55cd8172fdac331a3ed4398d353a243c}\label{class_doodle_player_a55cd8172fdac331a3ed4398d353a243c}} 
+float {\bfseries jump\+Force}
+\item 
+\mbox{\Hypertarget{class_doodle_player_a6acc96b7b962c30e4ed9dd1e8d97b7ee}\label{class_doodle_player_a6acc96b7b962c30e4ed9dd1e8d97b7ee}} 
+float {\bfseries move\+Speed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_doodle_player_a4bd04cc438238cb3395a3ee5a954e6a9}\label{class_doodle_player_a4bd04cc438238cb3395a3ee5a954e6a9}} 
+\index{DoodlePlayer@{DoodlePlayer}!DoodlePlayer@{DoodlePlayer}}
+\index{DoodlePlayer@{DoodlePlayer}!DoodlePlayer@{DoodlePlayer}}
+\doxysubsubsection{\texorpdfstring{DoodlePlayer()}{DoodlePlayer()}}
+{\footnotesize\ttfamily Doodle\+Player\+::\+Doodle\+Player (\begin{DoxyParamCaption}\item[{Ogre\+::\+Scene\+Manager $\ast$}]{scn\+Mgr,  }\item[{Ogre\+::\+Scene\+Node $\ast$}]{player\+Node }\end{DoxyParamCaption})}
+
+
+
+This is the \mbox{\hyperlink{class_doodle_player}{Doodle\+Player}} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scn\+Mgr} & It takes the Scene\+Manager as a parameter\\
+\hline
+{\em player\+Node} & It also takes the player\+Node as parameter\\
+\hline
+\end{DoxyParams}
+Inside, use the height and width to set the dimensions of the player cube. Also, set the initial velocity for the player. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doodle_player_a61f47a21e05caaa2271d147c215b8a4c}\label{class_doodle_player_a61f47a21e05caaa2271d147c215b8a4c}} 
+\index{DoodlePlayer@{DoodlePlayer}!frameStarted@{frameStarted}}
+\index{frameStarted@{frameStarted}!DoodlePlayer@{DoodlePlayer}}
+\doxysubsubsection{\texorpdfstring{frameStarted()}{frameStarted()}}
+{\footnotesize\ttfamily bool Doodle\+Player\+::frame\+Started (\begin{DoxyParamCaption}\item[{const Ogre\+::\+Frame\+Event \&}]{evt }\end{DoxyParamCaption})}
+
+
+
+The frame started function/ 
+
+This calls simulate physics every frame to determine the effects of gravity and velocity. It also translates the player according to their velocity. \mbox{\Hypertarget{class_doodle_player_aca7197d4b8a9b9b9dfc840cd81097ce3}\label{class_doodle_player_aca7197d4b8a9b9b9dfc840cd81097ce3}} 
+\index{DoodlePlayer@{DoodlePlayer}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!DoodlePlayer@{DoodlePlayer}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void Doodle\+Player\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{Ogre\+::\+Scene\+Node $\ast$}]{other,  }\item[{\mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} $\ast$}]{sm }\end{DoxyParamCaption})}
+
+
+
+This is the On\+Player\+Enter function This takes in the Scene\+Node of the other object colliding It also takes in the soundmanager, which it uses to play sound effects on collision. 
+
+\begin{DoxyNote}{Note}
+it checks to see if the player\textquotesingle{}s y velocity is less than zero, to ensure that the player only bounces off platforms when they are falling. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_doodle_player_ad23ab0522e522229b38b6b3fa148ad94}\label{class_doodle_player_ad23ab0522e522229b38b6b3fa148ad94}} 
+\index{DoodlePlayer@{DoodlePlayer}!PhysicsSimulate@{PhysicsSimulate}}
+\index{PhysicsSimulate@{PhysicsSimulate}!DoodlePlayer@{DoodlePlayer}}
+\doxysubsubsection{\texorpdfstring{PhysicsSimulate()}{PhysicsSimulate()}}
+{\footnotesize\ttfamily void Doodle\+Player\+::\+Physics\+Simulate (\begin{DoxyParamCaption}\item[{const Ogre\+::\+Frame\+Event \&}]{evt }\end{DoxyParamCaption})}
+
+
+
+This is the Physics\+Simulate function This uses a simple physics formula to determine the velocity and acceleration of the player. 
+
+\begin{DoxyNote}{Note}
+it is using gravity of -\/9.\+8 (earth\textquotesingle{}s gravity) 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Doodle\+Player.\+h\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Doodle\+Player.\+cpp\end{DoxyCompactItemize}

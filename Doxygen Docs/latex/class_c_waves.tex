@@ -1,0 +1,56 @@
+\hypertarget{class_c_waves}{}\doxysection{CWaves Class Reference}
+\label{class_c_waves}\index{CWaves@{CWaves}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_c_waves_ab04163eed493b9ad3a8018f9d59ad737}\label{class_c_waves_ab04163eed493b9ad3a8018f9d59ad737}} 
+WAVERESULT {\bfseries Load\+Wave\+File} (const char $\ast$sz\+Filename, WAVEID $\ast$Wave\+ID)
+\item 
+\mbox{\Hypertarget{class_c_waves_a5a1e2a7c6f6286951e29b4a93b5e318e}\label{class_c_waves_a5a1e2a7c6f6286951e29b4a93b5e318e}} 
+WAVERESULT {\bfseries Open\+Wave\+File} (const char $\ast$sz\+Filename, WAVEID $\ast$Wave\+ID)
+\item 
+\mbox{\Hypertarget{class_c_waves_aee9f92e9d35e6155fd383a34a95b480a}\label{class_c_waves_aee9f92e9d35e6155fd383a34a95b480a}} 
+WAVERESULT {\bfseries Read\+Wave\+Data} (WAVEID Wave\+ID, void $\ast$p\+Data, unsigned long ul\+Data\+Size, unsigned long $\ast$pul\+Bytes\+Written)
+\item 
+\mbox{\Hypertarget{class_c_waves_ae810545259a7ac689906019892cb8b7f}\label{class_c_waves_ae810545259a7ac689906019892cb8b7f}} 
+WAVERESULT {\bfseries Set\+Wave\+Data\+Offset} (WAVEID Wave\+ID, unsigned long ul\+Offset)
+\item 
+\mbox{\Hypertarget{class_c_waves_a80d060bad712a16fa58cc4e14ee1e168}\label{class_c_waves_a80d060bad712a16fa58cc4e14ee1e168}} 
+WAVERESULT {\bfseries Get\+Wave\+Data\+Offset} (WAVEID Wave\+ID, unsigned long $\ast$pul\+Offset)
+\item 
+\mbox{\Hypertarget{class_c_waves_abfe78a2518c09b2ccf4d3dcd52c0bb1b}\label{class_c_waves_abfe78a2518c09b2ccf4d3dcd52c0bb1b}} 
+WAVERESULT {\bfseries Get\+Wave\+Type} (WAVEID Wave\+ID, WAVEFILETYPE $\ast$pwf\+Type)
+\item 
+\mbox{\Hypertarget{class_c_waves_a37400a62934bc2c98340246aa2c25e1c}\label{class_c_waves_a37400a62934bc2c98340246aa2c25e1c}} 
+WAVERESULT {\bfseries Get\+Wave\+Format\+Ex\+Header} (WAVEID Wave\+ID, \mbox{\hyperlink{structt_w_a_v_e_f_o_r_m_a_t_e_x}{WAVEFORMATEX}} $\ast$p\+WFEX)
+\item 
+\mbox{\Hypertarget{class_c_waves_a9cff9340258652a6347f1838d7ab6cb3}\label{class_c_waves_a9cff9340258652a6347f1838d7ab6cb3}} 
+WAVERESULT {\bfseries Get\+Wave\+Format\+Extensible\+Header} (WAVEID Wave\+ID, \mbox{\hyperlink{struct_w_a_v_e_f_o_r_m_a_t_e_x_t_e_n_s_i_b_l_e}{WAVEFORMATEXTENSIBLE}} $\ast$p\+WFEXT)
+\item 
+\mbox{\Hypertarget{class_c_waves_a2af0af8b9f42b22b37bd2b070f185439}\label{class_c_waves_a2af0af8b9f42b22b37bd2b070f185439}} 
+WAVERESULT {\bfseries Get\+Wave\+Data} (WAVEID Wave\+ID, void $\ast$$\ast$pp\+Audio\+Data)
+\item 
+\mbox{\Hypertarget{class_c_waves_ae65d2fe770dacfeee01320236395243f}\label{class_c_waves_ae65d2fe770dacfeee01320236395243f}} 
+WAVERESULT {\bfseries Get\+Wave\+Size} (WAVEID Wave\+ID, unsigned long $\ast$pul\+Data\+Size)
+\item 
+\mbox{\Hypertarget{class_c_waves_a34855f6ae8d933355241cbd093627dc7}\label{class_c_waves_a34855f6ae8d933355241cbd093627dc7}} 
+WAVERESULT {\bfseries Get\+Wave\+Frequency} (WAVEID Wave\+ID, unsigned long $\ast$pul\+Frequency)
+\item 
+\mbox{\Hypertarget{class_c_waves_a1e3439c106447637b024b17d1309cb2d}\label{class_c_waves_a1e3439c106447637b024b17d1309cb2d}} 
+WAVERESULT {\bfseries Get\+Wave\+ALBuffer\+Format} (WAVEID Wave\+ID, PFNALGETENUMVALUE pfn\+Get\+Enum\+Value, unsigned long $\ast$pul\+Format)
+\item 
+\mbox{\Hypertarget{class_c_waves_a9af3ea27a4f1b8d8bfb2fbe0d3ee0519}\label{class_c_waves_a9af3ea27a4f1b8d8bfb2fbe0d3ee0519}} 
+WAVERESULT {\bfseries Delete\+Wave\+File} (WAVEID Wave\+ID)
+\item 
+\mbox{\Hypertarget{class_c_waves_a69b1f6cd34fddb3725efd5ec22bea109}\label{class_c_waves_a69b1f6cd34fddb3725efd5ec22bea109}} 
+char $\ast$ {\bfseries Get\+Error\+String} (WAVERESULT wr, char $\ast$sz\+Error\+String, unsigned long n\+Size\+Of\+Error\+String)
+\item 
+\mbox{\Hypertarget{class_c_waves_ade2c151bd6dd0113bbd5e48a0034fa5d}\label{class_c_waves_ade2c151bd6dd0113bbd5e48a0034fa5d}} 
+bool {\bfseries Is\+Wave\+ID} (WAVEID Wave\+ID)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Open\+AL/samples/framework/\+Win32/CWaves.\+h\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Open\+AL/samples/framework/\+Win32/CWaves.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{_s_d_l__rect_8h_source}{}\doxysection{SDL\+\_\+rect.\+h}
+\label{_s_d_l__rect_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_rect.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_rect.h}}
+\mbox{\hyperlink{_s_d_l__rect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2021 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_rect\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_rect\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__pixels_8h}{SDL\_pixels.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__rwops_8h}{SDL\_rwops.h}}"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{39 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}}}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{52 \} \mbox{\hyperlink{_s_d_l__rect_8h_aa8e5504e162ce2079402a96ab24464b0}{SDL\_Point}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{60 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___f_point}{SDL\_FPoint}}}
+\DoxyCodeLine{61 \{}
+\DoxyCodeLine{62     \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{64 \} \mbox{\hyperlink{_s_d_l__rect_8h_ad2d04905f83d62ade9d6e215e3ac9874}{SDL\_FPoint}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}}}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     \textcolor{keywordtype}{int} x, y;}
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} w, h;}
+\DoxyCodeLine{81 \} \mbox{\hyperlink{_s_d_l__rect_8h_a9e17b356ca55e6b653f4fe33c5357ed5}{SDL\_Rect}};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___f_rect}{SDL\_FRect}}}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89     \textcolor{keywordtype}{float} x;}
+\DoxyCodeLine{90     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{91     \textcolor{keywordtype}{float} w;}
+\DoxyCodeLine{92     \textcolor{keywordtype}{float} h;}
+\DoxyCodeLine{93 \} \mbox{\hyperlink{_s_d_l__rect_8h_a9237dbcbeeba2308b0180aa51ec5ada5}{SDL\_FRect}};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{99 SDL\_FORCE\_INLINE SDL\_bool \mbox{\hyperlink{_s_d_l__rect_8h_a2f9708f2739ef234c34e6feda50b4d2c}{SDL\_PointInRect}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} *p, \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} *r)}
+\DoxyCodeLine{100 \{}
+\DoxyCodeLine{101     \textcolor{keywordflow}{return} ( (p-\/>x >= r-\/>x) \&\& (p-\/>x < (r-\/>x + r-\/>w)) \&\&}
+\DoxyCodeLine{102              (p-\/>y >= r-\/>y) \&\& (p-\/>y < (r-\/>y + r-\/>h)) ) ? SDL\_TRUE : SDL\_FALSE;}
+\DoxyCodeLine{103 \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{108 SDL\_FORCE\_INLINE SDL\_bool \mbox{\hyperlink{_s_d_l__rect_8h_aac0e9b5d3f34baec6a2cde95bb01f49c}{SDL\_RectEmpty}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} *r)}
+\DoxyCodeLine{109 \{}
+\DoxyCodeLine{110     \textcolor{keywordflow}{return} ((!r) || (r-\/>w <= 0) || (r-\/>h <= 0)) ? SDL\_TRUE : SDL\_FALSE;}
+\DoxyCodeLine{111 \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{116 SDL\_FORCE\_INLINE SDL\_bool \mbox{\hyperlink{_s_d_l__rect_8h_a156979fd3561cf90b87741d11057262a}{SDL\_RectEquals}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} *a, \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} *b)}
+\DoxyCodeLine{117 \{}
+\DoxyCodeLine{118     \textcolor{keywordflow}{return} (a \&\& b \&\& (a-\/>x == b-\/>x) \&\& (a-\/>y == b-\/>y) \&\&}
+\DoxyCodeLine{119             (a-\/>w == b-\/>w) \&\& (a-\/>h == b-\/>h)) ? SDL\_TRUE : SDL\_FALSE;}
+\DoxyCodeLine{120 \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{135 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL \mbox{\hyperlink{_s_d_l__rect_8h_a191ec0b069421d4a36304b475697e847}{SDL\_HasIntersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * A,}
+\DoxyCodeLine{136                                                      \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * B);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{153 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL \mbox{\hyperlink{_s_d_l__rect_8h_aff8e3dd3b1a25443cd7c8cf02a087290}{SDL\_IntersectRect}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * A,}
+\DoxyCodeLine{154                                                    \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * B,}
+\DoxyCodeLine{155                                                    \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * result);}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{167 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL \mbox{\hyperlink{_s_d_l__rect_8h_a659f2c25335202888408c95195823f9c}{SDL\_UnionRect}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * A,}
+\DoxyCodeLine{168                                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * B,}
+\DoxyCodeLine{169                                            \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * result);}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{188 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL \mbox{\hyperlink{_s_d_l__rect_8h_afcbb58dbba760b9e6fdb4b5d1ece015c}{SDL\_EnclosePoints}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___point}{SDL\_Point}} * points,}
+\DoxyCodeLine{189                                                    \textcolor{keywordtype}{int} count,}
+\DoxyCodeLine{190                                                    \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * clip,}
+\DoxyCodeLine{191                                                    \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} * result);}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{211 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL \mbox{\hyperlink{_s_d_l__rect_8h_acdabdcbeb7b7083f94a092daa26ce069}{SDL\_IntersectRectAndLine}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l___rect}{SDL\_Rect}} *}
+\DoxyCodeLine{212                                                           rect, \textcolor{keywordtype}{int} *X1,}
+\DoxyCodeLine{213                                                           \textcolor{keywordtype}{int} *Y1, \textcolor{keywordtype}{int} *X2,}
+\DoxyCodeLine{214                                                           \textcolor{keywordtype}{int} *Y2);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{218 \}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_rect\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

@@ -1,0 +1,343 @@
+\hypertarget{_s_d_l__syswm_8h_source}{}\doxysection{SDL\+\_\+syswm.\+h}
+\label{_s_d_l__syswm_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_syswm.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_syswm.h}}
+\mbox{\hyperlink{_s_d_l__syswm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2021 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_syswm\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_syswm\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__error_8h}{SDL\_error.h}}"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__video_8h}{SDL\_video.h}}"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__version_8h}{SDL\_version.h}}"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{44 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\_SysWMinfo}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#if !defined(SDL\_PROTOTYPES\_ONLY)}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_WINDOWS)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifndef WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#ifndef NOMINMAX   }\textcolor{comment}{/* don't define min() and max(). */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define NOMINMAX}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_WINRT)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include <Inspectable.h>}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{/* This is the structure for custom window manager events */}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_X11)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_) \&\& defined(\_\_MACH\_\_)}}
+\DoxyCodeLine{65 \textcolor{comment}{/* conflicts with Quickdraw.h */}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define Cursor X11Cursor}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#include <X11/Xlib.h>}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include <X11/Xatom.h>}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_) \&\& defined(\_\_MACH\_\_)}}
+\DoxyCodeLine{73 \textcolor{comment}{/* matches the re-\/define above */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#undef Cursor}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* defined(SDL\_VIDEO\_DRIVER\_X11) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_DIRECTFB)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#include <directfb.h>}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_COCOA)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifdef \_\_OBJC\_\_}}
+\DoxyCodeLine{85 \textcolor{keyword}{@class} NSWindow;}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_NSWindow NSWindow;}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_UIKIT)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#ifdef \_\_OBJC\_\_}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#include <UIKit/UIKit.h>}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_UIWindow UIWindow;}
+\DoxyCodeLine{96 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_UIViewController UIViewController;}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{98 \textcolor{keyword}{typedef} Uint32 GLuint;}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_ANDROID)}}
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }ANativeWindow ANativeWindow;}
+\DoxyCodeLine{103 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} *EGLSurface;}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_VIVANTE)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__egl_8h}{SDL\_egl.h}}"{}}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_OS2)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define INCL\_WIN}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#include <os2.h>}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_PROTOTYPES\_ONLY */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_KMSDRM)}}
+\DoxyCodeLine{117 \textcolor{keyword}{struct }gbm\_device;}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{122 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{124 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#if !defined(SDL\_PROTOTYPES\_ONLY)}}
+\DoxyCodeLine{131 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{132 \{}
+\DoxyCodeLine{133     SDL\_SYSWM\_UNKNOWN,}
+\DoxyCodeLine{134     SDL\_SYSWM\_WINDOWS,}
+\DoxyCodeLine{135     SDL\_SYSWM\_X11,}
+\DoxyCodeLine{136     SDL\_SYSWM\_DIRECTFB,}
+\DoxyCodeLine{137     SDL\_SYSWM\_COCOA,}
+\DoxyCodeLine{138     SDL\_SYSWM\_UIKIT,}
+\DoxyCodeLine{139     SDL\_SYSWM\_WAYLAND,}
+\DoxyCodeLine{140     SDL\_SYSWM\_MIR,  \textcolor{comment}{/* no longer available, left for API/ABI compatibility. Remove in 2.1! */}}
+\DoxyCodeLine{141     SDL\_SYSWM\_WINRT,}
+\DoxyCodeLine{142     SDL\_SYSWM\_ANDROID,}
+\DoxyCodeLine{143     SDL\_SYSWM\_VIVANTE,}
+\DoxyCodeLine{144     SDL\_SYSWM\_OS2,}
+\DoxyCodeLine{145     SDL\_SYSWM\_HAIKU,}
+\DoxyCodeLine{146     SDL\_SYSWM\_KMSDRM,}
+\DoxyCodeLine{147     SDL\_SYSWM\_RISCOS}
+\DoxyCodeLine{148 \} \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\_SYSWM\_TYPE}};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{153 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_mmsg}{SDL\_SysWMmsg}}}
+\DoxyCodeLine{154 \{}
+\DoxyCodeLine{155     \mbox{\hyperlink{struct_s_d_l__version}{SDL\_version}} version;}
+\DoxyCodeLine{156     \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\_SYSWM\_TYPE}} subsystem;}
+\DoxyCodeLine{157     \textcolor{keyword}{union}}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_WINDOWS)}}
+\DoxyCodeLine{160         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{161             HWND \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a55cf9583b5eddfe60a5c9851f9cce457}{hwnd}};                  }
+\DoxyCodeLine{162             UINT \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a74894ed060d5508ab06aac584154d61e}{msg}};                   }
+\DoxyCodeLine{163             WPARAM \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a7463730478d90ebc031d83098f3f74fc}{wParam}};              }
+\DoxyCodeLine{164             LPARAM \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a24c1e4c3cb8d9781d34e5d99df66ac36}{lParam}};              }
+\DoxyCodeLine{165         \} win;}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_X11)}}
+\DoxyCodeLine{168         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{169             XEvent event;}
+\DoxyCodeLine{170         \} x11;}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_DIRECTFB)}}
+\DoxyCodeLine{173         \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{174             DFBEvent event;}
+\DoxyCodeLine{175         \} dfb;}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_COCOA)}}
+\DoxyCodeLine{178         \textcolor{keyword}{struct}}
+\DoxyCodeLine{179         \{}
+\DoxyCodeLine{180             \textcolor{comment}{/* Latest version of Xcode clang complains about empty structs in C v. C++:}}
+\DoxyCodeLine{181 \textcolor{comment}{                 error: empty struct has size 0 in C, size 1 in C++}}
+\DoxyCodeLine{182 \textcolor{comment}{             */}}
+\DoxyCodeLine{183             \textcolor{keywordtype}{int} dummy;}
+\DoxyCodeLine{184             \textcolor{comment}{/* No Cocoa window events yet */}}
+\DoxyCodeLine{185         \} cocoa;}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_UIKIT)}}
+\DoxyCodeLine{188         \textcolor{keyword}{struct}}
+\DoxyCodeLine{189         \{}
+\DoxyCodeLine{190             \textcolor{keywordtype}{int} dummy;}
+\DoxyCodeLine{191             \textcolor{comment}{/* No UIKit window events yet */}}
+\DoxyCodeLine{192         \} uikit;}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_VIVANTE)}}
+\DoxyCodeLine{195         \textcolor{keyword}{struct}}
+\DoxyCodeLine{196         \{}
+\DoxyCodeLine{197             \textcolor{keywordtype}{int} dummy;}
+\DoxyCodeLine{198             \textcolor{comment}{/* No Vivante window events yet */}}
+\DoxyCodeLine{199         \} vivante;}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_OS2)}}
+\DoxyCodeLine{202         \textcolor{keyword}{struct}}
+\DoxyCodeLine{203         \{}
+\DoxyCodeLine{204             BOOL fFrame;                }
+\DoxyCodeLine{205             HWND \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a55cf9583b5eddfe60a5c9851f9cce457}{hwnd}};                  }
+\DoxyCodeLine{206             ULONG \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a74894ed060d5508ab06aac584154d61e}{msg}};                  }
+\DoxyCodeLine{207             MPARAM mp1;                 }
+\DoxyCodeLine{208             MPARAM mp2;                 }
+\DoxyCodeLine{209         \} os2;}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{211         \textcolor{comment}{/* Can't have an empty union */}}
+\DoxyCodeLine{212         \textcolor{keywordtype}{int} dummy;}
+\DoxyCodeLine{213     \} \mbox{\hyperlink{struct_s_d_l___sys_w_mmsg_a74894ed060d5508ab06aac584154d61e}{msg}};}
+\DoxyCodeLine{214 \};}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{222 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\_SysWMinfo}}}
+\DoxyCodeLine{223 \{}
+\DoxyCodeLine{224     \mbox{\hyperlink{struct_s_d_l__version}{SDL\_version}} version;}
+\DoxyCodeLine{225     \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\_SYSWM\_TYPE}} subsystem;}
+\DoxyCodeLine{226     \textcolor{keyword}{union}}
+\DoxyCodeLine{227     \{}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_WINDOWS)}}
+\DoxyCodeLine{229         \textcolor{keyword}{struct}}
+\DoxyCodeLine{230         \{}
+\DoxyCodeLine{231             HWND \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};                }
+\DoxyCodeLine{232             HDC \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_a5c9d0745b083422834681e99c38b803e}{hdc}};                    }
+\DoxyCodeLine{233             HINSTANCE \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_ae3e93d21e2b20b2069f5f7d5308194f1}{hinstance}};        }
+\DoxyCodeLine{234         \} win;}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_WINRT)}}
+\DoxyCodeLine{237         \textcolor{keyword}{struct}}
+\DoxyCodeLine{238         \{}
+\DoxyCodeLine{239             IInspectable * \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};      }
+\DoxyCodeLine{240         \} winrt;}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_X11)}}
+\DoxyCodeLine{243         \textcolor{keyword}{struct}}
+\DoxyCodeLine{244         \{}
+\DoxyCodeLine{245             Display *display;           }
+\DoxyCodeLine{246             Window \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};              }
+\DoxyCodeLine{247         \} x11;}
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_DIRECTFB)}}
+\DoxyCodeLine{250         \textcolor{keyword}{struct}}
+\DoxyCodeLine{251         \{}
+\DoxyCodeLine{252             IDirectFB *dfb;             }
+\DoxyCodeLine{253             IDirectFBWindow *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};    }
+\DoxyCodeLine{254             IDirectFBSurface *surface;  }
+\DoxyCodeLine{255         \} dfb;}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{257 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_COCOA)}}
+\DoxyCodeLine{258         \textcolor{keyword}{struct}}
+\DoxyCodeLine{259         \{}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#if defined(\_\_OBJC\_\_) \&\& defined(\_\_has\_feature)}}
+\DoxyCodeLine{261 \textcolor{preprocessor}{        \#if \_\_has\_feature(objc\_arc)}}
+\DoxyCodeLine{262             NSWindow \_\_unsafe\_unretained *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}}; }
+\DoxyCodeLine{263 \textcolor{preprocessor}{        \#else}}
+\DoxyCodeLine{264             NSWindow *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};                     }
+\DoxyCodeLine{265 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{267             NSWindow *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};                     }
+\DoxyCodeLine{268 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{269         \} cocoa;}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_UIKIT)}}
+\DoxyCodeLine{272         \textcolor{keyword}{struct}}
+\DoxyCodeLine{273         \{}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#if defined(\_\_OBJC\_\_) \&\& defined(\_\_has\_feature)}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{        \#if \_\_has\_feature(objc\_arc)}}
+\DoxyCodeLine{276             UIWindow \_\_unsafe\_unretained *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}}; }
+\DoxyCodeLine{277 \textcolor{preprocessor}{        \#else}}
+\DoxyCodeLine{278             UIWindow *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};                     }
+\DoxyCodeLine{279 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{281             UIWindow *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};                     }
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{283             GLuint framebuffer; }
+\DoxyCodeLine{284             GLuint colorbuffer; }
+\DoxyCodeLine{285             GLuint resolveFramebuffer; }
+\DoxyCodeLine{286         \} uikit;}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{288 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_WAYLAND)}}
+\DoxyCodeLine{289         \textcolor{keyword}{struct}}
+\DoxyCodeLine{290         \{}
+\DoxyCodeLine{291             \textcolor{keyword}{struct }wl\_display *display;             }
+\DoxyCodeLine{292             \textcolor{keyword}{struct }wl\_surface *surface;             }
+\DoxyCodeLine{293             \textcolor{keywordtype}{void} *shell\_surface;                    }
+\DoxyCodeLine{294             \textcolor{keyword}{struct }wl\_egl\_window *egl\_window;       }
+\DoxyCodeLine{295             \textcolor{keyword}{struct }xdg\_surface *xdg\_surface;        }
+\DoxyCodeLine{296             \textcolor{keyword}{struct }xdg\_toplevel *xdg\_toplevel;      }
+\DoxyCodeLine{297         \} wl;}
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_MIR)  }\textcolor{comment}{/* no longer available, left for API/ABI compatibility. Remove in 2.1! */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{300         \textcolor{keyword}{struct}}
+\DoxyCodeLine{301         \{}
+\DoxyCodeLine{302             \textcolor{keywordtype}{void} *connection;  }
+\DoxyCodeLine{303             \textcolor{keywordtype}{void} *surface;  }
+\DoxyCodeLine{304         \} mir;}
+\DoxyCodeLine{305 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_ANDROID)}}
+\DoxyCodeLine{308         \textcolor{keyword}{struct}}
+\DoxyCodeLine{309         \{}
+\DoxyCodeLine{310             ANativeWindow *\mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};}
+\DoxyCodeLine{311             EGLSurface surface;}
+\DoxyCodeLine{312         \} android;}
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_OS2)}}
+\DoxyCodeLine{316         \textcolor{keyword}{struct}}
+\DoxyCodeLine{317         \{}
+\DoxyCodeLine{318             HWND hwnd;                  }
+\DoxyCodeLine{319             HWND hwndFrame;             }
+\DoxyCodeLine{320         \} os2;}
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_VIVANTE)}}
+\DoxyCodeLine{324         \textcolor{keyword}{struct}}
+\DoxyCodeLine{325         \{}
+\DoxyCodeLine{326             EGLNativeDisplayType display;}
+\DoxyCodeLine{327             EGLNativeWindowType \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}};}
+\DoxyCodeLine{328         \} vivante;}
+\DoxyCodeLine{329 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#if defined(SDL\_VIDEO\_DRIVER\_KMSDRM)}}
+\DoxyCodeLine{332         \textcolor{keyword}{struct}}
+\DoxyCodeLine{333         \{}
+\DoxyCodeLine{334             \textcolor{keywordtype}{int} dev\_index;               }
+\DoxyCodeLine{335             \textcolor{keywordtype}{int} drm\_fd;                  }
+\DoxyCodeLine{336             \textcolor{keyword}{struct }gbm\_device *gbm\_dev;  }
+\DoxyCodeLine{337         \} kmsdrm;}
+\DoxyCodeLine{338 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340         \textcolor{comment}{/* Make sure this union is always 64 bytes (8 64-\/bit pointers). */}}
+\DoxyCodeLine{341         \textcolor{comment}{/* Be careful not to overflow this if you add a new target! */}}
+\DoxyCodeLine{342         Uint8 dummy[64];}
+\DoxyCodeLine{343     \} info;}
+\DoxyCodeLine{344 \};}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_PROTOTYPES\_ONLY */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\_SysWMinfo}} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\_SysWMinfo}};}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350 }
+\DoxyCodeLine{368 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL \mbox{\hyperlink{_s_d_l__syswm_8h_ad6e40121a96c88af20d9469a04706fef}{SDL\_GetWindowWMInfo}}(\mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} * \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}},}
+\DoxyCodeLine{369                                                      \mbox{\hyperlink{struct_s_d_l___sys_w_minfo}{SDL\_SysWMinfo}} * info);}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{373 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{374 \}}
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_syswm\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

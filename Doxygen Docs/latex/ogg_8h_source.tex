@@ -1,0 +1,208 @@
+\hypertarget{ogg_8h_source}{}\doxysection{ogg.\+h}
+\label{ogg_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/playoggvorbis/include/Ogg/ogg.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/playoggvorbis/include/Ogg/ogg.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/********************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ *                                                                  *}}
+\DoxyCodeLine{3 \textcolor{comment}{ * THIS FILE IS PART OF THE OggVorbis SOFTWARE CODEC SOURCE CODE.   *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * USE, DISTRIBUTION AND REPRODUCTION OF THIS LIBRARY SOURCE IS     *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * GOVERNED BY A BSD-\/STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *}}
+\DoxyCodeLine{7 \textcolor{comment}{ *                                                                  *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-\/2002             *}}
+\DoxyCodeLine{9 \textcolor{comment}{ * by the Xiph.Org Foundation http://www.xiph.org/                  *}}
+\DoxyCodeLine{10 \textcolor{comment}{ *                                                                  *}}
+\DoxyCodeLine{11 \textcolor{comment}{ ********************************************************************}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{ function: toplevel libogg include}}
+\DoxyCodeLine{14 \textcolor{comment}{ last mod: \$Id: ogg.h 7188 2004-\/07-\/20 07:26:04Z xiphmont \$}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{ ********************************************************************/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_OGG\_H}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_OGG\_H}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{21 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <ogg/os\_types.h>}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{27   \textcolor{keywordtype}{long} endbyte;}
+\DoxyCodeLine{28   \textcolor{keywordtype}{int}  endbit;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buffer;}
+\DoxyCodeLine{31   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ptr;}
+\DoxyCodeLine{32   \textcolor{keywordtype}{long} storage;}
+\DoxyCodeLine{33 \} \mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* ogg\_page is used to encapsulate the data in one Ogg bitstream page *****/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{38   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *header;}
+\DoxyCodeLine{39   \textcolor{keywordtype}{long} header\_len;}
+\DoxyCodeLine{40   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *body;}
+\DoxyCodeLine{41   \textcolor{keywordtype}{long} body\_len;}
+\DoxyCodeLine{42 \} \mbox{\hyperlink{structogg__page}{ogg\_page}};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{/* ogg\_stream\_state contains the current encode/decode state of a logical}}
+\DoxyCodeLine{45 \textcolor{comment}{   Ogg bitstream **********************************************************/}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{48   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}   *body\_data;    \textcolor{comment}{/* bytes from packet bodies */}}
+\DoxyCodeLine{49   \textcolor{keywordtype}{long}    body\_storage;          \textcolor{comment}{/* storage elements allocated */}}
+\DoxyCodeLine{50   \textcolor{keywordtype}{long}    body\_fill;             \textcolor{comment}{/* elements stored; fill mark */}}
+\DoxyCodeLine{51   \textcolor{keywordtype}{long}    body\_returned;         \textcolor{comment}{/* elements of fill returned */}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54   \textcolor{keywordtype}{int}     *lacing\_vals;      \textcolor{comment}{/* The values that will go to the segment table */}}
+\DoxyCodeLine{55   ogg\_int64\_t *granule\_vals; \textcolor{comment}{/* granulepos values for headers. Not compact}}
+\DoxyCodeLine{56 \textcolor{comment}{                this way, but it is simple coupled to the}}
+\DoxyCodeLine{57 \textcolor{comment}{                lacing fifo */}}
+\DoxyCodeLine{58   \textcolor{keywordtype}{long}    lacing\_storage;}
+\DoxyCodeLine{59   \textcolor{keywordtype}{long}    lacing\_fill;}
+\DoxyCodeLine{60   \textcolor{keywordtype}{long}    lacing\_packet;}
+\DoxyCodeLine{61   \textcolor{keywordtype}{long}    lacing\_returned;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}    header[282];      \textcolor{comment}{/* working space for header encode */}}
+\DoxyCodeLine{64   \textcolor{keywordtype}{int}              header\_fill;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \textcolor{keywordtype}{int}     e\_o\_s;          \textcolor{comment}{/* set when we have buffered the last packet in the}}
+\DoxyCodeLine{67 \textcolor{comment}{                             logical bitstream */}}
+\DoxyCodeLine{68   \textcolor{keywordtype}{int}     b\_o\_s;          \textcolor{comment}{/* set after we've written the initial page}}
+\DoxyCodeLine{69 \textcolor{comment}{                             of a logical bitstream */}}
+\DoxyCodeLine{70   \textcolor{keywordtype}{long}    serialno;}
+\DoxyCodeLine{71   \textcolor{keywordtype}{long}    pageno;}
+\DoxyCodeLine{72   ogg\_int64\_t  packetno;      \textcolor{comment}{/* sequence number for decode; the framing}}
+\DoxyCodeLine{73 \textcolor{comment}{                             knows where there's a hole in the data,}}
+\DoxyCodeLine{74 \textcolor{comment}{                             but we need coupling so that the codec}}
+\DoxyCodeLine{75 \textcolor{comment}{                             (which is in a seperate abstraction}}
+\DoxyCodeLine{76 \textcolor{comment}{                             layer) also knows about the gap */}}
+\DoxyCodeLine{77   ogg\_int64\_t   granulepos;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \} \mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{/* ogg\_packet is used to encapsulate the data and metadata belonging}}
+\DoxyCodeLine{82 \textcolor{comment}{   to a single raw Ogg/Vorbis packet *************************************/}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{85   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *packet;}
+\DoxyCodeLine{86   \textcolor{keywordtype}{long}  bytes;}
+\DoxyCodeLine{87   \textcolor{keywordtype}{long}  b\_o\_s;}
+\DoxyCodeLine{88   \textcolor{keywordtype}{long}  e\_o\_s;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90   ogg\_int64\_t  granulepos;}
+\DoxyCodeLine{91   }
+\DoxyCodeLine{92   ogg\_int64\_t  packetno;     \textcolor{comment}{/* sequence number for decode; the framing}}
+\DoxyCodeLine{93 \textcolor{comment}{                knows where there's a hole in the data,}}
+\DoxyCodeLine{94 \textcolor{comment}{                but we need coupling so that the codec}}
+\DoxyCodeLine{95 \textcolor{comment}{                (which is in a seperate abstraction}}
+\DoxyCodeLine{96 \textcolor{comment}{                layer) also knows about the gap */}}
+\DoxyCodeLine{97 \} \mbox{\hyperlink{structogg__packet}{ogg\_packet}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{100   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *data;}
+\DoxyCodeLine{101   \textcolor{keywordtype}{int} storage;}
+\DoxyCodeLine{102   \textcolor{keywordtype}{int} fill;}
+\DoxyCodeLine{103   \textcolor{keywordtype}{int} returned;}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105   \textcolor{keywordtype}{int} unsynced;}
+\DoxyCodeLine{106   \textcolor{keywordtype}{int} headerbytes;}
+\DoxyCodeLine{107   \textcolor{keywordtype}{int} bodybytes;}
+\DoxyCodeLine{108 \} \mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{comment}{/* Ogg BITSTREAM PRIMITIVES: bitstream ************************/}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_writeinit(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{113 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_writetrunc(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{long} bits);}
+\DoxyCodeLine{114 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_writealign(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{115 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_writecopy(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{void} *source,\textcolor{keywordtype}{long} bits);}
+\DoxyCodeLine{116 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_reset(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{117 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_writeclear(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{118 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_readinit(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buf,\textcolor{keywordtype}{int} bytes);}
+\DoxyCodeLine{119 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_write(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} value,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{120 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpack\_look(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{121 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpack\_look1(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{122 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_adv(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{123 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpack\_adv1(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{124 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpack\_read(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{125 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpack\_read1(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{126 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpack\_bytes(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{127 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpack\_bits(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{128 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *oggpack\_get\_buffer(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_writeinit(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{131 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_writetrunc(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{long} bits);}
+\DoxyCodeLine{132 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_writealign(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{133 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_writecopy(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{void} *source,\textcolor{keywordtype}{long} bits);}
+\DoxyCodeLine{134 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_reset(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{135 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_writeclear(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{136 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_readinit(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *buf,\textcolor{keywordtype}{int} bytes);}
+\DoxyCodeLine{137 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_write(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} value,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{138 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpackB\_look(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{139 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpackB\_look1(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{140 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_adv(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{141 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}  oggpackB\_adv1(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{142 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpackB\_read(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b,\textcolor{keywordtype}{int} bits);}
+\DoxyCodeLine{143 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpackB\_read1(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{144 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpackB\_bytes(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{145 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}  oggpackB\_bits(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{146 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *oggpackB\_get\_buffer(\mbox{\hyperlink{structoggpack__buffer}{oggpack\_buffer}} *b);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{/* Ogg BITSTREAM PRIMITIVES: encoding **************************/}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_packetin(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os, \mbox{\hyperlink{structogg__packet}{ogg\_packet}} *op);}
+\DoxyCodeLine{151 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_pageout(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os, \mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{152 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_flush(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os, \mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{comment}{/* Ogg BITSTREAM PRIMITIVES: decoding **************************/}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_sync\_init(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy);}
+\DoxyCodeLine{157 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_sync\_clear(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy);}
+\DoxyCodeLine{158 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_sync\_reset(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy);}
+\DoxyCodeLine{159 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}  ogg\_sync\_destroy(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}    *ogg\_sync\_buffer(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy, \textcolor{keywordtype}{long} size);}
+\DoxyCodeLine{162 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_sync\_wrote(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy, \textcolor{keywordtype}{long} bytes);}
+\DoxyCodeLine{163 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}     ogg\_sync\_pageseek(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy,\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{164 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_sync\_pageout(\mbox{\hyperlink{structogg__sync__state}{ogg\_sync\_state}} *oy, \mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{165 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_pagein(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os, \mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{166 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_packetout(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os,\mbox{\hyperlink{structogg__packet}{ogg\_packet}} *op);}
+\DoxyCodeLine{167 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_packetpeek(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os,\mbox{\hyperlink{structogg__packet}{ogg\_packet}} *op);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{/* Ogg BITSTREAM PRIMITIVES: general ***************************/}}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_init(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os,\textcolor{keywordtype}{int} serialno);}
+\DoxyCodeLine{172 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_clear(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os);}
+\DoxyCodeLine{173 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_reset(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os);}
+\DoxyCodeLine{174 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_reset\_serialno(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os,\textcolor{keywordtype}{int} serialno);}
+\DoxyCodeLine{175 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_destroy(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os);}
+\DoxyCodeLine{176 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_stream\_eos(\mbox{\hyperlink{structogg__stream__state}{ogg\_stream\_state}} *os);}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}     ogg\_page\_checksum\_set(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_page\_version(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{181 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_page\_continued(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{182 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_page\_bos(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{183 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_page\_eos(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{184 \textcolor{keyword}{extern} ogg\_int64\_t  ogg\_page\_granulepos(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{185 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_page\_serialno(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{186 \textcolor{keyword}{extern} \textcolor{keywordtype}{long}     ogg\_page\_pageno(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{187 \textcolor{keyword}{extern} \textcolor{keywordtype}{int}      ogg\_page\_packets(\mbox{\hyperlink{structogg__page}{ogg\_page}} *og);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{keyword}{extern} \textcolor{keywordtype}{void}     ogg\_packet\_clear(\mbox{\hyperlink{structogg__packet}{ogg\_packet}} *op);}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{193 \}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_OGG\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 }
+
+\end{DoxyCode}

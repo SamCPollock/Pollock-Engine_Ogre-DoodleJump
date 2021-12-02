@@ -1,0 +1,116 @@
+\hypertarget{class_ball}{}\doxysection{Ball Class Reference}
+\label{class_ball}\index{Ball@{Ball}}
+Inheritance diagram for Ball\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ball}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ball_a56c764cb4e11e2403435d9046bf85b01}{Ball}} (Scene\+Manager $\ast$scn\+Mgr, Ogre\+::\+Scene\+Node $\ast$ball\+Node, \mbox{\hyperlink{class_paddle}{Paddle}} $\ast$paddle\+Reference)
+\item 
+void \mbox{\hyperlink{class_ball_a0063f2f9d97e977bba313e045884c972}{Bounds\+Checking}} ()
+\item 
+void \mbox{\hyperlink{class_ball_a45716f7fddea1f294f2471e8c2c3be5d}{Hit\+Bottom}} ()
+\item 
+void \mbox{\hyperlink{class_ball_afa2c96f32cfd07ba9524883e1473f566}{Rebound\+Paddle}} ()
+\item 
+void \mbox{\hyperlink{class_ball_a417b803c1a32e18cfd3d725ef1881de5}{Rebound\+Sides}} ()
+\item 
+bool \mbox{\hyperlink{class_ball_a9c18e8774031f3482645fbf0dc0dcb3c}{frame\+Started}} (const Ogre\+::\+Frame\+Event \&evt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ball_a4ffe359373628ed494365822329db3d2}\label{class_ball_a4ffe359373628ed494365822329db3d2}} 
+float {\bfseries screen\+Width}
+\item 
+\mbox{\Hypertarget{class_ball_adef4f0e1d661cbe6279a18efc59759c9}\label{class_ball_adef4f0e1d661cbe6279a18efc59759c9}} 
+float {\bfseries ball\+Speed}
+\item 
+\mbox{\Hypertarget{class_ball_af7c42d935c4fed9753d372e9821c95b3}\label{class_ball_af7c42d935c4fed9753d372e9821c95b3}} 
+int {\bfseries ball\+Score}
+\item 
+\mbox{\Hypertarget{class_ball_afddf4911f8c2d3673b12e8267d916395}\label{class_ball_afddf4911f8c2d3673b12e8267d916395}} 
+int {\bfseries ball\+Lives}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ball_a56c764cb4e11e2403435d9046bf85b01}\label{class_ball_a56c764cb4e11e2403435d9046bf85b01}} 
+\index{Ball@{Ball}!Ball@{Ball}}
+\index{Ball@{Ball}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{Ball()}{Ball()}}
+{\footnotesize\ttfamily Ball\+::\+Ball (\begin{DoxyParamCaption}\item[{Scene\+Manager $\ast$}]{scn\+Mgr,  }\item[{Ogre\+::\+Scene\+Node $\ast$}]{ball\+Node,  }\item[{\mbox{\hyperlink{class_paddle}{Paddle}} $\ast$}]{paddle\+Reference }\end{DoxyParamCaption})}
+
+This is the \mbox{\hyperlink{class_ball}{Ball}} constructor
+
+The ball is a rectangle object that bounces around the screen. 
+\begin{DoxyParams}{Parameters}
+{\em Scene\+Manager$\ast$,Scene\+Node$\ast$,Paddle$\ast$} & -- Pass all of these by reference when instantiating the ball. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Set the ball\textquotesingle{}s properties in here. Properties include height, width, ball\+Speed, screen\+Width, ball\+Score, 
+
+the ball\textquotesingle{}s x velocity is set higher than its y velocity to produce a more challenging trajectory. ball\+Lives, and velocity. ~\newline
+ 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ball_a0063f2f9d97e977bba313e045884c972}\label{class_ball_a0063f2f9d97e977bba313e045884c972}} 
+\index{Ball@{Ball}!BoundsChecking@{BoundsChecking}}
+\index{BoundsChecking@{BoundsChecking}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{BoundsChecking()}{BoundsChecking()}}
+{\footnotesize\ttfamily void Ball\+::\+Bounds\+Checking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the Bounds\+Checking function.
+
+This checks the ball\textquotesingle{}s position against the sides, top, and bottom of the screen. It also checks using the \mbox{\hyperlink{class_collision_manager}{Collision\+Manager}} for collision against the paddle. \mbox{\Hypertarget{class_ball_a9c18e8774031f3482645fbf0dc0dcb3c}\label{class_ball_a9c18e8774031f3482645fbf0dc0dcb3c}} 
+\index{Ball@{Ball}!frameStarted@{frameStarted}}
+\index{frameStarted@{frameStarted}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{frameStarted()}{frameStarted()}}
+{\footnotesize\ttfamily bool Ball\+::frame\+Started (\begin{DoxyParamCaption}\item[{const Ogre\+::\+Frame\+Event \&}]{evt }\end{DoxyParamCaption})}
+
+This is the frame\+Started function.
+
+This calls the translate function every frame to move the ball according to it\textquotesingle{}s velocity. ~\newline
+ It also calls the Bounds\+Checking function every frame. \begin{DoxyNote}{Note}
+translate is adjusted by evt.\+time\+Since\+Last\+Frame to ensure consistent speed across frame rates. ~\newline
+ 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_ball_a45716f7fddea1f294f2471e8c2c3be5d}\label{class_ball_a45716f7fddea1f294f2471e8c2c3be5d}} 
+\index{Ball@{Ball}!HitBottom@{HitBottom}}
+\index{HitBottom@{HitBottom}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{HitBottom()}{HitBottom()}}
+{\footnotesize\ttfamily void Ball\+::\+Hit\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the Hit\+Bottom function.
+
+This is called when the Bound\+Check determines the ball has reached the bottom of the screen. It reversed the ball\textquotesingle{}s speed, moves the ball to a safe position to avoid repeat collisions, and decrements the ball\textquotesingle{}s lives. ~\newline
+ \mbox{\Hypertarget{class_ball_afa2c96f32cfd07ba9524883e1473f566}\label{class_ball_afa2c96f32cfd07ba9524883e1473f566}} 
+\index{Ball@{Ball}!ReboundPaddle@{ReboundPaddle}}
+\index{ReboundPaddle@{ReboundPaddle}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{ReboundPaddle()}{ReboundPaddle()}}
+{\footnotesize\ttfamily void Ball\+::\+Rebound\+Paddle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the Rebound\+Paddle function.
+
+This is called when the \mbox{\hyperlink{class_collision_manager}{Collision\+Manager}} determines that the ball has collided with the paddle. It reverses the ball\textquotesingle{}s speed, moves the ball to a safe position to avoid repeat collisions, and increments the ball\textquotesingle{}s score. \mbox{\Hypertarget{class_ball_a417b803c1a32e18cfd3d725ef1881de5}\label{class_ball_a417b803c1a32e18cfd3d725ef1881de5}} 
+\index{Ball@{Ball}!ReboundSides@{ReboundSides}}
+\index{ReboundSides@{ReboundSides}!Ball@{Ball}}
+\doxysubsubsection{\texorpdfstring{ReboundSides()}{ReboundSides()}}
+{\footnotesize\ttfamily void Ball\+::\+Rebound\+Sides (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the Rebound\+Sides function.
+
+This is called when the ball reaches the max or minimum screen bounds on the x axis. It simply reverses the ball\textquotesingle{}s x velocity. ~\newline
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment1-\/\+Pong/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Ball.\+h\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment1-\/\+Pong/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Ball.\+cpp\end{DoxyCompactItemize}

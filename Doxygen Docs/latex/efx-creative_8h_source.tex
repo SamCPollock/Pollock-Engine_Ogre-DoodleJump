@@ -1,0 +1,142 @@
+\hypertarget{efx-creative_8h_source}{}\doxysection{efx-\/creative.h}
+\label{efx-creative_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/efx-\/creative.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/efx-\/creative.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_\_efxcreative\_h\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_\_efxcreative\_h\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{21 \textcolor{comment}{/* AL EAXReverb effect parameters. */}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DENSITY                               0x0001}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DIFFUSION                             0x0002}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_GAIN                                  0x0003}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_GAINHF                                0x0004}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_GAINLF                                0x0005}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DECAY\_TIME                            0x0006}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DECAY\_HFRATIO                         0x0007}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DECAY\_LFRATIO                         0x0008}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_REFLECTIONS\_GAIN                      0x0009}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_REFLECTIONS\_DELAY                     0x000A}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_REFLECTIONS\_PAN                       0x000B}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_LATE\_REVERB\_GAIN                      0x000C}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_LATE\_REVERB\_DELAY                     0x000D}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_LATE\_REVERB\_PAN                       0x000E}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_ECHO\_TIME                             0x000F}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_ECHO\_DEPTH                            0x0010}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MODULATION\_TIME                       0x0011}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MODULATION\_DEPTH                      0x0012}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_AIR\_ABSORPTION\_GAINHF                 0x0013 }}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_HFREFERENCE                           0x0014 }}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_LFREFERENCE                           0x0015 }}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_ROOM\_ROLLOFF\_FACTOR                   0x0016}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DECAY\_HFLIMIT                         0x0017}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{/* Effect type definitions to be used with AL\_EFFECT\_TYPE. */}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define AL\_EFFECT\_EAXREVERB                                0x8000}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{ /**********************************************************}}
+\DoxyCodeLine{52 \textcolor{comment}{ * Effect parameter structures, value definitions, ranges and defaults.}}
+\DoxyCodeLine{53 \textcolor{comment}{ */}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_DENSITY                           0.0f}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_DENSITY                           1.0f}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_DENSITY                       1.0f}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_DIFFUSION                         0.0f}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_DIFFUSION                         1.0f}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_DIFFUSION                     1.0f}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_GAIN                              0.0f}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_GAIN                              1.0f}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_GAIN                          0.32f}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_GAINHF                            0.0f}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_GAINHF                            1.0f}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_GAINHF                        0.89f}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_GAINLF                            0.0f}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_GAINLF                            1.0f}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_GAINLF                        1.0f}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_DECAY\_TIME                        0.1f}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_DECAY\_TIME                        20.0f}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_DECAY\_TIME                    1.49f}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_DECAY\_HFRATIO                     0.1f}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_DECAY\_HFRATIO                     2.0f}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_DECAY\_HFRATIO                 0.83f}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_DECAY\_LFRATIO                     0.1f}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_DECAY\_LFRATIO                     2.0f}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_DECAY\_LFRATIO                 1.0f}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_REFLECTIONS\_GAIN                  0.0f}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_REFLECTIONS\_GAIN                  3.16f}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_REFLECTIONS\_GAIN              0.05f}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_REFLECTIONS\_DELAY                 0.0f}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_REFLECTIONS\_DELAY                 0.3f}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_REFLECTIONS\_DELAY             0.007f}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_REFLECTIONS\_PAN               \{0.0f, 0.0f, 0.0f\}}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_LATE\_REVERB\_GAIN                  0.0f}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_LATE\_REVERB\_GAIN                  10.0f}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_LATE\_REVERB\_GAIN              1.26f}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_LATE\_REVERB\_DELAY                 0.0f}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_LATE\_REVERB\_DELAY                 0.1f}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_LATE\_REVERB\_DELAY             0.011f}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_LATE\_REVERB\_PAN               \{0.0f, 0.0f, 0.0f\}}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_ECHO\_TIME                         0.075f}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_ECHO\_TIME                         0.25f}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_ECHO\_TIME                     0.25f}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_ECHO\_DEPTH                        0.0f}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_ECHO\_DEPTH                        1.0f}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_ECHO\_DEPTH                    0.0f}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_MODULATION\_TIME                   0.04f}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_MODULATION\_TIME                   4.0f}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_MODULATION\_TIME               0.25f}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_MODULATION\_DEPTH                  0.0f}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_MODULATION\_DEPTH                  1.0f}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_MODULATION\_DEPTH              0.0f}}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_AIR\_ABSORPTION\_GAINHF             0.892f}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_AIR\_ABSORPTION\_GAINHF             1.0f}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_AIR\_ABSORPTION\_GAINHF         0.994f}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_HFREFERENCE                       1000.0f}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_HFREFERENCE                       20000.0f}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_HFREFERENCE                   5000.0f}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_LFREFERENCE                       20.0f}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_LFREFERENCE                       1000.0f}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_LFREFERENCE                   250.0f}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_ROOM\_ROLLOFF\_FACTOR               0.0f}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_ROOM\_ROLLOFF\_FACTOR               10.0f}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_ROOM\_ROLLOFF\_FACTOR           0.0f}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MIN\_DECAY\_HFLIMIT                     AL\_FALSE}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_MAX\_DECAY\_HFLIMIT                     AL\_TRUE}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define AL\_EAXREVERB\_DEFAULT\_DECAY\_HFLIMIT                 AL\_TRUE}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{148 \}  \textcolor{comment}{/* extern "{}C"{} */}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_efxcreative\_h\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

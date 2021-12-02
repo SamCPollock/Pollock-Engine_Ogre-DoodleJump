@@ -1,0 +1,74 @@
+\hypertarget{class_paddle}{}\doxysection{Paddle Class Reference}
+\label{class_paddle}\index{Paddle@{Paddle}}
+Inheritance diagram for Paddle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_paddle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_paddle_a735d640962918d2e752e0599c1735a79}{Paddle}} (Ogre\+::\+Scene\+Manager $\ast$scn\+Mgr, Ogre\+::\+Scene\+Node $\ast$paddle\+Node)
+\item 
+void \mbox{\hyperlink{class_paddle_a8dddde94fd24b92e04d1b61caee8e7ae}{Bounds\+Checking}} ()
+\item 
+bool \mbox{\hyperlink{class_paddle_a05d60ac86163b78e76007b79347f1ab0}{frame\+Started}} (const Ogre\+::\+Frame\+Event \&evt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_paddle_a2505f586de18a2af33c9bc6986e5812b}\label{class_paddle_a2505f586de18a2af33c9bc6986e5812b}} 
+float {\bfseries screen\+Width}
+\item 
+\mbox{\Hypertarget{class_paddle_a0a951e1714bf9da4f51883aa847d131e}\label{class_paddle_a0a951e1714bf9da4f51883aa847d131e}} 
+float {\bfseries paddle\+Speed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_paddle_a735d640962918d2e752e0599c1735a79}\label{class_paddle_a735d640962918d2e752e0599c1735a79}} 
+\index{Paddle@{Paddle}!Paddle@{Paddle}}
+\index{Paddle@{Paddle}!Paddle@{Paddle}}
+\doxysubsubsection{\texorpdfstring{Paddle()}{Paddle()}}
+{\footnotesize\ttfamily Paddle\+::\+Paddle (\begin{DoxyParamCaption}\item[{Ogre\+::\+Scene\+Manager $\ast$}]{scn\+Mgr,  }\item[{Ogre\+::\+Scene\+Node $\ast$}]{paddle\+Node }\end{DoxyParamCaption})}
+
+This is the \mbox{\hyperlink{class_paddle}{Paddle}} constructor
+
+The paddle is a rectangle object that moves left and right at the bottom of the screen according to player input. 
+\begin{DoxyParams}{Parameters}
+{\em Scene\+Manager$\ast$,Scene\+Node$\ast$} & -- Pass all of these by reference when instantiating the paddle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Set the paddles\textquotesingle{}s properties in here. Properties include height, width, paddle\+Speed, screen\+Width. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_paddle_a8dddde94fd24b92e04d1b61caee8e7ae}\label{class_paddle_a8dddde94fd24b92e04d1b61caee8e7ae}} 
+\index{Paddle@{Paddle}!BoundsChecking@{BoundsChecking}}
+\index{BoundsChecking@{BoundsChecking}!Paddle@{Paddle}}
+\doxysubsubsection{\texorpdfstring{BoundsChecking()}{BoundsChecking()}}
+{\footnotesize\ttfamily void Paddle\+::\+Bounds\+Checking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the Bound\+Checking function
+
+This checks the paddle\textquotesingle{}s position against the x limits of the screen and ensures that the paddle does not move off the screen. ~\newline
+ \mbox{\Hypertarget{class_paddle_a05d60ac86163b78e76007b79347f1ab0}\label{class_paddle_a05d60ac86163b78e76007b79347f1ab0}} 
+\index{Paddle@{Paddle}!frameStarted@{frameStarted}}
+\index{frameStarted@{frameStarted}!Paddle@{Paddle}}
+\doxysubsubsection{\texorpdfstring{frameStarted()}{frameStarted()}}
+{\footnotesize\ttfamily bool Paddle\+::frame\+Started (\begin{DoxyParamCaption}\item[{const Ogre\+::\+Frame\+Event \&}]{evt }\end{DoxyParamCaption})}
+
+This is the frame\+Started function
+
+This calls bounds\+Checking every frame. It also translates the paddle according to its velocity. \begin{DoxyNote}{Note}
+velocity is returned to 0 after moving every frame to ensure the paddle only moves while the player is inputting a direction. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment1-\/\+Pong/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Paddle.\+h\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment1-\/\+Pong/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Paddle.\+cpp\end{DoxyCompactItemize}

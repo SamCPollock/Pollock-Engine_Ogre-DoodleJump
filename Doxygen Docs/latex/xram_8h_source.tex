@@ -1,0 +1,85 @@
+\hypertarget{xram_8h_source}{}\doxysection{xram.\+h}
+\label{xram_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/xram.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/xram.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <al.h>}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{// X-\/RAM Function pointer definitions}}
+\DoxyCodeLine{4 \textcolor{keyword}{typedef} ALboolean (\_\_cdecl *EAXSetBufferMode)(ALsizei n, ALuint *buffers, ALint value);}
+\DoxyCodeLine{5 \textcolor{keyword}{typedef} ALenum    (\_\_cdecl *EAXGetBufferMode)(ALuint buffer, ALint *value);}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{8 \textcolor{comment}{// Query for X-\/RAM extension}}
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// if (alIsExtensionPresent("{}EAX-\/RAM"{}) == AL\_TRUE)}}
+\DoxyCodeLine{11 \textcolor{comment}{//      X-\/RAM Extension found}}
+\DoxyCodeLine{12 \textcolor{comment}{//  }}
+\DoxyCodeLine{14 \textcolor{comment}{}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17 \textcolor{comment}{// X-\/RAM enum names}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{// "{}AL\_EAX\_RAM\_SIZE"{}}}
+\DoxyCodeLine{20 \textcolor{comment}{// "{}AL\_EAX\_RAM\_FREE"{}}}
+\DoxyCodeLine{21 \textcolor{comment}{// "{}AL\_STORAGE\_AUTOMATIC"{}}}
+\DoxyCodeLine{22 \textcolor{comment}{// "{}AL\_STORAGE\_HARDWARE"{}}}
+\DoxyCodeLine{23 \textcolor{comment}{// "{}AL\_STORAGE\_ACCESSIBLE"{}}}
+\DoxyCodeLine{24 \textcolor{comment}{//}}
+\DoxyCodeLine{25 \textcolor{comment}{// Query enum values using alGetEnumValue, for example}}
+\DoxyCodeLine{26 \textcolor{comment}{// }}
+\DoxyCodeLine{27 \textcolor{comment}{// long lRamSizeEnum = alGetEnumValue("{}AL\_EAX\_RAM\_SIZE"{})}}
+\DoxyCodeLine{28 \textcolor{comment}{//}}
+\DoxyCodeLine{30 \textcolor{comment}{}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{33 \textcolor{comment}{// Query total amount of X-\/RAM}}
+\DoxyCodeLine{34 \textcolor{comment}{//}}
+\DoxyCodeLine{35 \textcolor{comment}{// long lTotalSize = alGetInteger(alGetEnumValue("{}AL\_EAX\_RAM\_SIZE"{})}}
+\DoxyCodeLine{36 \textcolor{comment}{//}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41 \textcolor{comment}{// Query free X-\/RAM available}}
+\DoxyCodeLine{42 \textcolor{comment}{//}}
+\DoxyCodeLine{43 \textcolor{comment}{// long lFreeSize = alGetInteger(alGetEnumValue("{}AL\_EAX\_RAM\_FREE"{})}}
+\DoxyCodeLine{44 \textcolor{comment}{//}}
+\DoxyCodeLine{46 \textcolor{comment}{}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49 \textcolor{comment}{// Query X-\/RAM Function pointers}}
+\DoxyCodeLine{50 \textcolor{comment}{// }}
+\DoxyCodeLine{51 \textcolor{comment}{// Use typedefs defined above to get the X-\/RAM function pointers using}}
+\DoxyCodeLine{52 \textcolor{comment}{// alGetProcAddress}}
+\DoxyCodeLine{53 \textcolor{comment}{//}}
+\DoxyCodeLine{54 \textcolor{comment}{// EAXSetBufferMode eaxSetBufferMode;}}
+\DoxyCodeLine{55 \textcolor{comment}{// EAXGetBufferMode eaxGetBufferMode;}}
+\DoxyCodeLine{56 \textcolor{comment}{//}}
+\DoxyCodeLine{57 \textcolor{comment}{// eaxSetBufferMode = (EAXSetBufferMode)alGetProcAddress("{}EAXSetBufferMode"{});}}
+\DoxyCodeLine{58 \textcolor{comment}{// eaxGetBufferMode = (EAXGetBufferMode)alGetProcAddress("{}EAXGetBufferMode"{});}}
+\DoxyCodeLine{59 \textcolor{comment}{//}}
+\DoxyCodeLine{61 \textcolor{comment}{}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64 \textcolor{comment}{// Force an Open AL Buffer into X-\/RAM (good for non-\/streaming buffers)}}
+\DoxyCodeLine{65 \textcolor{comment}{//}}
+\DoxyCodeLine{66 \textcolor{comment}{// ALuint uiBuffer;}}
+\DoxyCodeLine{67 \textcolor{comment}{// alGenBuffers(1, \&uiBuffer);}}
+\DoxyCodeLine{68 \textcolor{comment}{// eaxSetBufferMode(1, \&uiBuffer, alGetEnumValue("{}AL\_STORAGE\_HARDWARE"{}));}}
+\DoxyCodeLine{69 \textcolor{comment}{// alBufferData(...);}}
+\DoxyCodeLine{70 \textcolor{comment}{//}}
+\DoxyCodeLine{72 \textcolor{comment}{}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75 \textcolor{comment}{// Force an Open AL Buffer into 'accessible' (currently host) RAM (good for streaming buffers)}}
+\DoxyCodeLine{76 \textcolor{comment}{//}}
+\DoxyCodeLine{77 \textcolor{comment}{// ALuint uiBuffer;}}
+\DoxyCodeLine{78 \textcolor{comment}{// alGenBuffers(1, \&uiBuffer);}}
+\DoxyCodeLine{79 \textcolor{comment}{// eaxSetBufferMode(1, \&uiBuffer, alGetEnumValue("{}AL\_STORAGE\_ACCESSIBLE"{}));}}
+\DoxyCodeLine{80 \textcolor{comment}{// alBufferData(...);}}
+\DoxyCodeLine{81 \textcolor{comment}{//}}
+\DoxyCodeLine{83 \textcolor{comment}{}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86 \textcolor{comment}{// Put an Open AL Buffer into X-\/RAM if memory is available, otherwise use}}
+\DoxyCodeLine{87 \textcolor{comment}{// host RAM.  This is the default mode.}}
+\DoxyCodeLine{88 \textcolor{comment}{//}}
+\DoxyCodeLine{89 \textcolor{comment}{// ALuint uiBuffer;}}
+\DoxyCodeLine{90 \textcolor{comment}{// alGenBuffers(1, \&uiBuffer);}}
+\DoxyCodeLine{91 \textcolor{comment}{// eaxSetBufferMode(1, \&uiBuffer, alGetEnumValue("{}AL\_STORAGE\_AUTOMATIC"{}));}}
+\DoxyCodeLine{92 \textcolor{comment}{// alBufferData(...);}}
+\DoxyCodeLine{93 \textcolor{comment}{//}}
+\DoxyCodeLine{94 }
+
+\end{DoxyCode}

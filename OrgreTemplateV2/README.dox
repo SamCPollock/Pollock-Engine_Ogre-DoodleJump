@@ -1,0 +1,20 @@
+/**
+
+
+
+@mainpage Pollock -- OgrePong
+
+
+
+@author Sam Pollock
+
+
+
+HOW IT WORKS
+@attention use A + D keys to move the player
+/// Bounce on platforms to keep climbing!
+/// Lose lives by falling off screen.
+/// Made by Sam Pollock for Game Engine Development (Taught by Hooman Salamat) at George Brown College, fall 2021.
+
+
+*/

@@ -1,0 +1,53 @@
+\hypertarget{class_sound_manager}{}\doxysection{Sound\+Manager Class Reference}
+\label{class_sound_manager}\index{SoundManager@{SoundManager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35}{Sound\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_sound_manager_ad072f123b270f53624663f4c555fc282}{add\+Sound\+Effect}} (const char $\ast$path)
+\item 
+void \mbox{\hyperlink{class_sound_manager_a9f7249b4a9e6ec16da34d3a4438365c6}{play\+Sound\+Effect}} (const int index, bool is\+Looping)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35}\label{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35}} 
+\index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
+\index{SoundManager@{SoundManager}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{SoundManager()}{SoundManager()}}
+{\footnotesize\ttfamily Sound\+Manager\+::\+Sound\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the \mbox{\hyperlink{class_sound_manager}{Sound\+Manager}} constructor It sets the audio rate, format, channels, and buffers. ~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sound_manager_ad072f123b270f53624663f4c555fc282}\label{class_sound_manager_ad072f123b270f53624663f4c555fc282}} 
+\index{SoundManager@{SoundManager}!addSoundEffect@{addSoundEffect}}
+\index{addSoundEffect@{addSoundEffect}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{addSoundEffect()}{addSoundEffect()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::add\+Sound\+Effect (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+This is the Add\+Sound\+Effect function. It takes in the path of an audio file, then adds it to the sound effect bank. \begin{DoxyNote}{Note}
+the index of chunks starts at 0. ~\newline
+ 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_sound_manager_a9f7249b4a9e6ec16da34d3a4438365c6}\label{class_sound_manager_a9f7249b4a9e6ec16da34d3a4438365c6}} 
+\index{SoundManager@{SoundManager}!playSoundEffect@{playSoundEffect}}
+\index{playSoundEffect@{playSoundEffect}!SoundManager@{SoundManager}}
+\doxysubsubsection{\texorpdfstring{playSoundEffect()}{playSoundEffect()}}
+{\footnotesize\ttfamily void Sound\+Manager\+::play\+Sound\+Effect (\begin{DoxyParamCaption}\item[{const int}]{index,  }\item[{bool}]{is\+Looping }\end{DoxyParamCaption})}
+
+This is the play sound effect function. 
+\begin{DoxyParams}{Parameters}
+{\em index} & It takes in an integer for the index of the sound you want\\
+\hline
+{\em is\+Looping} & Next, it takes a boolean for whether the sound is supposed to loop or not.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Sound\+Manager.\+h\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Sound\+Manager.\+cpp\end{DoxyCompactItemize}

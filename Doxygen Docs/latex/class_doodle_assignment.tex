@@ -1,0 +1,124 @@
+\hypertarget{class_doodle_assignment}{}\doxysection{Doodle\+Assignment Class Reference}
+\label{class_doodle_assignment}\index{DoodleAssignment@{DoodleAssignment}}
+Inheritance diagram for Doodle\+Assignment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_doodle_assignment}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_doodle_assignment_a9e50396078c6cda5fca94c4e639a305a}{setup}} ()
+\item 
+void \mbox{\hyperlink{class_doodle_assignment_a31aa14a31193d84cb109dd017d24ad14}{create\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_doodle_assignment_a11bacf5292f27ec30c6f5678711534d4}{create\+Camera}} ()
+\item 
+bool \mbox{\hyperlink{class_doodle_assignment_ae29ca48afd0c60ada9e715ae9787c2d1}{key\+Pressed}} (const Keyboard\+Event \&evt)
+\item 
+void \mbox{\hyperlink{class_doodle_assignment_aa8218c6804846265c3f5472db581c951}{create\+Frame\+Listener}} ()
+\item 
+void \mbox{\hyperlink{class_doodle_assignment_a76ba308ff9599f16e0e70ac54922e431}{Spawn\+Platforms}} (int number\+Of\+Platforms)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_doodle_assignment_a4dbd3b364c3e61a00357b02f928296c3}\label{class_doodle_assignment_a4dbd3b364c3e61a00357b02f928296c3}} 
+Ogre\+Bites\+::\+Tray\+Listener {\bfseries m\+Tray\+Listener}
+\item 
+\mbox{\Hypertarget{class_doodle_assignment_a9e6af44c6dc1bdbcd60b9351405e67ad}\label{class_doodle_assignment_a9e6af44c6dc1bdbcd60b9351405e67ad}} 
+Ogre\+Bites\+::\+Label $\ast$ {\bfseries m\+Info\+Label}
+\item 
+\mbox{\Hypertarget{class_doodle_assignment_ae4db96c1fadd1e56686538d06a248a0e}\label{class_doodle_assignment_ae4db96c1fadd1e56686538d06a248a0e}} 
+Ogre\+Bites\+::\+Label $\ast$ {\bfseries m\+Tpu\+Label}
+\item 
+\mbox{\Hypertarget{class_doodle_assignment_ab686dc80b34bbad2fd2759af37584f53}\label{class_doodle_assignment_ab686dc80b34bbad2fd2759af37584f53}} 
+Ogre\+Bites\+::\+Label $\ast$ {\bfseries m\+Tpu}
+\item 
+\mbox{\Hypertarget{class_doodle_assignment_a25eef71c3f848b604b0f423654c71534}\label{class_doodle_assignment_a25eef71c3f848b604b0f423654c71534}} 
+Ogre\+Bites\+::\+Label $\ast$ {\bfseries m\+Score\+Label}
+\item 
+\mbox{\Hypertarget{class_doodle_assignment_a95d0898f6abe579ba193c86b1acf9844}\label{class_doodle_assignment_a95d0898f6abe579ba193c86b1acf9844}} 
+Ogre\+Bites\+::\+Label $\ast$ {\bfseries m\+Lives\+Label}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a \mbox{\hyperlink{class_doodle_assignment}{Doodle\+Assignment}} class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_doodle_assignment_a11bacf5292f27ec30c6f5678711534d4}\label{class_doodle_assignment_a11bacf5292f27ec30c6f5678711534d4}} 
+\index{DoodleAssignment@{DoodleAssignment}!createCamera@{createCamera}}
+\index{createCamera@{createCamera}!DoodleAssignment@{DoodleAssignment}}
+\doxysubsubsection{\texorpdfstring{createCamera()}{createCamera()}}
+{\footnotesize\ttfamily void Doodle\+Assignment\+::create\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the create\+Camera function.
+
+It creates the camera in the scene and sets its initial position and characteristics. ~\newline
+ \mbox{[}camera\mbox{]}
+
+\mbox{[}camera\mbox{]}\mbox{\Hypertarget{class_doodle_assignment_aa8218c6804846265c3f5472db581c951}\label{class_doodle_assignment_aa8218c6804846265c3f5472db581c951}} 
+\index{DoodleAssignment@{DoodleAssignment}!createFrameListener@{createFrameListener}}
+\index{createFrameListener@{createFrameListener}!DoodleAssignment@{DoodleAssignment}}
+\doxysubsubsection{\texorpdfstring{createFrameListener()}{createFrameListener()}}
+{\footnotesize\ttfamily void Doodle\+Assignment\+::create\+Frame\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the create\+Frame\+Listener function
+
+It adds each a frame listener for each game object. It also adds a frame listenr for the UI. Finally, it adds the \mbox{\hyperlink{class_game_logic_frame_listener}{Game\+Logic\+Frame\+Listener}}, which process gameplay logic every frame. \mbox{\Hypertarget{class_doodle_assignment_a31aa14a31193d84cb109dd017d24ad14}\label{class_doodle_assignment_a31aa14a31193d84cb109dd017d24ad14}} 
+\index{DoodleAssignment@{DoodleAssignment}!createScene@{createScene}}
+\index{createScene@{createScene}!DoodleAssignment@{DoodleAssignment}}
+\doxysubsubsection{\texorpdfstring{createScene()}{createScene()}}
+{\footnotesize\ttfamily void Doodle\+Assignment\+::create\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is the create\+Scene function.
+
+This creates the lights and any other objects and UI in the scene. ~\newline
+ \mbox{[}turnlights\mbox{]}
+
+\mbox{[}turnlights\mbox{]}
+
+\mbox{[}newlight\mbox{]}
+
+\mbox{[}newlight\mbox{]}
+
+\mbox{[}lightpos\mbox{]}
+
+\mbox{[}lightpos\mbox{]}\mbox{\Hypertarget{class_doodle_assignment_ae29ca48afd0c60ada9e715ae9787c2d1}\label{class_doodle_assignment_ae29ca48afd0c60ada9e715ae9787c2d1}} 
+\index{DoodleAssignment@{DoodleAssignment}!keyPressed@{keyPressed}}
+\index{keyPressed@{keyPressed}!DoodleAssignment@{DoodleAssignment}}
+\doxysubsubsection{\texorpdfstring{keyPressed()}{keyPressed()}}
+{\footnotesize\ttfamily bool Doodle\+Assignment\+::key\+Pressed (\begin{DoxyParamCaption}\item[{const Keyboard\+Event \&}]{evt }\end{DoxyParamCaption})}
+
+This is a key\+Pressed function.
+
+It checks for keyboard inputs and sets the velocity of the Player accordingly. \begin{DoxyNote}{Note}
+more cases can be added to introduce additional inputs for the player. ~\newline
+ 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_doodle_assignment_a9e50396078c6cda5fca94c4e639a305a}\label{class_doodle_assignment_a9e50396078c6cda5fca94c4e639a305a}} 
+\index{DoodleAssignment@{DoodleAssignment}!setup@{setup}}
+\index{setup@{setup}!DoodleAssignment@{DoodleAssignment}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Doodle\+Assignment\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This is a setup function
+
+This calls the functions to setup the game, including the base \mbox{\hyperlink{class_doodle_assignment_a9e50396078c6cda5fca94c4e639a305a}{setup()}}, adding scene manager, creating the scene, creating the camera, and creating the frame listeners. ~\newline
+ \mbox{\Hypertarget{class_doodle_assignment_a76ba308ff9599f16e0e70ac54922e431}\label{class_doodle_assignment_a76ba308ff9599f16e0e70ac54922e431}} 
+\index{DoodleAssignment@{DoodleAssignment}!SpawnPlatforms@{SpawnPlatforms}}
+\index{SpawnPlatforms@{SpawnPlatforms}!DoodleAssignment@{DoodleAssignment}}
+\doxysubsubsection{\texorpdfstring{SpawnPlatforms()}{SpawnPlatforms()}}
+{\footnotesize\ttfamily void Doodle\+Assignment\+::\+Spawn\+Platforms (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Platforms }\end{DoxyParamCaption})}
+
+This is the Spawn\+Platforms function. This takes in an integer for number of platforms and spawns that many platforms. The variance variable is used to determine the range of y displacements between platforms. Each platform\textquotesingle{}s position starts at 0,0,0 then is adjusted according to how many were made. Each platform has a random x value set, between a range determined in the set\+Position. \begin{DoxyNote}{Note}
+After each platform is created, it is added to the platforms\+Vector for use in Game\+Logic. ~\newline
+ 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment2-\/\+Doodle\+Jump/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/Pollock-\/\+Assignment2-\/\+Doodle.\+cpp\end{DoxyCompactItemize}

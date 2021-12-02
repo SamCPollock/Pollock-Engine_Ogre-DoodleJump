@@ -1,0 +1,651 @@
+\hypertarget{_s_d_l__mixer_8h_source}{}\doxysection{SDL\+\_\+mixer.\+h}
+\label{_s_d_l__mixer_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2\_mixer-\/devel-\/2.0.4-\/VC/SDL2\_mixer-\/2.0.4/include/SDL\_mixer.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2\_mixer-\/devel-\/2.0.4-\/VC/SDL2\_mixer-\/2.0.4/include/SDL\_mixer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  SDL\_mixer:  An audio mixer library based on the SDL library}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2018 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef SDL\_MIXER\_H\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SDL\_MIXER\_H\_}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__rwops_8h}{SDL\_rwops.h}}"{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__audio_8h}{SDL\_audio.h}}"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__endian_8h}{SDL\_endian.h}}"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__version_8h}{SDL\_version.h}}"{}}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{34 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* Printable format: "{}\%d.\%d.\%d"{}, MAJOR, MINOR, PATCHLEVEL}}
+\DoxyCodeLine{38 \textcolor{comment}{*/}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define SDL\_MIXER\_MAJOR\_VERSION 2}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define SDL\_MIXER\_MINOR\_VERSION 0}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define SDL\_MIXER\_PATCHLEVEL    4}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/* This macro can be used to fill a version structure with the compile-\/time}}
+\DoxyCodeLine{44 \textcolor{comment}{ * version of the SDL\_mixer library.}}
+\DoxyCodeLine{45 \textcolor{comment}{ */}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define SDL\_MIXER\_VERSION(X)                        \(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\{                                                   \(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    (X)-\/>major = SDL\_MIXER\_MAJOR\_VERSION;           \(\backslash\)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{    (X)-\/>minor = SDL\_MIXER\_MINOR\_VERSION;           \(\backslash\)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{    (X)-\/>patch = SDL\_MIXER\_PATCHLEVEL;              \(\backslash\)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/* Backwards compatibility */}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define MIX\_MAJOR\_VERSION   SDL\_MIXER\_MAJOR\_VERSION}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define MIX\_MINOR\_VERSION   SDL\_MIXER\_MINOR\_VERSION}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define MIX\_PATCHLEVEL      SDL\_MIXER\_PATCHLEVEL}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define MIX\_VERSION(X)      SDL\_MIXER\_VERSION(X)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define SDL\_MIXER\_COMPILEDVERSION \(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{    SDL\_VERSIONNUM(SDL\_MIXER\_MAJOR\_VERSION, SDL\_MIXER\_MINOR\_VERSION, SDL\_MIXER\_PATCHLEVEL)}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define SDL\_MIXER\_VERSION\_ATLEAST(X, Y, Z) \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    (SDL\_MIXER\_COMPILEDVERSION >= SDL\_VERSIONNUM(X, Y, Z))}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{/* This function gets the version of the dynamically linked SDL\_mixer library.}}
+\DoxyCodeLine{72 \textcolor{comment}{   it should NOT be used to fill a version structure, instead you should}}
+\DoxyCodeLine{73 \textcolor{comment}{   use the SDL\_MIXER\_VERSION() macro.}}
+\DoxyCodeLine{74 \textcolor{comment}{ */}}
+\DoxyCodeLine{75 \textcolor{keyword}{extern} DECLSPEC \textcolor{keyword}{const} \mbox{\hyperlink{struct_s_d_l__version}{SDL\_version}} * SDLCALL Mix\_Linked\_Version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{78 \{}
+\DoxyCodeLine{79     MIX\_INIT\_FLAC   = 0x00000001,}
+\DoxyCodeLine{80     MIX\_INIT\_MOD    = 0x00000002,}
+\DoxyCodeLine{81     MIX\_INIT\_MP3    = 0x00000008,}
+\DoxyCodeLine{82     MIX\_INIT\_OGG    = 0x00000010,}
+\DoxyCodeLine{83     MIX\_INIT\_MID    = 0x00000020,}
+\DoxyCodeLine{84     MIX\_INIT\_OPUS   = 0x00000040}
+\DoxyCodeLine{85 \} MIX\_InitFlags;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{/* Loads dynamic libraries and prepares them for use.  Flags should be}}
+\DoxyCodeLine{88 \textcolor{comment}{   one or more flags from MIX\_InitFlags OR'd together.}}
+\DoxyCodeLine{89 \textcolor{comment}{   It returns the flags successfully initialized, or 0 on failure.}}
+\DoxyCodeLine{90 \textcolor{comment}{ */}}
+\DoxyCodeLine{91 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_Init(\textcolor{keywordtype}{int} flags);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{/* Unloads libraries loaded with Mix\_Init */}}
+\DoxyCodeLine{94 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_Quit(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{/* The default mixer has 8 simultaneous mixing channels */}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#ifndef MIX\_CHANNELS}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define MIX\_CHANNELS    8}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{comment}{/* Good default values for a PC soundcard */}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define MIX\_DEFAULT\_FREQUENCY   22050}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#if SDL\_BYTEORDER == SDL\_LIL\_ENDIAN}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define MIX\_DEFAULT\_FORMAT  AUDIO\_S16LSB}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define MIX\_DEFAULT\_FORMAT  AUDIO\_S16MSB}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define MIX\_DEFAULT\_CHANNELS    2}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define MIX\_MAX\_VOLUME          SDL\_MIX\_MAXVOLUME }\textcolor{comment}{/* Volume of a chunk */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{/* The internal format for an audio chunk */}}
+\DoxyCodeLine{113 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} \{}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} allocated;}
+\DoxyCodeLine{115     Uint8 *abuf;}
+\DoxyCodeLine{116     Uint32 alen;}
+\DoxyCodeLine{117     Uint8 volume;       \textcolor{comment}{/* Per-\/sample volume, 0-\/128 */}}
+\DoxyCodeLine{118 \} \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{comment}{/* The different fading types supported */}}
+\DoxyCodeLine{121 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{122     MIX\_NO\_FADING,}
+\DoxyCodeLine{123     MIX\_FADING\_OUT,}
+\DoxyCodeLine{124     MIX\_FADING\_IN}
+\DoxyCodeLine{125 \} Mix\_Fading;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{comment}{/* These are types of music files (not libraries used to load them) */}}
+\DoxyCodeLine{128 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{129     MUS\_NONE,}
+\DoxyCodeLine{130     MUS\_CMD,}
+\DoxyCodeLine{131     MUS\_WAV,}
+\DoxyCodeLine{132     MUS\_MOD,}
+\DoxyCodeLine{133     MUS\_MID,}
+\DoxyCodeLine{134     MUS\_OGG,}
+\DoxyCodeLine{135     MUS\_MP3,}
+\DoxyCodeLine{136     MUS\_MP3\_MAD\_UNUSED,}
+\DoxyCodeLine{137     MUS\_FLAC,}
+\DoxyCodeLine{138     MUS\_MODPLUG\_UNUSED,}
+\DoxyCodeLine{139     MUS\_OPUS}
+\DoxyCodeLine{140 \} Mix\_MusicType;}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{comment}{/* The internal format for a music chunk interpreted via mikmod */}}
+\DoxyCodeLine{143 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_Mix\_Music Mix\_Music;}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 \textcolor{comment}{/* Open the mixer with a certain audio format */}}
+\DoxyCodeLine{146 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_OpenAudio(\textcolor{keywordtype}{int} frequency, Uint16 format, \textcolor{keywordtype}{int} channels, \textcolor{keywordtype}{int} chunksize);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{/* Open the mixer with specific device and certain audio format */}}
+\DoxyCodeLine{149 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_OpenAudioDevice(\textcolor{keywordtype}{int} frequency, Uint16 format, \textcolor{keywordtype}{int} channels, \textcolor{keywordtype}{int} chunksize, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* device, \textcolor{keywordtype}{int} allowed\_changes);}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{comment}{/* Dynamically change the number of channels managed by the mixer.}}
+\DoxyCodeLine{152 \textcolor{comment}{   If decreasing the number of channels, the upper channels are}}
+\DoxyCodeLine{153 \textcolor{comment}{   stopped.}}
+\DoxyCodeLine{154 \textcolor{comment}{   This function returns the new number of allocated channels.}}
+\DoxyCodeLine{155 \textcolor{comment}{ */}}
+\DoxyCodeLine{156 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_AllocateChannels(\textcolor{keywordtype}{int} numchans);}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{comment}{/* Find out what the actual audio device parameters are.}}
+\DoxyCodeLine{159 \textcolor{comment}{   This function returns 1 if the audio has been opened, 0 otherwise.}}
+\DoxyCodeLine{160 \textcolor{comment}{ */}}
+\DoxyCodeLine{161 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_QuerySpec(\textcolor{keywordtype}{int} *frequency,Uint16 *format,\textcolor{keywordtype}{int} *channels);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{comment}{/* Load a wave file or a music (.mod .s3m .it .xm) file */}}
+\DoxyCodeLine{164 \textcolor{keyword}{extern} DECLSPEC \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} * SDLCALL Mix\_LoadWAV\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}} *src, \textcolor{keywordtype}{int} freesrc);}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define Mix\_LoadWAV(file)   Mix\_LoadWAV\_RW(SDL\_RWFromFile(file, "{}rb"{}}), 1)}
+\DoxyCodeLine{166 \textcolor{keyword}{extern} DECLSPEC Mix\_Music * SDLCALL Mix\_LoadMUS(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *file);}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{comment}{/* Load a music file from an SDL\_RWop object (Ogg and MikMod specific currently)}}
+\DoxyCodeLine{169 \textcolor{comment}{   Matt Campbell (matt@campbellhome.dhs.org) April 2000 */}}
+\DoxyCodeLine{170 \textcolor{keyword}{extern} DECLSPEC Mix\_Music * SDLCALL Mix\_LoadMUS\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}} *src, \textcolor{keywordtype}{int} freesrc);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{comment}{/* Load a music file from an SDL\_RWop object assuming a specific format */}}
+\DoxyCodeLine{173 \textcolor{keyword}{extern} DECLSPEC Mix\_Music * SDLCALL Mix\_LoadMUSType\_RW(\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\_RWops}} *src, Mix\_MusicType type, \textcolor{keywordtype}{int} freesrc);}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{comment}{/* Load a wave file of the mixer format from a memory buffer */}}
+\DoxyCodeLine{176 \textcolor{keyword}{extern} DECLSPEC \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} * SDLCALL Mix\_QuickLoad\_WAV(Uint8 *mem);}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{comment}{/* Load raw audio data of the mixer format from a memory buffer */}}
+\DoxyCodeLine{179 \textcolor{keyword}{extern} DECLSPEC \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} * SDLCALL Mix\_QuickLoad\_RAW(Uint8 *mem, Uint32 len);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{comment}{/* Free an audio chunk previously loaded */}}
+\DoxyCodeLine{182 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_FreeChunk(\mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} *chunk);}
+\DoxyCodeLine{183 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_FreeMusic(Mix\_Music *music);}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{/* Get a list of chunk/music decoders that this build of SDL\_mixer provides.}}
+\DoxyCodeLine{186 \textcolor{comment}{   This list can change between builds AND runs of the program, if external}}
+\DoxyCodeLine{187 \textcolor{comment}{   libraries that add functionality become available.}}
+\DoxyCodeLine{188 \textcolor{comment}{   You must successfully call Mix\_OpenAudio() before calling these functions.}}
+\DoxyCodeLine{189 \textcolor{comment}{   This API is only available in SDL\_mixer 1.2.9 and later.}}
+\DoxyCodeLine{190 \textcolor{comment}{}}
+\DoxyCodeLine{191 \textcolor{comment}{   // usage...}}
+\DoxyCodeLine{192 \textcolor{comment}{   int i;}}
+\DoxyCodeLine{193 \textcolor{comment}{   const int total = Mix\_GetNumChunkDecoders();}}
+\DoxyCodeLine{194 \textcolor{comment}{   for (i = 0; i < total; i++)}}
+\DoxyCodeLine{195 \textcolor{comment}{       printf("{}Supported chunk decoder: [\%s]\(\backslash\)n"{}, Mix\_GetChunkDecoder(i));}}
+\DoxyCodeLine{196 \textcolor{comment}{}}
+\DoxyCodeLine{197 \textcolor{comment}{   Appearing in this list doesn't promise your specific audio file will}}
+\DoxyCodeLine{198 \textcolor{comment}{   decode...but it's handy to know if you have, say, a functioning Timidity}}
+\DoxyCodeLine{199 \textcolor{comment}{   install.}}
+\DoxyCodeLine{200 \textcolor{comment}{}}
+\DoxyCodeLine{201 \textcolor{comment}{   These return values are static, read-\/only data; do not modify or free it.}}
+\DoxyCodeLine{202 \textcolor{comment}{   The pointers remain valid until you call Mix\_CloseAudio().}}
+\DoxyCodeLine{203 \textcolor{comment}{*/}}
+\DoxyCodeLine{204 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GetNumChunkDecoders(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{205 \textcolor{keyword}{extern} DECLSPEC \textcolor{keyword}{const} \textcolor{keywordtype}{char} * SDLCALL Mix\_GetChunkDecoder(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{206 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL Mix\_HasChunkDecoder(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
+\DoxyCodeLine{207 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GetNumMusicDecoders(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{208 \textcolor{keyword}{extern} DECLSPEC \textcolor{keyword}{const} \textcolor{keywordtype}{char} * SDLCALL Mix\_GetMusicDecoder(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{209 \textcolor{keyword}{extern} DECLSPEC SDL\_bool SDLCALL Mix\_HasMusicDecoder(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{comment}{/* Find out the music format of a mixer music, or the currently playing}}
+\DoxyCodeLine{212 \textcolor{comment}{   music, if 'music' is NULL.}}
+\DoxyCodeLine{213 \textcolor{comment}{*/}}
+\DoxyCodeLine{214 \textcolor{keyword}{extern} DECLSPEC Mix\_MusicType SDLCALL Mix\_GetMusicType(\textcolor{keyword}{const} Mix\_Music *music);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{comment}{/* Set a function that is called after all mixing is performed.}}
+\DoxyCodeLine{217 \textcolor{comment}{   This can be used to provide real-\/time visual display of the audio stream}}
+\DoxyCodeLine{218 \textcolor{comment}{   or add a custom mixer filter for the stream data.}}
+\DoxyCodeLine{219 \textcolor{comment}{*/}}
+\DoxyCodeLine{220 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_SetPostMix(\textcolor{keywordtype}{void} (SDLCALL *mix\_func)(\textcolor{keywordtype}{void} *udata, Uint8 *stream, \textcolor{keywordtype}{int} len), \textcolor{keywordtype}{void} *arg);}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{comment}{/* Add your own music player or additional mixer function.}}
+\DoxyCodeLine{223 \textcolor{comment}{   If 'mix\_func' is NULL, the default music player is re-\/enabled.}}
+\DoxyCodeLine{224 \textcolor{comment}{ */}}
+\DoxyCodeLine{225 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_HookMusic(\textcolor{keywordtype}{void} (SDLCALL *mix\_func)(\textcolor{keywordtype}{void} *udata, Uint8 *stream, \textcolor{keywordtype}{int} len), \textcolor{keywordtype}{void} *arg);}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{comment}{/* Add your own callback for when the music has finished playing or when it is}}
+\DoxyCodeLine{228 \textcolor{comment}{ * stopped from a call to Mix\_HaltMusic.}}
+\DoxyCodeLine{229 \textcolor{comment}{ */}}
+\DoxyCodeLine{230 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_HookMusicFinished(\textcolor{keywordtype}{void} (SDLCALL *music\_finished)(\textcolor{keywordtype}{void}));}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232 \textcolor{comment}{/* Get a pointer to the user data for the current music hook */}}
+\DoxyCodeLine{233 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} * SDLCALL Mix\_GetMusicHookData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{comment}{/*}}
+\DoxyCodeLine{236 \textcolor{comment}{ * Add your own callback when a channel has finished playing. NULL}}
+\DoxyCodeLine{237 \textcolor{comment}{ *  to disable callback. The callback may be called from the mixer's audio}}
+\DoxyCodeLine{238 \textcolor{comment}{ *  callback or it could be called as a result of Mix\_HaltChannel(), etc.}}
+\DoxyCodeLine{239 \textcolor{comment}{ *  do not call SDL\_LockAudio() from this callback; you will either be}}
+\DoxyCodeLine{240 \textcolor{comment}{ *  inside the audio callback, or SDL\_mixer will explicitly lock the audio}}
+\DoxyCodeLine{241 \textcolor{comment}{ *  before calling your callback.}}
+\DoxyCodeLine{242 \textcolor{comment}{ */}}
+\DoxyCodeLine{243 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_ChannelFinished(\textcolor{keywordtype}{void} (SDLCALL *channel\_finished)(\textcolor{keywordtype}{int} channel));}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{comment}{/* Special Effects API by ryan c. gordon. (icculus@icculus.org) */}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{preprocessor}{\#define MIX\_CHANNEL\_POST  -\/2}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{comment}{/* This is the format of a special effect callback:}}
+\DoxyCodeLine{251 \textcolor{comment}{ *}}
+\DoxyCodeLine{252 \textcolor{comment}{ *   myeffect(int chan, void *stream, int len, void *udata);}}
+\DoxyCodeLine{253 \textcolor{comment}{ *}}
+\DoxyCodeLine{254 \textcolor{comment}{ * (chan) is the channel number that your effect is affecting. (stream) is}}
+\DoxyCodeLine{255 \textcolor{comment}{ *  the buffer of data to work upon. (len) is the size of (stream), and}}
+\DoxyCodeLine{256 \textcolor{comment}{ *  (udata) is a user-\/defined bit of data, which you pass as the last arg of}}
+\DoxyCodeLine{257 \textcolor{comment}{ *  Mix\_RegisterEffect(), and is passed back unmolested to your callback.}}
+\DoxyCodeLine{258 \textcolor{comment}{ *  Your effect changes the contents of (stream) based on whatever parameters}}
+\DoxyCodeLine{259 \textcolor{comment}{ *  are significant, or just leaves it be, if you prefer. You can do whatever}}
+\DoxyCodeLine{260 \textcolor{comment}{ *  you like to the buffer, though, and it will continue in its changed state}}
+\DoxyCodeLine{261 \textcolor{comment}{ *  down the mixing pipeline, through any other effect functions, then finally}}
+\DoxyCodeLine{262 \textcolor{comment}{ *  to be mixed with the rest of the channels and music for the final output}}
+\DoxyCodeLine{263 \textcolor{comment}{ *  stream.}}
+\DoxyCodeLine{264 \textcolor{comment}{ *}}
+\DoxyCodeLine{265 \textcolor{comment}{ * DO NOT EVER call SDL\_LockAudio() from your callback function!}}
+\DoxyCodeLine{266 \textcolor{comment}{ */}}
+\DoxyCodeLine{267 \textcolor{keyword}{typedef} void (SDLCALL *Mix\_EffectFunc\_t)(\textcolor{keywordtype}{int} chan, \textcolor{keywordtype}{void} *stream, \textcolor{keywordtype}{int} len, \textcolor{keywordtype}{void} *udata);}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{comment}{/*}}
+\DoxyCodeLine{270 \textcolor{comment}{ * This is a callback that signifies that a channel has finished all its}}
+\DoxyCodeLine{271 \textcolor{comment}{ *  loops and has completed playback. This gets called if the buffer}}
+\DoxyCodeLine{272 \textcolor{comment}{ *  plays out normally, or if you call Mix\_HaltChannel(), implicitly stop}}
+\DoxyCodeLine{273 \textcolor{comment}{ *  a channel via Mix\_AllocateChannels(), or unregister a callback while}}
+\DoxyCodeLine{274 \textcolor{comment}{ *  it's still playing.}}
+\DoxyCodeLine{275 \textcolor{comment}{ *}}
+\DoxyCodeLine{276 \textcolor{comment}{ * DO NOT EVER call SDL\_LockAudio() from your callback function!}}
+\DoxyCodeLine{277 \textcolor{comment}{ */}}
+\DoxyCodeLine{278 \textcolor{keyword}{typedef} void (SDLCALL *Mix\_EffectDone\_t)(\textcolor{keywordtype}{int} chan, \textcolor{keywordtype}{void} *udata);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{comment}{/* Register a special effect function. At mixing time, the channel data is}}
+\DoxyCodeLine{282 \textcolor{comment}{ *  copied into a buffer and passed through each registered effect function.}}
+\DoxyCodeLine{283 \textcolor{comment}{ *  After it passes through all the functions, it is mixed into the final}}
+\DoxyCodeLine{284 \textcolor{comment}{ *  output stream. The copy to buffer is performed once, then each effect}}
+\DoxyCodeLine{285 \textcolor{comment}{ *  function performs on the output of the previous effect. Understand that}}
+\DoxyCodeLine{286 \textcolor{comment}{ *  this extra copy to a buffer is not performed if there are no effects}}
+\DoxyCodeLine{287 \textcolor{comment}{ *  registered for a given chunk, which saves CPU cycles, and any given}}
+\DoxyCodeLine{288 \textcolor{comment}{ *  effect will be extra cycles, too, so it is crucial that your code run}}
+\DoxyCodeLine{289 \textcolor{comment}{ *  fast. Also note that the data that your function is given is in the}}
+\DoxyCodeLine{290 \textcolor{comment}{ *  format of the sound device, and not the format you gave to Mix\_OpenAudio(),}}
+\DoxyCodeLine{291 \textcolor{comment}{ *  although they may in reality be the same. This is an unfortunate but}}
+\DoxyCodeLine{292 \textcolor{comment}{ *  necessary speed concern. Use Mix\_QuerySpec() to determine if you can}}
+\DoxyCodeLine{293 \textcolor{comment}{ *  handle the data before you register your effect, and take appropriate}}
+\DoxyCodeLine{294 \textcolor{comment}{ *  actions.}}
+\DoxyCodeLine{295 \textcolor{comment}{ * You may also specify a callback (Mix\_EffectDone\_t) that is called when}}
+\DoxyCodeLine{296 \textcolor{comment}{ *  the channel finishes playing. This gives you a more fine-\/grained control}}
+\DoxyCodeLine{297 \textcolor{comment}{ *  than Mix\_ChannelFinished(), in case you need to free effect-\/specific}}
+\DoxyCodeLine{298 \textcolor{comment}{ *  resources, etc. If you don't need this, you can specify NULL.}}
+\DoxyCodeLine{299 \textcolor{comment}{ * You may set the callbacks before or after calling Mix\_PlayChannel().}}
+\DoxyCodeLine{300 \textcolor{comment}{ * Things like Mix\_SetPanning() are just internal special effect functions,}}
+\DoxyCodeLine{301 \textcolor{comment}{ *  so if you are using that, you've already incurred the overhead of a copy}}
+\DoxyCodeLine{302 \textcolor{comment}{ *  to a separate buffer, and that these effects will be in the queue with}}
+\DoxyCodeLine{303 \textcolor{comment}{ *  any functions you've registered. The list of registered effects for a}}
+\DoxyCodeLine{304 \textcolor{comment}{ *  channel is reset when a chunk finishes playing, so you need to explicitly}}
+\DoxyCodeLine{305 \textcolor{comment}{ *  set them with each call to Mix\_PlayChannel*().}}
+\DoxyCodeLine{306 \textcolor{comment}{ * You may also register a special effect function that is to be run after}}
+\DoxyCodeLine{307 \textcolor{comment}{ *  final mixing occurs. The rules for these callbacks are identical to those}}
+\DoxyCodeLine{308 \textcolor{comment}{ *  in Mix\_RegisterEffect, but they are run after all the channels and the}}
+\DoxyCodeLine{309 \textcolor{comment}{ *  music have been mixed into a single stream, whereas channel-\/specific}}
+\DoxyCodeLine{310 \textcolor{comment}{ *  effects run on a given channel before any other mixing occurs. These}}
+\DoxyCodeLine{311 \textcolor{comment}{ *  global effect callbacks are call "{}posteffects"{}. Posteffects only have}}
+\DoxyCodeLine{312 \textcolor{comment}{ *  their Mix\_EffectDone\_t function called when they are unregistered (since}}
+\DoxyCodeLine{313 \textcolor{comment}{ *  the main output stream is never "{}done"{} in the same sense as a channel).}}
+\DoxyCodeLine{314 \textcolor{comment}{ *  You must unregister them manually when you've had enough. Your callback}}
+\DoxyCodeLine{315 \textcolor{comment}{ *  will be told that the channel being mixed is (MIX\_CHANNEL\_POST) if the}}
+\DoxyCodeLine{316 \textcolor{comment}{ *  processing is considered a posteffect.}}
+\DoxyCodeLine{317 \textcolor{comment}{ *}}
+\DoxyCodeLine{318 \textcolor{comment}{ * After all these effects have finished processing, the callback registered}}
+\DoxyCodeLine{319 \textcolor{comment}{ *  through Mix\_SetPostMix() runs, and then the stream goes to the audio}}
+\DoxyCodeLine{320 \textcolor{comment}{ *  device.}}
+\DoxyCodeLine{321 \textcolor{comment}{ *}}
+\DoxyCodeLine{322 \textcolor{comment}{ * DO NOT EVER call SDL\_LockAudio() from your callback function!}}
+\DoxyCodeLine{323 \textcolor{comment}{ *}}
+\DoxyCodeLine{324 \textcolor{comment}{ * returns zero if error (no such channel), nonzero if added.}}
+\DoxyCodeLine{325 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{326 \textcolor{comment}{ */}}
+\DoxyCodeLine{327 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_RegisterEffect(\textcolor{keywordtype}{int} chan, Mix\_EffectFunc\_t f, Mix\_EffectDone\_t d, \textcolor{keywordtype}{void} *arg);}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{comment}{/* You may not need to call this explicitly, unless you need to stop an}}
+\DoxyCodeLine{331 \textcolor{comment}{ *  effect from processing in the middle of a chunk's playback.}}
+\DoxyCodeLine{332 \textcolor{comment}{ * Posteffects are never implicitly unregistered as they are for channels,}}
+\DoxyCodeLine{333 \textcolor{comment}{ *  but they may be explicitly unregistered through this function by}}
+\DoxyCodeLine{334 \textcolor{comment}{ *  specifying MIX\_CHANNEL\_POST for a channel.}}
+\DoxyCodeLine{335 \textcolor{comment}{ * returns zero if error (no such channel or effect), nonzero if removed.}}
+\DoxyCodeLine{336 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{337 \textcolor{comment}{ */}}
+\DoxyCodeLine{338 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_UnregisterEffect(\textcolor{keywordtype}{int} channel, Mix\_EffectFunc\_t f);}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 \textcolor{comment}{/* You may not need to call this explicitly, unless you need to stop all}}
+\DoxyCodeLine{342 \textcolor{comment}{ *  effects from processing in the middle of a chunk's playback. Note that}}
+\DoxyCodeLine{343 \textcolor{comment}{ *  this will also shut off some internal effect processing, since}}
+\DoxyCodeLine{344 \textcolor{comment}{ *  Mix\_SetPanning() and others may use this API under the hood. This is}}
+\DoxyCodeLine{345 \textcolor{comment}{ *  called internally when a channel completes playback.}}
+\DoxyCodeLine{346 \textcolor{comment}{ * Posteffects are never implicitly unregistered as they are for channels,}}
+\DoxyCodeLine{347 \textcolor{comment}{ *  but they may be explicitly unregistered through this function by}}
+\DoxyCodeLine{348 \textcolor{comment}{ *  specifying MIX\_CHANNEL\_POST for a channel.}}
+\DoxyCodeLine{349 \textcolor{comment}{ * returns zero if error (no such channel), nonzero if all effects removed.}}
+\DoxyCodeLine{350 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{351 \textcolor{comment}{ */}}
+\DoxyCodeLine{352 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_UnregisterAllEffects(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define MIX\_EFFECTSMAXSPEED  "{}MIX\_EFFECTSMAXSPEED"{}}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 \textcolor{comment}{/*}}
+\DoxyCodeLine{358 \textcolor{comment}{ * These are the internally-\/defined mixing effects. They use the same API that}}
+\DoxyCodeLine{359 \textcolor{comment}{ *  effects defined in the application use, but are provided here as a}}
+\DoxyCodeLine{360 \textcolor{comment}{ *  convenience. Some effects can reduce their quality or use more memory in}}
+\DoxyCodeLine{361 \textcolor{comment}{ *  the name of speed; to enable this, make sure the environment variable}}
+\DoxyCodeLine{362 \textcolor{comment}{ *  MIX\_EFFECTSMAXSPEED (see above) is defined before you call}}
+\DoxyCodeLine{363 \textcolor{comment}{ *  Mix\_OpenAudio().}}
+\DoxyCodeLine{364 \textcolor{comment}{ */}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 \textcolor{comment}{/* Set the panning of a channel. The left and right channels are specified}}
+\DoxyCodeLine{368 \textcolor{comment}{ *  as integers between 0 and 255, quietest to loudest, respectively.}}
+\DoxyCodeLine{369 \textcolor{comment}{ *}}
+\DoxyCodeLine{370 \textcolor{comment}{ * Technically, this is just individual volume control for a sample with}}
+\DoxyCodeLine{371 \textcolor{comment}{ *  two (stereo) channels, so it can be used for more than just panning.}}
+\DoxyCodeLine{372 \textcolor{comment}{ *  If you want real panning, call it like this:}}
+\DoxyCodeLine{373 \textcolor{comment}{ *}}
+\DoxyCodeLine{374 \textcolor{comment}{ *   Mix\_SetPanning(channel, left, 255 -\/ left);}}
+\DoxyCodeLine{375 \textcolor{comment}{ *}}
+\DoxyCodeLine{376 \textcolor{comment}{ * ...which isn't so hard.}}
+\DoxyCodeLine{377 \textcolor{comment}{ *}}
+\DoxyCodeLine{378 \textcolor{comment}{ * Setting (channel) to MIX\_CHANNEL\_POST registers this as a posteffect, and}}
+\DoxyCodeLine{379 \textcolor{comment}{ *  the panning will be done to the final mixed stream before passing it on}}
+\DoxyCodeLine{380 \textcolor{comment}{ *  to the audio device.}}
+\DoxyCodeLine{381 \textcolor{comment}{ *}}
+\DoxyCodeLine{382 \textcolor{comment}{ * This uses the Mix\_RegisterEffect() API internally, and returns without}}
+\DoxyCodeLine{383 \textcolor{comment}{ *  registering the effect function if the audio device is not configured}}
+\DoxyCodeLine{384 \textcolor{comment}{ *  for stereo output. Setting both (left) and (right) to 255 causes this}}
+\DoxyCodeLine{385 \textcolor{comment}{ *  effect to be unregistered, since that is the data's normal state.}}
+\DoxyCodeLine{386 \textcolor{comment}{ *}}
+\DoxyCodeLine{387 \textcolor{comment}{ * returns zero if error (no such channel or Mix\_RegisterEffect() fails),}}
+\DoxyCodeLine{388 \textcolor{comment}{ *  nonzero if panning effect enabled. Note that an audio device in mono}}
+\DoxyCodeLine{389 \textcolor{comment}{ *  mode is a no-\/op, but this call will return successful in that case.}}
+\DoxyCodeLine{390 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{391 \textcolor{comment}{ */}}
+\DoxyCodeLine{392 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetPanning(\textcolor{keywordtype}{int} channel, Uint8 left, Uint8 right);}
+\DoxyCodeLine{393 }
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395 \textcolor{comment}{/* Set the position of a channel. (angle) is an integer from 0 to 360, that}}
+\DoxyCodeLine{396 \textcolor{comment}{ *  specifies the location of the sound in relation to the listener. (angle)}}
+\DoxyCodeLine{397 \textcolor{comment}{ *  will be reduced as neccesary (540 becomes 180 degrees, -\/100 becomes 260).}}
+\DoxyCodeLine{398 \textcolor{comment}{ *  Angle 0 is due north, and rotates clockwise as the value increases.}}
+\DoxyCodeLine{399 \textcolor{comment}{ *  For efficiency, the precision of this effect may be limited (angles 1}}
+\DoxyCodeLine{400 \textcolor{comment}{ *  through 7 might all produce the same effect, 8 through 15 are equal, etc).}}
+\DoxyCodeLine{401 \textcolor{comment}{ *  (distance) is an integer between 0 and 255 that specifies the space}}
+\DoxyCodeLine{402 \textcolor{comment}{ *  between the sound and the listener. The larger the number, the further}}
+\DoxyCodeLine{403 \textcolor{comment}{ *  away the sound is. Using 255 does not guarantee that the channel will be}}
+\DoxyCodeLine{404 \textcolor{comment}{ *  culled from the mixing process or be completely silent. For efficiency,}}
+\DoxyCodeLine{405 \textcolor{comment}{ *  the precision of this effect may be limited (distance 0 through 5 might}}
+\DoxyCodeLine{406 \textcolor{comment}{ *  all produce the same effect, 6 through 10 are equal, etc). Setting (angle)}}
+\DoxyCodeLine{407 \textcolor{comment}{ *  and (distance) to 0 unregisters this effect, since the data would be}}
+\DoxyCodeLine{408 \textcolor{comment}{ *  unchanged.}}
+\DoxyCodeLine{409 \textcolor{comment}{ *}}
+\DoxyCodeLine{410 \textcolor{comment}{ * If you need more precise positional audio, consider using OpenAL for}}
+\DoxyCodeLine{411 \textcolor{comment}{ *  spatialized effects instead of SDL\_mixer. This is only meant to be a}}
+\DoxyCodeLine{412 \textcolor{comment}{ *  basic effect for simple "{}3D"{} games.}}
+\DoxyCodeLine{413 \textcolor{comment}{ *}}
+\DoxyCodeLine{414 \textcolor{comment}{ * If the audio device is configured for mono output, then you won't get}}
+\DoxyCodeLine{415 \textcolor{comment}{ *  any effectiveness from the angle; however, distance attenuation on the}}
+\DoxyCodeLine{416 \textcolor{comment}{ *  channel will still occur. While this effect will function with stereo}}
+\DoxyCodeLine{417 \textcolor{comment}{ *  voices, it makes more sense to use voices with only one channel of sound,}}
+\DoxyCodeLine{418 \textcolor{comment}{ *  so when they are mixed through this effect, the positioning will sound}}
+\DoxyCodeLine{419 \textcolor{comment}{ *  correct. You can convert them to mono through SDL before giving them to}}
+\DoxyCodeLine{420 \textcolor{comment}{ *  the mixer in the first place if you like.}}
+\DoxyCodeLine{421 \textcolor{comment}{ *}}
+\DoxyCodeLine{422 \textcolor{comment}{ * Setting (channel) to MIX\_CHANNEL\_POST registers this as a posteffect, and}}
+\DoxyCodeLine{423 \textcolor{comment}{ *  the positioning will be done to the final mixed stream before passing it}}
+\DoxyCodeLine{424 \textcolor{comment}{ *  on to the audio device.}}
+\DoxyCodeLine{425 \textcolor{comment}{ *}}
+\DoxyCodeLine{426 \textcolor{comment}{ * This is a convenience wrapper over Mix\_SetDistance() and Mix\_SetPanning().}}
+\DoxyCodeLine{427 \textcolor{comment}{ *}}
+\DoxyCodeLine{428 \textcolor{comment}{ * returns zero if error (no such channel or Mix\_RegisterEffect() fails),}}
+\DoxyCodeLine{429 \textcolor{comment}{ *  nonzero if position effect is enabled.}}
+\DoxyCodeLine{430 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{431 \textcolor{comment}{ */}}
+\DoxyCodeLine{432 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetPosition(\textcolor{keywordtype}{int} channel, Sint16 angle, Uint8 distance);}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 \textcolor{comment}{/* Set the "{}distance"{} of a channel. (distance) is an integer from 0 to 255}}
+\DoxyCodeLine{436 \textcolor{comment}{ *  that specifies the location of the sound in relation to the listener.}}
+\DoxyCodeLine{437 \textcolor{comment}{ *  Distance 0 is overlapping the listener, and 255 is as far away as possible}}
+\DoxyCodeLine{438 \textcolor{comment}{ *  A distance of 255 does not guarantee silence; in such a case, you might}}
+\DoxyCodeLine{439 \textcolor{comment}{ *  want to try changing the chunk's volume, or just cull the sample from the}}
+\DoxyCodeLine{440 \textcolor{comment}{ *  mixing process with Mix\_HaltChannel().}}
+\DoxyCodeLine{441 \textcolor{comment}{ * For efficiency, the precision of this effect may be limited (distances 1}}
+\DoxyCodeLine{442 \textcolor{comment}{ *  through 7 might all produce the same effect, 8 through 15 are equal, etc).}}
+\DoxyCodeLine{443 \textcolor{comment}{ *  (distance) is an integer between 0 and 255 that specifies the space}}
+\DoxyCodeLine{444 \textcolor{comment}{ *  between the sound and the listener. The larger the number, the further}}
+\DoxyCodeLine{445 \textcolor{comment}{ *  away the sound is.}}
+\DoxyCodeLine{446 \textcolor{comment}{ * Setting (distance) to 0 unregisters this effect, since the data would be}}
+\DoxyCodeLine{447 \textcolor{comment}{ *  unchanged.}}
+\DoxyCodeLine{448 \textcolor{comment}{ * If you need more precise positional audio, consider using OpenAL for}}
+\DoxyCodeLine{449 \textcolor{comment}{ *  spatialized effects instead of SDL\_mixer. This is only meant to be a}}
+\DoxyCodeLine{450 \textcolor{comment}{ *  basic effect for simple "{}3D"{} games.}}
+\DoxyCodeLine{451 \textcolor{comment}{ *}}
+\DoxyCodeLine{452 \textcolor{comment}{ * Setting (channel) to MIX\_CHANNEL\_POST registers this as a posteffect, and}}
+\DoxyCodeLine{453 \textcolor{comment}{ *  the distance attenuation will be done to the final mixed stream before}}
+\DoxyCodeLine{454 \textcolor{comment}{ *  passing it on to the audio device.}}
+\DoxyCodeLine{455 \textcolor{comment}{ *}}
+\DoxyCodeLine{456 \textcolor{comment}{ * This uses the Mix\_RegisterEffect() API internally.}}
+\DoxyCodeLine{457 \textcolor{comment}{ *}}
+\DoxyCodeLine{458 \textcolor{comment}{ * returns zero if error (no such channel or Mix\_RegisterEffect() fails),}}
+\DoxyCodeLine{459 \textcolor{comment}{ *  nonzero if position effect is enabled.}}
+\DoxyCodeLine{460 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{461 \textcolor{comment}{ */}}
+\DoxyCodeLine{462 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetDistance(\textcolor{keywordtype}{int} channel, Uint8 distance);}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 \textcolor{comment}{/*}}
+\DoxyCodeLine{466 \textcolor{comment}{ * !!! FIXME : Haven't implemented, since the effect goes past the}}
+\DoxyCodeLine{467 \textcolor{comment}{ *              end of the sound buffer. Will have to think about this.}}
+\DoxyCodeLine{468 \textcolor{comment}{ *               -\/-\/ryan.}}
+\DoxyCodeLine{469 \textcolor{comment}{ */}}
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{471 \textcolor{comment}{/* Causes an echo effect to be mixed into a sound. (echo) is the amount}}
+\DoxyCodeLine{472 \textcolor{comment}{ *  of echo to mix. 0 is no echo, 255 is infinite (and probably not}}
+\DoxyCodeLine{473 \textcolor{comment}{ *  what you want).}}
+\DoxyCodeLine{474 \textcolor{comment}{ *}}
+\DoxyCodeLine{475 \textcolor{comment}{ * Setting (channel) to MIX\_CHANNEL\_POST registers this as a posteffect, and}}
+\DoxyCodeLine{476 \textcolor{comment}{ *  the reverbing will be done to the final mixed stream before passing it on}}
+\DoxyCodeLine{477 \textcolor{comment}{ *  to the audio device.}}
+\DoxyCodeLine{478 \textcolor{comment}{ *}}
+\DoxyCodeLine{479 \textcolor{comment}{ * This uses the Mix\_RegisterEffect() API internally. If you specify an echo}}
+\DoxyCodeLine{480 \textcolor{comment}{ *  of zero, the effect is unregistered, as the data is already in that state.}}
+\DoxyCodeLine{481 \textcolor{comment}{ *}}
+\DoxyCodeLine{482 \textcolor{comment}{ * returns zero if error (no such channel or Mix\_RegisterEffect() fails),}}
+\DoxyCodeLine{483 \textcolor{comment}{ *  nonzero if reversing effect is enabled.}}
+\DoxyCodeLine{484 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{485 \textcolor{comment}{ */}}
+\DoxyCodeLine{486 \textcolor{keyword}{extern} no\_parse\_DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetReverb(\textcolor{keywordtype}{int} channel, Uint8 echo);}
+\DoxyCodeLine{487 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 \textcolor{comment}{/* Causes a channel to reverse its stereo. This is handy if the user has his}}
+\DoxyCodeLine{490 \textcolor{comment}{ *  speakers hooked up backwards, or you would like to have a minor bit of}}
+\DoxyCodeLine{491 \textcolor{comment}{ *  psychedelia in your sound code.  :)  Calling this function with (flip)}}
+\DoxyCodeLine{492 \textcolor{comment}{ *  set to non-\/zero reverses the chunks's usual channels. If (flip) is zero,}}
+\DoxyCodeLine{493 \textcolor{comment}{ *  the effect is unregistered.}}
+\DoxyCodeLine{494 \textcolor{comment}{ *}}
+\DoxyCodeLine{495 \textcolor{comment}{ * This uses the Mix\_RegisterEffect() API internally, and thus is probably}}
+\DoxyCodeLine{496 \textcolor{comment}{ *  more CPU intensive than having the user just plug in his speakers}}
+\DoxyCodeLine{497 \textcolor{comment}{ *  correctly. Mix\_SetReverseStereo() returns without registering the effect}}
+\DoxyCodeLine{498 \textcolor{comment}{ *  function if the audio device is not configured for stereo output.}}
+\DoxyCodeLine{499 \textcolor{comment}{ *}}
+\DoxyCodeLine{500 \textcolor{comment}{ * If you specify MIX\_CHANNEL\_POST for (channel), then this the effect is used}}
+\DoxyCodeLine{501 \textcolor{comment}{ *  on the final mixed stream before sending it on to the audio device (a}}
+\DoxyCodeLine{502 \textcolor{comment}{ *  posteffect).}}
+\DoxyCodeLine{503 \textcolor{comment}{ *}}
+\DoxyCodeLine{504 \textcolor{comment}{ * returns zero if error (no such channel or Mix\_RegisterEffect() fails),}}
+\DoxyCodeLine{505 \textcolor{comment}{ *  nonzero if reversing effect is enabled. Note that an audio device in mono}}
+\DoxyCodeLine{506 \textcolor{comment}{ *  mode is a no-\/op, but this call will return successful in that case.}}
+\DoxyCodeLine{507 \textcolor{comment}{ *  Error messages can be retrieved from Mix\_GetError().}}
+\DoxyCodeLine{508 \textcolor{comment}{ */}}
+\DoxyCodeLine{509 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetReverseStereo(\textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{int} flip);}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511 \textcolor{comment}{/* end of effects API. -\/-\/ryan. */}}
+\DoxyCodeLine{512 }
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514 \textcolor{comment}{/* Reserve the first channels (0 -\/> n-\/1) for the application, i.e. don't allocate}}
+\DoxyCodeLine{515 \textcolor{comment}{   them dynamically to the next sample if requested with a -\/1 value below.}}
+\DoxyCodeLine{516 \textcolor{comment}{   Returns the number of reserved channels.}}
+\DoxyCodeLine{517 \textcolor{comment}{ */}}
+\DoxyCodeLine{518 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_ReserveChannels(\textcolor{keywordtype}{int} num);}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520 \textcolor{comment}{/* Channel grouping functions */}}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522 \textcolor{comment}{/* Attach a tag to a channel. A tag can be assigned to several mixer}}
+\DoxyCodeLine{523 \textcolor{comment}{   channels, to form groups of channels.}}
+\DoxyCodeLine{524 \textcolor{comment}{   If 'tag' is -\/1, the tag is removed (actually -\/1 is the tag used to}}
+\DoxyCodeLine{525 \textcolor{comment}{   represent the group of all the channels).}}
+\DoxyCodeLine{526 \textcolor{comment}{   Returns true if everything was OK.}}
+\DoxyCodeLine{527 \textcolor{comment}{ */}}
+\DoxyCodeLine{528 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GroupChannel(\textcolor{keywordtype}{int} which, \textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{529 \textcolor{comment}{/* Assign several consecutive channels to a group */}}
+\DoxyCodeLine{530 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GroupChannels(\textcolor{keywordtype}{int} from, \textcolor{keywordtype}{int} to, \textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{531 \textcolor{comment}{/* Finds the first available channel in a group of channels,}}
+\DoxyCodeLine{532 \textcolor{comment}{   returning -\/1 if none are available.}}
+\DoxyCodeLine{533 \textcolor{comment}{ */}}
+\DoxyCodeLine{534 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GroupAvailable(\textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{535 \textcolor{comment}{/* Returns the number of channels in a group. This is also a subtle}}
+\DoxyCodeLine{536 \textcolor{comment}{   way to get the total number of channels when 'tag' is -\/1}}
+\DoxyCodeLine{537 \textcolor{comment}{ */}}
+\DoxyCodeLine{538 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GroupCount(\textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{539 \textcolor{comment}{/* Finds the "{}oldest"{} sample playing in a group of channels */}}
+\DoxyCodeLine{540 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GroupOldest(\textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{541 \textcolor{comment}{/* Finds the "{}most recent"{} (i.e. last) sample playing in a group of channels */}}
+\DoxyCodeLine{542 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GroupNewer(\textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{543 }
+\DoxyCodeLine{544 \textcolor{comment}{/* Play an audio chunk on a specific channel.}}
+\DoxyCodeLine{545 \textcolor{comment}{   If the specified channel is -\/1, play on the first free channel.}}
+\DoxyCodeLine{546 \textcolor{comment}{   If 'loops' is greater than zero, loop the sound that many times.}}
+\DoxyCodeLine{547 \textcolor{comment}{   If 'loops' is -\/1, loop inifinitely (\string~65000 times).}}
+\DoxyCodeLine{548 \textcolor{comment}{   Returns which channel was used to play the sound.}}
+\DoxyCodeLine{549 \textcolor{comment}{*/}}
+\DoxyCodeLine{550 \textcolor{preprocessor}{\#define Mix\_PlayChannel(channel,chunk,loops) Mix\_PlayChannelTimed(channel,chunk,loops,-\/1)}}
+\DoxyCodeLine{551 \textcolor{comment}{/* The same as above, but the sound is played at most 'ticks' milliseconds */}}
+\DoxyCodeLine{552 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_PlayChannelTimed(\textcolor{keywordtype}{int} channel, \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} *chunk, \textcolor{keywordtype}{int} loops, \textcolor{keywordtype}{int} ticks);}
+\DoxyCodeLine{553 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_PlayMusic(Mix\_Music *music, \textcolor{keywordtype}{int} loops);}
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 \textcolor{comment}{/* Fade in music or a channel over "{}ms"{} milliseconds, same semantics as the "{}Play"{} functions */}}
+\DoxyCodeLine{556 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_FadeInMusic(Mix\_Music *music, \textcolor{keywordtype}{int} loops, \textcolor{keywordtype}{int} ms);}
+\DoxyCodeLine{557 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_FadeInMusicPos(Mix\_Music *music, \textcolor{keywordtype}{int} loops, \textcolor{keywordtype}{int} ms, \textcolor{keywordtype}{double} position);}
+\DoxyCodeLine{558 \textcolor{preprocessor}{\#define Mix\_FadeInChannel(channel,chunk,loops,ms) Mix\_FadeInChannelTimed(channel,chunk,loops,ms,-\/1)}}
+\DoxyCodeLine{559 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_FadeInChannelTimed(\textcolor{keywordtype}{int} channel, \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} *chunk, \textcolor{keywordtype}{int} loops, \textcolor{keywordtype}{int} ms, \textcolor{keywordtype}{int} ticks);}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561 \textcolor{comment}{/* Set the volume in the range of 0-\/128 of a specific channel or chunk.}}
+\DoxyCodeLine{562 \textcolor{comment}{   If the specified channel is -\/1, set volume for all channels.}}
+\DoxyCodeLine{563 \textcolor{comment}{   Returns the original volume.}}
+\DoxyCodeLine{564 \textcolor{comment}{   If the specified volume is -\/1, just return the current volume.}}
+\DoxyCodeLine{565 \textcolor{comment}{*/}}
+\DoxyCodeLine{566 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_Volume(\textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{int} volume);}
+\DoxyCodeLine{567 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_VolumeChunk(\mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} *chunk, \textcolor{keywordtype}{int} volume);}
+\DoxyCodeLine{568 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_VolumeMusic(\textcolor{keywordtype}{int} volume);}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570 \textcolor{comment}{/* Halt playing of a particular channel */}}
+\DoxyCodeLine{571 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_HaltChannel(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{572 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_HaltGroup(\textcolor{keywordtype}{int} tag);}
+\DoxyCodeLine{573 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_HaltMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{575 \textcolor{comment}{/* Change the expiration delay for a particular channel.}}
+\DoxyCodeLine{576 \textcolor{comment}{   The sample will stop playing after the 'ticks' milliseconds have elapsed,}}
+\DoxyCodeLine{577 \textcolor{comment}{   or remove the expiration if 'ticks' is -\/1}}
+\DoxyCodeLine{578 \textcolor{comment}{*/}}
+\DoxyCodeLine{579 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_ExpireChannel(\textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{int} ticks);}
+\DoxyCodeLine{580 }
+\DoxyCodeLine{581 \textcolor{comment}{/* Halt a channel, fading it out progressively till it's silent}}
+\DoxyCodeLine{582 \textcolor{comment}{   The ms parameter indicates the number of milliseconds the fading}}
+\DoxyCodeLine{583 \textcolor{comment}{   will take.}}
+\DoxyCodeLine{584 \textcolor{comment}{ */}}
+\DoxyCodeLine{585 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_FadeOutChannel(\textcolor{keywordtype}{int} which, \textcolor{keywordtype}{int} ms);}
+\DoxyCodeLine{586 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_FadeOutGroup(\textcolor{keywordtype}{int} tag, \textcolor{keywordtype}{int} ms);}
+\DoxyCodeLine{587 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_FadeOutMusic(\textcolor{keywordtype}{int} ms);}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589 \textcolor{comment}{/* Query the fading status of a channel */}}
+\DoxyCodeLine{590 \textcolor{keyword}{extern} DECLSPEC Mix\_Fading SDLCALL Mix\_FadingMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{591 \textcolor{keyword}{extern} DECLSPEC Mix\_Fading SDLCALL Mix\_FadingChannel(\textcolor{keywordtype}{int} which);}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593 \textcolor{comment}{/* Pause/Resume a particular channel */}}
+\DoxyCodeLine{594 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_Pause(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{595 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_Resume(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{596 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_Paused(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598 \textcolor{comment}{/* Pause/Resume the music stream */}}
+\DoxyCodeLine{599 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_PauseMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{600 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_ResumeMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{601 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_RewindMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{602 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_PausedMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604 \textcolor{comment}{/* Set the current position in the music stream.}}
+\DoxyCodeLine{605 \textcolor{comment}{   This returns 0 if successful, or -\/1 if it failed or isn't implemented.}}
+\DoxyCodeLine{606 \textcolor{comment}{   This function is only implemented for MOD music formats (set pattern}}
+\DoxyCodeLine{607 \textcolor{comment}{   order number) and for OGG, FLAC, MP3\_MAD, MP3\_MPG and MODPLUG music}}
+\DoxyCodeLine{608 \textcolor{comment}{   (set position in seconds), at the moment.}}
+\DoxyCodeLine{609 \textcolor{comment}{*/}}
+\DoxyCodeLine{610 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetMusicPosition(\textcolor{keywordtype}{double} position);}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 \textcolor{comment}{/* Check the status of a specific channel.}}
+\DoxyCodeLine{613 \textcolor{comment}{   If the specified channel is -\/1, check all channels.}}
+\DoxyCodeLine{614 \textcolor{comment}{*/}}
+\DoxyCodeLine{615 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_Playing(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{616 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_PlayingMusic(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{617 }
+\DoxyCodeLine{618 \textcolor{comment}{/* Stop music and set external music playback command */}}
+\DoxyCodeLine{619 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetMusicCMD(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *command);}
+\DoxyCodeLine{620 }
+\DoxyCodeLine{621 \textcolor{comment}{/* Synchro value is set by MikMod from modules while playing */}}
+\DoxyCodeLine{622 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetSynchroValue(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{623 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_GetSynchroValue(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625 \textcolor{comment}{/* Set/Get/Iterate SoundFonts paths to use by supported MIDI backends */}}
+\DoxyCodeLine{626 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_SetSoundFonts(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *paths);}
+\DoxyCodeLine{627 \textcolor{keyword}{extern} DECLSPEC \textcolor{keyword}{const} \textcolor{keywordtype}{char}* SDLCALL Mix\_GetSoundFonts(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{628 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{int} SDLCALL Mix\_EachSoundFont(\textcolor{keywordtype}{int} (SDLCALL *\textcolor{keyword}{function})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, \textcolor{keywordtype}{void}*), \textcolor{keywordtype}{void} *data);}
+\DoxyCodeLine{629 }
+\DoxyCodeLine{630 \textcolor{comment}{/* Get the Mix\_Chunk currently associated with a mixer channel}}
+\DoxyCodeLine{631 \textcolor{comment}{    Returns NULL if it's an invalid channel, or there's no chunk associated.}}
+\DoxyCodeLine{632 \textcolor{comment}{*/}}
+\DoxyCodeLine{633 \textcolor{keyword}{extern} DECLSPEC \mbox{\hyperlink{struct_mix___chunk}{Mix\_Chunk}} * SDLCALL Mix\_GetChunk(\textcolor{keywordtype}{int} channel);}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635 \textcolor{comment}{/* Close the mixer, halting all playing audio */}}
+\DoxyCodeLine{636 \textcolor{keyword}{extern} DECLSPEC \textcolor{keywordtype}{void} SDLCALL Mix\_CloseAudio(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638 \textcolor{comment}{/* We'll use SDL for reporting errors */}}
+\DoxyCodeLine{639 \textcolor{preprocessor}{\#define Mix\_SetError    SDL\_SetError}}
+\DoxyCodeLine{640 \textcolor{preprocessor}{\#define Mix\_GetError    SDL\_GetError}}
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#define Mix\_ClearError  SDL\_ClearError}}
+\DoxyCodeLine{642 }
+\DoxyCodeLine{643 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{644 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{645 \}}
+\DoxyCodeLine{646 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{647 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_MIXER\_H\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

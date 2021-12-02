@@ -1,0 +1,39 @@
+\hypertarget{_game_object_8h_source}{}\doxysection{C\+:/\+Users/samcp/\+Documents/\+Github Stuff/\+GBC Year 3/\+\_\+\+Ogre-\/\+Assignment1-\/\+Pong/\+Orgre\+Template\+V2/\+Orgre\+Template\+V2/\+Game\+Object.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Ogre.h"{}}}
+\DoxyCodeLine{3 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}} : \textcolor{keyword}{public} Ogre::FrameListener \textcolor{comment}{// make this pure virtual -\/-\/-\/ inherit from FrameListener? }}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keyword}{public}: }
+\DoxyCodeLine{6     \textcolor{comment}{//GameObject();}}
+\DoxyCodeLine{7     Ogre::Vector3 position;}
+\DoxyCodeLine{8     Ogre::Vector3 velocity;}
+\DoxyCodeLine{9     Ogre::SceneNode* sceneNode;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{float} height;}
+\DoxyCodeLine{11     \textcolor{keywordtype}{float} width;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{comment}{// getters}}
+\DoxyCodeLine{15     Ogre::Vector3 \mbox{\hyperlink{class_game_object_aa57aabfa73bbd497597a03e486252cf5}{GetVelocity}}();}
+\DoxyCodeLine{16     Ogre::SceneNode* \mbox{\hyperlink{class_game_object_ab4318d69bb450da55c6d5378d4b5220d}{GetSceneNode}}();}
+\DoxyCodeLine{17     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_object_ad26f228ce2402b641767cafd9f988fdb}{GetHeight}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_object_a58abaa62e4cea71b8f266365b3f0fb54}{GetWidth}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{comment}{// setters}}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_object_a25413f4a5e9cfe3bb8b3ce79b62c9f61}{SetSceneNode}}(Ogre::SceneNode* node);}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_object_a596772004ca3c0b88c47b10eefcd31a4}{SetVelocity}}(Ogre::Vector3 newVelocity);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} SetHeight(\textcolor{keywordtype}{float} newHeight);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} SetWidth(\textcolor{keywordtype}{float} newWidth);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{comment}{// Collisions}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} HitBottom();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} ReboundPaddle();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} ReboundSides();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} Update();  }
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+
+\end{DoxyCode}

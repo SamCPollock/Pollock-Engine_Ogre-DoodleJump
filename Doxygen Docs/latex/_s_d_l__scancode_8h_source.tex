@@ -1,0 +1,321 @@
+\hypertarget{_s_d_l__scancode_8h_source}{}\doxysection{SDL\+\_\+scancode.\+h}
+\label{_s_d_l__scancode_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_scancode.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_scancode.h}}
+\mbox{\hyperlink{_s_d_l__scancode_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2021 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_scancode\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_scancode\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     SDL\_SCANCODE\_UNKNOWN = 0,}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52     \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     SDL\_SCANCODE\_A = 4,}
+\DoxyCodeLine{55     SDL\_SCANCODE\_B = 5,}
+\DoxyCodeLine{56     SDL\_SCANCODE\_C = 6,}
+\DoxyCodeLine{57     SDL\_SCANCODE\_D = 7,}
+\DoxyCodeLine{58     SDL\_SCANCODE\_E = 8,}
+\DoxyCodeLine{59     SDL\_SCANCODE\_F = 9,}
+\DoxyCodeLine{60     SDL\_SCANCODE\_G = 10,}
+\DoxyCodeLine{61     SDL\_SCANCODE\_H = 11,}
+\DoxyCodeLine{62     SDL\_SCANCODE\_I = 12,}
+\DoxyCodeLine{63     SDL\_SCANCODE\_J = 13,}
+\DoxyCodeLine{64     SDL\_SCANCODE\_K = 14,}
+\DoxyCodeLine{65     SDL\_SCANCODE\_L = 15,}
+\DoxyCodeLine{66     SDL\_SCANCODE\_M = 16,}
+\DoxyCodeLine{67     SDL\_SCANCODE\_N = 17,}
+\DoxyCodeLine{68     SDL\_SCANCODE\_O = 18,}
+\DoxyCodeLine{69     SDL\_SCANCODE\_P = 19,}
+\DoxyCodeLine{70     SDL\_SCANCODE\_Q = 20,}
+\DoxyCodeLine{71     SDL\_SCANCODE\_R = 21,}
+\DoxyCodeLine{72     SDL\_SCANCODE\_S = 22,}
+\DoxyCodeLine{73     SDL\_SCANCODE\_T = 23,}
+\DoxyCodeLine{74     SDL\_SCANCODE\_U = 24,}
+\DoxyCodeLine{75     SDL\_SCANCODE\_V = 25,}
+\DoxyCodeLine{76     SDL\_SCANCODE\_W = 26,}
+\DoxyCodeLine{77     SDL\_SCANCODE\_X = 27,}
+\DoxyCodeLine{78     SDL\_SCANCODE\_Y = 28,}
+\DoxyCodeLine{79     SDL\_SCANCODE\_Z = 29,}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     SDL\_SCANCODE\_1 = 30,}
+\DoxyCodeLine{82     SDL\_SCANCODE\_2 = 31,}
+\DoxyCodeLine{83     SDL\_SCANCODE\_3 = 32,}
+\DoxyCodeLine{84     SDL\_SCANCODE\_4 = 33,}
+\DoxyCodeLine{85     SDL\_SCANCODE\_5 = 34,}
+\DoxyCodeLine{86     SDL\_SCANCODE\_6 = 35,}
+\DoxyCodeLine{87     SDL\_SCANCODE\_7 = 36,}
+\DoxyCodeLine{88     SDL\_SCANCODE\_8 = 37,}
+\DoxyCodeLine{89     SDL\_SCANCODE\_9 = 38,}
+\DoxyCodeLine{90     SDL\_SCANCODE\_0 = 39,}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     SDL\_SCANCODE\_RETURN = 40,}
+\DoxyCodeLine{93     SDL\_SCANCODE\_ESCAPE = 41,}
+\DoxyCodeLine{94     SDL\_SCANCODE\_BACKSPACE = 42,}
+\DoxyCodeLine{95     SDL\_SCANCODE\_TAB = 43,}
+\DoxyCodeLine{96     SDL\_SCANCODE\_SPACE = 44,}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     SDL\_SCANCODE\_MINUS = 45,}
+\DoxyCodeLine{99     SDL\_SCANCODE\_EQUALS = 46,}
+\DoxyCodeLine{100     SDL\_SCANCODE\_LEFTBRACKET = 47,}
+\DoxyCodeLine{101     SDL\_SCANCODE\_RIGHTBRACKET = 48,}
+\DoxyCodeLine{102     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba0ada7413e8a549d8a91d095789a3c138}{SDL\_SCANCODE\_BACKSLASH}} = 49, }
+\DoxyCodeLine{116     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac3a553bf8b10cc5fb62734c866e799e5}{SDL\_SCANCODE\_NONUSHASH}} = 50, }
+\DoxyCodeLine{128     SDL\_SCANCODE\_SEMICOLON = 51,}
+\DoxyCodeLine{129     SDL\_SCANCODE\_APOSTROPHE = 52,}
+\DoxyCodeLine{130     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba98a95c705af01d280d8ce14146bdddae}{SDL\_SCANCODE\_GRAVE}} = 53, }
+\DoxyCodeLine{147     SDL\_SCANCODE\_COMMA = 54,}
+\DoxyCodeLine{148     SDL\_SCANCODE\_PERIOD = 55,}
+\DoxyCodeLine{149     SDL\_SCANCODE\_SLASH = 56,}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     SDL\_SCANCODE\_CAPSLOCK = 57,}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     SDL\_SCANCODE\_F1 = 58,}
+\DoxyCodeLine{154     SDL\_SCANCODE\_F2 = 59,}
+\DoxyCodeLine{155     SDL\_SCANCODE\_F3 = 60,}
+\DoxyCodeLine{156     SDL\_SCANCODE\_F4 = 61,}
+\DoxyCodeLine{157     SDL\_SCANCODE\_F5 = 62,}
+\DoxyCodeLine{158     SDL\_SCANCODE\_F6 = 63,}
+\DoxyCodeLine{159     SDL\_SCANCODE\_F7 = 64,}
+\DoxyCodeLine{160     SDL\_SCANCODE\_F8 = 65,}
+\DoxyCodeLine{161     SDL\_SCANCODE\_F9 = 66,}
+\DoxyCodeLine{162     SDL\_SCANCODE\_F10 = 67,}
+\DoxyCodeLine{163     SDL\_SCANCODE\_F11 = 68,}
+\DoxyCodeLine{164     SDL\_SCANCODE\_F12 = 69,}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     SDL\_SCANCODE\_PRINTSCREEN = 70,}
+\DoxyCodeLine{167     SDL\_SCANCODE\_SCROLLLOCK = 71,}
+\DoxyCodeLine{168     SDL\_SCANCODE\_PAUSE = 72,}
+\DoxyCodeLine{169     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bafadcacdcd29fa5cf74598a6c61796287}{SDL\_SCANCODE\_INSERT}} = 73, }
+\DoxyCodeLine{171     SDL\_SCANCODE\_HOME = 74,}
+\DoxyCodeLine{172     SDL\_SCANCODE\_PAGEUP = 75,}
+\DoxyCodeLine{173     SDL\_SCANCODE\_DELETE = 76,}
+\DoxyCodeLine{174     SDL\_SCANCODE\_END = 77,}
+\DoxyCodeLine{175     SDL\_SCANCODE\_PAGEDOWN = 78,}
+\DoxyCodeLine{176     SDL\_SCANCODE\_RIGHT = 79,}
+\DoxyCodeLine{177     SDL\_SCANCODE\_LEFT = 80,}
+\DoxyCodeLine{178     SDL\_SCANCODE\_DOWN = 81,}
+\DoxyCodeLine{179     SDL\_SCANCODE\_UP = 82,}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba6fe49f0c14d072eaa8fcd80862a73b32}{SDL\_SCANCODE\_NUMLOCKCLEAR}} = 83, }
+\DoxyCodeLine{183     SDL\_SCANCODE\_KP\_DIVIDE = 84,}
+\DoxyCodeLine{184     SDL\_SCANCODE\_KP\_MULTIPLY = 85,}
+\DoxyCodeLine{185     SDL\_SCANCODE\_KP\_MINUS = 86,}
+\DoxyCodeLine{186     SDL\_SCANCODE\_KP\_PLUS = 87,}
+\DoxyCodeLine{187     SDL\_SCANCODE\_KP\_ENTER = 88,}
+\DoxyCodeLine{188     SDL\_SCANCODE\_KP\_1 = 89,}
+\DoxyCodeLine{189     SDL\_SCANCODE\_KP\_2 = 90,}
+\DoxyCodeLine{190     SDL\_SCANCODE\_KP\_3 = 91,}
+\DoxyCodeLine{191     SDL\_SCANCODE\_KP\_4 = 92,}
+\DoxyCodeLine{192     SDL\_SCANCODE\_KP\_5 = 93,}
+\DoxyCodeLine{193     SDL\_SCANCODE\_KP\_6 = 94,}
+\DoxyCodeLine{194     SDL\_SCANCODE\_KP\_7 = 95,}
+\DoxyCodeLine{195     SDL\_SCANCODE\_KP\_8 = 96,}
+\DoxyCodeLine{196     SDL\_SCANCODE\_KP\_9 = 97,}
+\DoxyCodeLine{197     SDL\_SCANCODE\_KP\_0 = 98,}
+\DoxyCodeLine{198     SDL\_SCANCODE\_KP\_PERIOD = 99,}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba2ede89520423e3fe6357257283872d25}{SDL\_SCANCODE\_NONUSBACKSLASH}} = 100, }
+\DoxyCodeLine{210     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777badb4e1b4439049803dd22679a7abbf466}{SDL\_SCANCODE\_APPLICATION}} = 101, }
+\DoxyCodeLine{211     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba736f5c8b3d2c2c899e5dac90fce3a691}{SDL\_SCANCODE\_POWER}} = 102, }
+\DoxyCodeLine{214     SDL\_SCANCODE\_KP\_EQUALS = 103,}
+\DoxyCodeLine{215     SDL\_SCANCODE\_F13 = 104,}
+\DoxyCodeLine{216     SDL\_SCANCODE\_F14 = 105,}
+\DoxyCodeLine{217     SDL\_SCANCODE\_F15 = 106,}
+\DoxyCodeLine{218     SDL\_SCANCODE\_F16 = 107,}
+\DoxyCodeLine{219     SDL\_SCANCODE\_F17 = 108,}
+\DoxyCodeLine{220     SDL\_SCANCODE\_F18 = 109,}
+\DoxyCodeLine{221     SDL\_SCANCODE\_F19 = 110,}
+\DoxyCodeLine{222     SDL\_SCANCODE\_F20 = 111,}
+\DoxyCodeLine{223     SDL\_SCANCODE\_F21 = 112,}
+\DoxyCodeLine{224     SDL\_SCANCODE\_F22 = 113,}
+\DoxyCodeLine{225     SDL\_SCANCODE\_F23 = 114,}
+\DoxyCodeLine{226     SDL\_SCANCODE\_F24 = 115,}
+\DoxyCodeLine{227     SDL\_SCANCODE\_EXECUTE = 116,}
+\DoxyCodeLine{228     SDL\_SCANCODE\_HELP = 117,}
+\DoxyCodeLine{229     SDL\_SCANCODE\_MENU = 118,}
+\DoxyCodeLine{230     SDL\_SCANCODE\_SELECT = 119,}
+\DoxyCodeLine{231     SDL\_SCANCODE\_STOP = 120,}
+\DoxyCodeLine{232     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac9197a2eef1a3f3b9359feffdb0a126e}{SDL\_SCANCODE\_AGAIN}} = 121,   }
+\DoxyCodeLine{233     SDL\_SCANCODE\_UNDO = 122,}
+\DoxyCodeLine{234     SDL\_SCANCODE\_CUT = 123,}
+\DoxyCodeLine{235     SDL\_SCANCODE\_COPY = 124,}
+\DoxyCodeLine{236     SDL\_SCANCODE\_PASTE = 125,}
+\DoxyCodeLine{237     SDL\_SCANCODE\_FIND = 126,}
+\DoxyCodeLine{238     SDL\_SCANCODE\_MUTE = 127,}
+\DoxyCodeLine{239     SDL\_SCANCODE\_VOLUMEUP = 128,}
+\DoxyCodeLine{240     SDL\_SCANCODE\_VOLUMEDOWN = 129,}
+\DoxyCodeLine{241 \textcolor{comment}{/* not sure whether there's a reason to enable these */}}
+\DoxyCodeLine{242 \textcolor{comment}{/*     SDL\_SCANCODE\_LOCKINGCAPSLOCK = 130,  */}}
+\DoxyCodeLine{243 \textcolor{comment}{/*     SDL\_SCANCODE\_LOCKINGNUMLOCK = 131, */}}
+\DoxyCodeLine{244 \textcolor{comment}{/*     SDL\_SCANCODE\_LOCKINGSCROLLLOCK = 132, */}}
+\DoxyCodeLine{245     SDL\_SCANCODE\_KP\_COMMA = 133,}
+\DoxyCodeLine{246     SDL\_SCANCODE\_KP\_EQUALSAS400 = 134,}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba271484c36406e14309d6456a7b105d11}{SDL\_SCANCODE\_INTERNATIONAL1}} = 135, }
+\DoxyCodeLine{250     SDL\_SCANCODE\_INTERNATIONAL2 = 136,}
+\DoxyCodeLine{251     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba7b8e9da1c746c94bf93727d81ec13e3d}{SDL\_SCANCODE\_INTERNATIONAL3}} = 137, }
+\DoxyCodeLine{252     SDL\_SCANCODE\_INTERNATIONAL4 = 138,}
+\DoxyCodeLine{253     SDL\_SCANCODE\_INTERNATIONAL5 = 139,}
+\DoxyCodeLine{254     SDL\_SCANCODE\_INTERNATIONAL6 = 140,}
+\DoxyCodeLine{255     SDL\_SCANCODE\_INTERNATIONAL7 = 141,}
+\DoxyCodeLine{256     SDL\_SCANCODE\_INTERNATIONAL8 = 142,}
+\DoxyCodeLine{257     SDL\_SCANCODE\_INTERNATIONAL9 = 143,}
+\DoxyCodeLine{258     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba7f7be1cf065a535aa5b55f8d00dcea53}{SDL\_SCANCODE\_LANG1}} = 144, }
+\DoxyCodeLine{259     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba286b0b85880f3227d34fb24e57b5c07f}{SDL\_SCANCODE\_LANG2}} = 145, }
+\DoxyCodeLine{260     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777baa339dcd13c578be8f95aa6d013432f7e}{SDL\_SCANCODE\_LANG3}} = 146, }
+\DoxyCodeLine{261     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777baa012fb1c4b68db61f6ef3a9e8f5ea419}{SDL\_SCANCODE\_LANG4}} = 147, }
+\DoxyCodeLine{262     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777badcaf2dafa4e6e579c971b3f52d33d8ad}{SDL\_SCANCODE\_LANG5}} = 148, }
+\DoxyCodeLine{263     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777baebbf5f90a525a274be9f1ff8145f3601}{SDL\_SCANCODE\_LANG6}} = 149, }
+\DoxyCodeLine{264     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac544904fb1498903e44a3435261de5c7}{SDL\_SCANCODE\_LANG7}} = 150, }
+\DoxyCodeLine{265     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba21ac9ec9b92b6b88c5341046e2a17d6f}{SDL\_SCANCODE\_LANG8}} = 151, }
+\DoxyCodeLine{266     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777baf585d6475dabc61549da2160335c1f3e}{SDL\_SCANCODE\_LANG9}} = 152, }
+\DoxyCodeLine{268     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac5a757253971a21c0b68bc413da5d261}{SDL\_SCANCODE\_ALTERASE}} = 153, }
+\DoxyCodeLine{269     SDL\_SCANCODE\_SYSREQ = 154,}
+\DoxyCodeLine{270     SDL\_SCANCODE\_CANCEL = 155,}
+\DoxyCodeLine{271     SDL\_SCANCODE\_CLEAR = 156,}
+\DoxyCodeLine{272     SDL\_SCANCODE\_PRIOR = 157,}
+\DoxyCodeLine{273     SDL\_SCANCODE\_RETURN2 = 158,}
+\DoxyCodeLine{274     SDL\_SCANCODE\_SEPARATOR = 159,}
+\DoxyCodeLine{275     SDL\_SCANCODE\_OUT = 160,}
+\DoxyCodeLine{276     SDL\_SCANCODE\_OPER = 161,}
+\DoxyCodeLine{277     SDL\_SCANCODE\_CLEARAGAIN = 162,}
+\DoxyCodeLine{278     SDL\_SCANCODE\_CRSEL = 163,}
+\DoxyCodeLine{279     SDL\_SCANCODE\_EXSEL = 164,}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281     SDL\_SCANCODE\_KP\_00 = 176,}
+\DoxyCodeLine{282     SDL\_SCANCODE\_KP\_000 = 177,}
+\DoxyCodeLine{283     SDL\_SCANCODE\_THOUSANDSSEPARATOR = 178,}
+\DoxyCodeLine{284     SDL\_SCANCODE\_DECIMALSEPARATOR = 179,}
+\DoxyCodeLine{285     SDL\_SCANCODE\_CURRENCYUNIT = 180,}
+\DoxyCodeLine{286     SDL\_SCANCODE\_CURRENCYSUBUNIT = 181,}
+\DoxyCodeLine{287     SDL\_SCANCODE\_KP\_LEFTPAREN = 182,}
+\DoxyCodeLine{288     SDL\_SCANCODE\_KP\_RIGHTPAREN = 183,}
+\DoxyCodeLine{289     SDL\_SCANCODE\_KP\_LEFTBRACE = 184,}
+\DoxyCodeLine{290     SDL\_SCANCODE\_KP\_RIGHTBRACE = 185,}
+\DoxyCodeLine{291     SDL\_SCANCODE\_KP\_TAB = 186,}
+\DoxyCodeLine{292     SDL\_SCANCODE\_KP\_BACKSPACE = 187,}
+\DoxyCodeLine{293     SDL\_SCANCODE\_KP\_A = 188,}
+\DoxyCodeLine{294     SDL\_SCANCODE\_KP\_B = 189,}
+\DoxyCodeLine{295     SDL\_SCANCODE\_KP\_C = 190,}
+\DoxyCodeLine{296     SDL\_SCANCODE\_KP\_D = 191,}
+\DoxyCodeLine{297     SDL\_SCANCODE\_KP\_E = 192,}
+\DoxyCodeLine{298     SDL\_SCANCODE\_KP\_F = 193,}
+\DoxyCodeLine{299     SDL\_SCANCODE\_KP\_XOR = 194,}
+\DoxyCodeLine{300     SDL\_SCANCODE\_KP\_POWER = 195,}
+\DoxyCodeLine{301     SDL\_SCANCODE\_KP\_PERCENT = 196,}
+\DoxyCodeLine{302     SDL\_SCANCODE\_KP\_LESS = 197,}
+\DoxyCodeLine{303     SDL\_SCANCODE\_KP\_GREATER = 198,}
+\DoxyCodeLine{304     SDL\_SCANCODE\_KP\_AMPERSAND = 199,}
+\DoxyCodeLine{305     SDL\_SCANCODE\_KP\_DBLAMPERSAND = 200,}
+\DoxyCodeLine{306     SDL\_SCANCODE\_KP\_VERTICALBAR = 201,}
+\DoxyCodeLine{307     SDL\_SCANCODE\_KP\_DBLVERTICALBAR = 202,}
+\DoxyCodeLine{308     SDL\_SCANCODE\_KP\_COLON = 203,}
+\DoxyCodeLine{309     SDL\_SCANCODE\_KP\_HASH = 204,}
+\DoxyCodeLine{310     SDL\_SCANCODE\_KP\_SPACE = 205,}
+\DoxyCodeLine{311     SDL\_SCANCODE\_KP\_AT = 206,}
+\DoxyCodeLine{312     SDL\_SCANCODE\_KP\_EXCLAM = 207,}
+\DoxyCodeLine{313     SDL\_SCANCODE\_KP\_MEMSTORE = 208,}
+\DoxyCodeLine{314     SDL\_SCANCODE\_KP\_MEMRECALL = 209,}
+\DoxyCodeLine{315     SDL\_SCANCODE\_KP\_MEMCLEAR = 210,}
+\DoxyCodeLine{316     SDL\_SCANCODE\_KP\_MEMADD = 211,}
+\DoxyCodeLine{317     SDL\_SCANCODE\_KP\_MEMSUBTRACT = 212,}
+\DoxyCodeLine{318     SDL\_SCANCODE\_KP\_MEMMULTIPLY = 213,}
+\DoxyCodeLine{319     SDL\_SCANCODE\_KP\_MEMDIVIDE = 214,}
+\DoxyCodeLine{320     SDL\_SCANCODE\_KP\_PLUSMINUS = 215,}
+\DoxyCodeLine{321     SDL\_SCANCODE\_KP\_CLEAR = 216,}
+\DoxyCodeLine{322     SDL\_SCANCODE\_KP\_CLEARENTRY = 217,}
+\DoxyCodeLine{323     SDL\_SCANCODE\_KP\_BINARY = 218,}
+\DoxyCodeLine{324     SDL\_SCANCODE\_KP\_OCTAL = 219,}
+\DoxyCodeLine{325     SDL\_SCANCODE\_KP\_DECIMAL = 220,}
+\DoxyCodeLine{326     SDL\_SCANCODE\_KP\_HEXADECIMAL = 221,}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328     SDL\_SCANCODE\_LCTRL = 224,}
+\DoxyCodeLine{329     SDL\_SCANCODE\_LSHIFT = 225,}
+\DoxyCodeLine{330     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bae6a58c2b28e6aa3d473d1a76c75088bc}{SDL\_SCANCODE\_LALT}} = 226, }
+\DoxyCodeLine{331     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba8b3916409c841cdb3ef4b0d4cc9d9155}{SDL\_SCANCODE\_LGUI}} = 227, }
+\DoxyCodeLine{332     SDL\_SCANCODE\_RCTRL = 228,}
+\DoxyCodeLine{333     SDL\_SCANCODE\_RSHIFT = 229,}
+\DoxyCodeLine{334     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba9af4ffee688b9914dfb696b43b4e9889}{SDL\_SCANCODE\_RALT}} = 230, }
+\DoxyCodeLine{335     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba46902ad8e7146f0f255400aff8ab489d}{SDL\_SCANCODE\_RGUI}} = 231, }
+\DoxyCodeLine{337     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac35fd3f41be03648c6c478d6e88bbe91}{SDL\_SCANCODE\_MODE}} = 257,    }
+\DoxyCodeLine{342     \textcolor{comment}{/* @\} */}\textcolor{comment}{/* Usage page 0x07 */}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{349     \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351     SDL\_SCANCODE\_AUDIONEXT = 258,}
+\DoxyCodeLine{352     SDL\_SCANCODE\_AUDIOPREV = 259,}
+\DoxyCodeLine{353     SDL\_SCANCODE\_AUDIOSTOP = 260,}
+\DoxyCodeLine{354     SDL\_SCANCODE\_AUDIOPLAY = 261,}
+\DoxyCodeLine{355     SDL\_SCANCODE\_AUDIOMUTE = 262,}
+\DoxyCodeLine{356     SDL\_SCANCODE\_MEDIASELECT = 263,}
+\DoxyCodeLine{357     SDL\_SCANCODE\_WWW = 264,}
+\DoxyCodeLine{358     SDL\_SCANCODE\_MAIL = 265,}
+\DoxyCodeLine{359     SDL\_SCANCODE\_CALCULATOR = 266,}
+\DoxyCodeLine{360     SDL\_SCANCODE\_COMPUTER = 267,}
+\DoxyCodeLine{361     SDL\_SCANCODE\_AC\_SEARCH = 268,}
+\DoxyCodeLine{362     SDL\_SCANCODE\_AC\_HOME = 269,}
+\DoxyCodeLine{363     SDL\_SCANCODE\_AC\_BACK = 270,}
+\DoxyCodeLine{364     SDL\_SCANCODE\_AC\_FORWARD = 271,}
+\DoxyCodeLine{365     SDL\_SCANCODE\_AC\_STOP = 272,}
+\DoxyCodeLine{366     SDL\_SCANCODE\_AC\_REFRESH = 273,}
+\DoxyCodeLine{367     SDL\_SCANCODE\_AC\_BOOKMARKS = 274,}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369     \textcolor{comment}{/* @\} */}\textcolor{comment}{/* Usage page 0x0C */}}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{376     \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378     SDL\_SCANCODE\_BRIGHTNESSDOWN = 275,}
+\DoxyCodeLine{379     SDL\_SCANCODE\_BRIGHTNESSUP = 276,}
+\DoxyCodeLine{380     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba893aa25f300cba8af0cf6263a4cd7ade}{SDL\_SCANCODE\_DISPLAYSWITCH}} = 277, }
+\DoxyCodeLine{382     SDL\_SCANCODE\_KBDILLUMTOGGLE = 278,}
+\DoxyCodeLine{383     SDL\_SCANCODE\_KBDILLUMDOWN = 279,}
+\DoxyCodeLine{384     SDL\_SCANCODE\_KBDILLUMUP = 280,}
+\DoxyCodeLine{385     SDL\_SCANCODE\_EJECT = 281,}
+\DoxyCodeLine{386     SDL\_SCANCODE\_SLEEP = 282,}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388     SDL\_SCANCODE\_APP1 = 283,}
+\DoxyCodeLine{389     SDL\_SCANCODE\_APP2 = 284,}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391     \textcolor{comment}{/* @\} */}\textcolor{comment}{/* Walther keys */}}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{398     \textcolor{comment}{/* @\{ */}}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400     SDL\_SCANCODE\_AUDIOREWIND = 285,}
+\DoxyCodeLine{401     SDL\_SCANCODE\_AUDIOFASTFORWARD = 286,}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403     \textcolor{comment}{/* @\} */}\textcolor{comment}{/* Usage page 0x0C (additional media keys) */}}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405     \textcolor{comment}{/* Add any other keys here. */}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407     \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bad2f6ac1f569510266d9dcd92f86d8b33}{SDL\_NUM\_SCANCODES}} = 512 }
+\DoxyCodeLine{409 \} \mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777b}{SDL\_Scancode}};}
+\DoxyCodeLine{410 }
+\DoxyCodeLine{411 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_scancode\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

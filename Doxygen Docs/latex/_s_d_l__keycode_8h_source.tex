@@ -1,0 +1,339 @@
+\hypertarget{_s_d_l__keycode_8h_source}{}\doxysection{SDL\+\_\+keycode.\+h}
+\label{_s_d_l__keycode_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_keycode.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/SDL2-\/devel-\/2.0.18-\/VC/SDL2-\/2.0.18/include/SDL\_keycode.h}}
+\mbox{\hyperlink{_s_d_l__keycode_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2021 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_keycode\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_keycode\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__stdinc_8h}{SDL\_stdinc.h}}"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__scancode_8h}{SDL\_scancode.h}}"{}}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} Sint32 \mbox{\hyperlink{_s_d_l__keycode_8h_ae9265f064f13f0f74dfca26a67875171}{SDL\_Keycode}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define SDLK\_SCANCODE\_MASK (1<<30)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define SDL\_SCANCODE\_TO\_KEYCODE(X)  (X | SDLK\_SCANCODE\_MASK)}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52     SDLK\_UNKNOWN = 0,}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     SDLK\_RETURN = \textcolor{charliteral}{'\(\backslash\)r'},}
+\DoxyCodeLine{55     SDLK\_ESCAPE = \textcolor{stringliteral}{'\(\backslash\)x1B'},}
+\DoxyCodeLine{56     SDLK\_BACKSPACE = \textcolor{charliteral}{'\(\backslash\)b'},}
+\DoxyCodeLine{57     SDLK\_TAB = \textcolor{charliteral}{'\(\backslash\)t'},}
+\DoxyCodeLine{58     SDLK\_SPACE = \textcolor{charliteral}{' '},}
+\DoxyCodeLine{59     SDLK\_EXCLAIM = \textcolor{charliteral}{'!'},}
+\DoxyCodeLine{60     SDLK\_QUOTEDBL = \textcolor{charliteral}{'"{}'},}
+\DoxyCodeLine{61     SDLK\_HASH = \textcolor{charliteral}{'\#'},}
+\DoxyCodeLine{62     SDLK\_PERCENT = \textcolor{charliteral}{'\%'},}
+\DoxyCodeLine{63     SDLK\_DOLLAR = \textcolor{charliteral}{'\$'},}
+\DoxyCodeLine{64     SDLK\_AMPERSAND = \textcolor{charliteral}{'\&'},}
+\DoxyCodeLine{65     SDLK\_QUOTE = \textcolor{charliteral}{'\(\backslash\)''},}
+\DoxyCodeLine{66     SDLK\_LEFTPAREN = \textcolor{charliteral}{'('},}
+\DoxyCodeLine{67     SDLK\_RIGHTPAREN = \textcolor{charliteral}{')'},}
+\DoxyCodeLine{68     SDLK\_ASTERISK = \textcolor{charliteral}{'*'},}
+\DoxyCodeLine{69     SDLK\_PLUS = \textcolor{charliteral}{'+'},}
+\DoxyCodeLine{70     SDLK\_COMMA = \textcolor{charliteral}{','},}
+\DoxyCodeLine{71     SDLK\_MINUS = \textcolor{charliteral}{'-\/'},}
+\DoxyCodeLine{72     SDLK\_PERIOD = \textcolor{charliteral}{'.'},}
+\DoxyCodeLine{73     SDLK\_SLASH = \textcolor{charliteral}{'/'},}
+\DoxyCodeLine{74     SDLK\_0 = \textcolor{charliteral}{'0'},}
+\DoxyCodeLine{75     SDLK\_1 = \textcolor{charliteral}{'1'},}
+\DoxyCodeLine{76     SDLK\_2 = \textcolor{charliteral}{'2'},}
+\DoxyCodeLine{77     SDLK\_3 = \textcolor{charliteral}{'3'},}
+\DoxyCodeLine{78     SDLK\_4 = \textcolor{charliteral}{'4'},}
+\DoxyCodeLine{79     SDLK\_5 = \textcolor{charliteral}{'5'},}
+\DoxyCodeLine{80     SDLK\_6 = \textcolor{charliteral}{'6'},}
+\DoxyCodeLine{81     SDLK\_7 = \textcolor{charliteral}{'7'},}
+\DoxyCodeLine{82     SDLK\_8 = \textcolor{charliteral}{'8'},}
+\DoxyCodeLine{83     SDLK\_9 = \textcolor{charliteral}{'9'},}
+\DoxyCodeLine{84     SDLK\_COLON = \textcolor{charliteral}{':'},}
+\DoxyCodeLine{85     SDLK\_SEMICOLON = \textcolor{charliteral}{';'},}
+\DoxyCodeLine{86     SDLK\_LESS = \textcolor{charliteral}{'<'},}
+\DoxyCodeLine{87     SDLK\_EQUALS = \textcolor{charliteral}{'='},}
+\DoxyCodeLine{88     SDLK\_GREATER = \textcolor{charliteral}{'>'},}
+\DoxyCodeLine{89     SDLK\_QUESTION = \textcolor{charliteral}{'?'},}
+\DoxyCodeLine{90     SDLK\_AT = \textcolor{charliteral}{'@'},}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{/*}}
+\DoxyCodeLine{93 \textcolor{comment}{       Skip uppercase letters}}
+\DoxyCodeLine{94 \textcolor{comment}{     */}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     SDLK\_LEFTBRACKET = \textcolor{charliteral}{'['},}
+\DoxyCodeLine{97     SDLK\_BACKSLASH = \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},}
+\DoxyCodeLine{98     SDLK\_RIGHTBRACKET = \textcolor{charliteral}{']'},}
+\DoxyCodeLine{99     SDLK\_CARET = \textcolor{charliteral}{'\string^'},}
+\DoxyCodeLine{100     SDLK\_UNDERSCORE = \textcolor{charliteral}{'\_'},}
+\DoxyCodeLine{101     SDLK\_BACKQUOTE = \textcolor{charliteral}{'`'},}
+\DoxyCodeLine{102     SDLK\_a = \textcolor{charliteral}{'a'},}
+\DoxyCodeLine{103     SDLK\_b = \textcolor{charliteral}{'b'},}
+\DoxyCodeLine{104     SDLK\_c = \textcolor{charliteral}{'c'},}
+\DoxyCodeLine{105     SDLK\_d = \textcolor{charliteral}{'d'},}
+\DoxyCodeLine{106     SDLK\_e = \textcolor{charliteral}{'e'},}
+\DoxyCodeLine{107     SDLK\_f = \textcolor{charliteral}{'f'},}
+\DoxyCodeLine{108     SDLK\_g = \textcolor{charliteral}{'g'},}
+\DoxyCodeLine{109     SDLK\_h = \textcolor{charliteral}{'h'},}
+\DoxyCodeLine{110     SDLK\_i = \textcolor{charliteral}{'i'},}
+\DoxyCodeLine{111     SDLK\_j = \textcolor{charliteral}{'j'},}
+\DoxyCodeLine{112     SDLK\_k = \textcolor{charliteral}{'k'},}
+\DoxyCodeLine{113     SDLK\_l = \textcolor{charliteral}{'l'},}
+\DoxyCodeLine{114     SDLK\_m = \textcolor{charliteral}{'m'},}
+\DoxyCodeLine{115     SDLK\_n = \textcolor{charliteral}{'n'},}
+\DoxyCodeLine{116     SDLK\_o = \textcolor{charliteral}{'o'},}
+\DoxyCodeLine{117     SDLK\_p = \textcolor{charliteral}{'p'},}
+\DoxyCodeLine{118     SDLK\_q = \textcolor{charliteral}{'q'},}
+\DoxyCodeLine{119     SDLK\_r = \textcolor{charliteral}{'r'},}
+\DoxyCodeLine{120     SDLK\_s = \textcolor{charliteral}{'s'},}
+\DoxyCodeLine{121     SDLK\_t = \textcolor{charliteral}{'t'},}
+\DoxyCodeLine{122     SDLK\_u = \textcolor{charliteral}{'u'},}
+\DoxyCodeLine{123     SDLK\_v = \textcolor{charliteral}{'v'},}
+\DoxyCodeLine{124     SDLK\_w = \textcolor{charliteral}{'w'},}
+\DoxyCodeLine{125     SDLK\_x = \textcolor{charliteral}{'x'},}
+\DoxyCodeLine{126     SDLK\_y = \textcolor{charliteral}{'y'},}
+\DoxyCodeLine{127     SDLK\_z = \textcolor{charliteral}{'z'},}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     SDLK\_CAPSLOCK = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CAPSLOCK),}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     SDLK\_F1 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F1),}
+\DoxyCodeLine{132     SDLK\_F2 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F2),}
+\DoxyCodeLine{133     SDLK\_F3 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F3),}
+\DoxyCodeLine{134     SDLK\_F4 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F4),}
+\DoxyCodeLine{135     SDLK\_F5 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F5),}
+\DoxyCodeLine{136     SDLK\_F6 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F6),}
+\DoxyCodeLine{137     SDLK\_F7 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F7),}
+\DoxyCodeLine{138     SDLK\_F8 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F8),}
+\DoxyCodeLine{139     SDLK\_F9 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F9),}
+\DoxyCodeLine{140     SDLK\_F10 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F10),}
+\DoxyCodeLine{141     SDLK\_F11 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F11),}
+\DoxyCodeLine{142     SDLK\_F12 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F12),}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     SDLK\_PRINTSCREEN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_PRINTSCREEN),}
+\DoxyCodeLine{145     SDLK\_SCROLLLOCK = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_SCROLLLOCK),}
+\DoxyCodeLine{146     SDLK\_PAUSE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_PAUSE),}
+\DoxyCodeLine{147     SDLK\_INSERT = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bafadcacdcd29fa5cf74598a6c61796287}{SDL\_SCANCODE\_INSERT}}),}
+\DoxyCodeLine{148     SDLK\_HOME = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_HOME),}
+\DoxyCodeLine{149     SDLK\_PAGEUP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_PAGEUP),}
+\DoxyCodeLine{150     SDLK\_DELETE = \textcolor{stringliteral}{'\(\backslash\)x7F'},}
+\DoxyCodeLine{151     SDLK\_END = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_END),}
+\DoxyCodeLine{152     SDLK\_PAGEDOWN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_PAGEDOWN),}
+\DoxyCodeLine{153     SDLK\_RIGHT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_RIGHT),}
+\DoxyCodeLine{154     SDLK\_LEFT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_LEFT),}
+\DoxyCodeLine{155     SDLK\_DOWN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_DOWN),}
+\DoxyCodeLine{156     SDLK\_UP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_UP),}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     SDLK\_NUMLOCKCLEAR = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba6fe49f0c14d072eaa8fcd80862a73b32}{SDL\_SCANCODE\_NUMLOCKCLEAR}}),}
+\DoxyCodeLine{159     SDLK\_KP\_DIVIDE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_DIVIDE),}
+\DoxyCodeLine{160     SDLK\_KP\_MULTIPLY = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MULTIPLY),}
+\DoxyCodeLine{161     SDLK\_KP\_MINUS = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MINUS),}
+\DoxyCodeLine{162     SDLK\_KP\_PLUS = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_PLUS),}
+\DoxyCodeLine{163     SDLK\_KP\_ENTER = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_ENTER),}
+\DoxyCodeLine{164     SDLK\_KP\_1 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_1),}
+\DoxyCodeLine{165     SDLK\_KP\_2 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_2),}
+\DoxyCodeLine{166     SDLK\_KP\_3 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_3),}
+\DoxyCodeLine{167     SDLK\_KP\_4 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_4),}
+\DoxyCodeLine{168     SDLK\_KP\_5 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_5),}
+\DoxyCodeLine{169     SDLK\_KP\_6 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_6),}
+\DoxyCodeLine{170     SDLK\_KP\_7 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_7),}
+\DoxyCodeLine{171     SDLK\_KP\_8 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_8),}
+\DoxyCodeLine{172     SDLK\_KP\_9 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_9),}
+\DoxyCodeLine{173     SDLK\_KP\_0 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_0),}
+\DoxyCodeLine{174     SDLK\_KP\_PERIOD = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_PERIOD),}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     SDLK\_APPLICATION = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777badb4e1b4439049803dd22679a7abbf466}{SDL\_SCANCODE\_APPLICATION}}),}
+\DoxyCodeLine{177     SDLK\_POWER = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba736f5c8b3d2c2c899e5dac90fce3a691}{SDL\_SCANCODE\_POWER}}),}
+\DoxyCodeLine{178     SDLK\_KP\_EQUALS = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_EQUALS),}
+\DoxyCodeLine{179     SDLK\_F13 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F13),}
+\DoxyCodeLine{180     SDLK\_F14 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F14),}
+\DoxyCodeLine{181     SDLK\_F15 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F15),}
+\DoxyCodeLine{182     SDLK\_F16 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F16),}
+\DoxyCodeLine{183     SDLK\_F17 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F17),}
+\DoxyCodeLine{184     SDLK\_F18 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F18),}
+\DoxyCodeLine{185     SDLK\_F19 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F19),}
+\DoxyCodeLine{186     SDLK\_F20 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F20),}
+\DoxyCodeLine{187     SDLK\_F21 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F21),}
+\DoxyCodeLine{188     SDLK\_F22 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F22),}
+\DoxyCodeLine{189     SDLK\_F23 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F23),}
+\DoxyCodeLine{190     SDLK\_F24 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_F24),}
+\DoxyCodeLine{191     SDLK\_EXECUTE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_EXECUTE),}
+\DoxyCodeLine{192     SDLK\_HELP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_HELP),}
+\DoxyCodeLine{193     SDLK\_MENU = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_MENU),}
+\DoxyCodeLine{194     SDLK\_SELECT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_SELECT),}
+\DoxyCodeLine{195     SDLK\_STOP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_STOP),}
+\DoxyCodeLine{196     SDLK\_AGAIN = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac9197a2eef1a3f3b9359feffdb0a126e}{SDL\_SCANCODE\_AGAIN}}),}
+\DoxyCodeLine{197     SDLK\_UNDO = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_UNDO),}
+\DoxyCodeLine{198     SDLK\_CUT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CUT),}
+\DoxyCodeLine{199     SDLK\_COPY = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_COPY),}
+\DoxyCodeLine{200     SDLK\_PASTE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_PASTE),}
+\DoxyCodeLine{201     SDLK\_FIND = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_FIND),}
+\DoxyCodeLine{202     SDLK\_MUTE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_MUTE),}
+\DoxyCodeLine{203     SDLK\_VOLUMEUP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_VOLUMEUP),}
+\DoxyCodeLine{204     SDLK\_VOLUMEDOWN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_VOLUMEDOWN),}
+\DoxyCodeLine{205     SDLK\_KP\_COMMA = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_COMMA),}
+\DoxyCodeLine{206     SDLK\_KP\_EQUALSAS400 =}
+\DoxyCodeLine{207         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_EQUALSAS400),}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     SDLK\_ALTERASE = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac5a757253971a21c0b68bc413da5d261}{SDL\_SCANCODE\_ALTERASE}}),}
+\DoxyCodeLine{210     SDLK\_SYSREQ = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_SYSREQ),}
+\DoxyCodeLine{211     SDLK\_CANCEL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CANCEL),}
+\DoxyCodeLine{212     SDLK\_CLEAR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CLEAR),}
+\DoxyCodeLine{213     SDLK\_PRIOR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_PRIOR),}
+\DoxyCodeLine{214     SDLK\_RETURN2 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_RETURN2),}
+\DoxyCodeLine{215     SDLK\_SEPARATOR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_SEPARATOR),}
+\DoxyCodeLine{216     SDLK\_OUT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_OUT),}
+\DoxyCodeLine{217     SDLK\_OPER = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_OPER),}
+\DoxyCodeLine{218     SDLK\_CLEARAGAIN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CLEARAGAIN),}
+\DoxyCodeLine{219     SDLK\_CRSEL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CRSEL),}
+\DoxyCodeLine{220     SDLK\_EXSEL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_EXSEL),}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222     SDLK\_KP\_00 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_00),}
+\DoxyCodeLine{223     SDLK\_KP\_000 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_000),}
+\DoxyCodeLine{224     SDLK\_THOUSANDSSEPARATOR =}
+\DoxyCodeLine{225         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_THOUSANDSSEPARATOR),}
+\DoxyCodeLine{226     SDLK\_DECIMALSEPARATOR =}
+\DoxyCodeLine{227         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_DECIMALSEPARATOR),}
+\DoxyCodeLine{228     SDLK\_CURRENCYUNIT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CURRENCYUNIT),}
+\DoxyCodeLine{229     SDLK\_CURRENCYSUBUNIT =}
+\DoxyCodeLine{230         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CURRENCYSUBUNIT),}
+\DoxyCodeLine{231     SDLK\_KP\_LEFTPAREN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_LEFTPAREN),}
+\DoxyCodeLine{232     SDLK\_KP\_RIGHTPAREN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_RIGHTPAREN),}
+\DoxyCodeLine{233     SDLK\_KP\_LEFTBRACE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_LEFTBRACE),}
+\DoxyCodeLine{234     SDLK\_KP\_RIGHTBRACE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_RIGHTBRACE),}
+\DoxyCodeLine{235     SDLK\_KP\_TAB = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_TAB),}
+\DoxyCodeLine{236     SDLK\_KP\_BACKSPACE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_BACKSPACE),}
+\DoxyCodeLine{237     SDLK\_KP\_A = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_A),}
+\DoxyCodeLine{238     SDLK\_KP\_B = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_B),}
+\DoxyCodeLine{239     SDLK\_KP\_C = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_C),}
+\DoxyCodeLine{240     SDLK\_KP\_D = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_D),}
+\DoxyCodeLine{241     SDLK\_KP\_E = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_E),}
+\DoxyCodeLine{242     SDLK\_KP\_F = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_F),}
+\DoxyCodeLine{243     SDLK\_KP\_XOR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_XOR),}
+\DoxyCodeLine{244     SDLK\_KP\_POWER = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_POWER),}
+\DoxyCodeLine{245     SDLK\_KP\_PERCENT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_PERCENT),}
+\DoxyCodeLine{246     SDLK\_KP\_LESS = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_LESS),}
+\DoxyCodeLine{247     SDLK\_KP\_GREATER = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_GREATER),}
+\DoxyCodeLine{248     SDLK\_KP\_AMPERSAND = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_AMPERSAND),}
+\DoxyCodeLine{249     SDLK\_KP\_DBLAMPERSAND =}
+\DoxyCodeLine{250         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_DBLAMPERSAND),}
+\DoxyCodeLine{251     SDLK\_KP\_VERTICALBAR =}
+\DoxyCodeLine{252         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_VERTICALBAR),}
+\DoxyCodeLine{253     SDLK\_KP\_DBLVERTICALBAR =}
+\DoxyCodeLine{254         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_DBLVERTICALBAR),}
+\DoxyCodeLine{255     SDLK\_KP\_COLON = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_COLON),}
+\DoxyCodeLine{256     SDLK\_KP\_HASH = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_HASH),}
+\DoxyCodeLine{257     SDLK\_KP\_SPACE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_SPACE),}
+\DoxyCodeLine{258     SDLK\_KP\_AT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_AT),}
+\DoxyCodeLine{259     SDLK\_KP\_EXCLAM = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_EXCLAM),}
+\DoxyCodeLine{260     SDLK\_KP\_MEMSTORE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMSTORE),}
+\DoxyCodeLine{261     SDLK\_KP\_MEMRECALL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMRECALL),}
+\DoxyCodeLine{262     SDLK\_KP\_MEMCLEAR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMCLEAR),}
+\DoxyCodeLine{263     SDLK\_KP\_MEMADD = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMADD),}
+\DoxyCodeLine{264     SDLK\_KP\_MEMSUBTRACT =}
+\DoxyCodeLine{265         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMSUBTRACT),}
+\DoxyCodeLine{266     SDLK\_KP\_MEMMULTIPLY =}
+\DoxyCodeLine{267         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMMULTIPLY),}
+\DoxyCodeLine{268     SDLK\_KP\_MEMDIVIDE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_MEMDIVIDE),}
+\DoxyCodeLine{269     SDLK\_KP\_PLUSMINUS = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_PLUSMINUS),}
+\DoxyCodeLine{270     SDLK\_KP\_CLEAR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_CLEAR),}
+\DoxyCodeLine{271     SDLK\_KP\_CLEARENTRY = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_CLEARENTRY),}
+\DoxyCodeLine{272     SDLK\_KP\_BINARY = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_BINARY),}
+\DoxyCodeLine{273     SDLK\_KP\_OCTAL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_OCTAL),}
+\DoxyCodeLine{274     SDLK\_KP\_DECIMAL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_DECIMAL),}
+\DoxyCodeLine{275     SDLK\_KP\_HEXADECIMAL =}
+\DoxyCodeLine{276         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KP\_HEXADECIMAL),}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278     SDLK\_LCTRL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_LCTRL),}
+\DoxyCodeLine{279     SDLK\_LSHIFT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_LSHIFT),}
+\DoxyCodeLine{280     SDLK\_LALT = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bae6a58c2b28e6aa3d473d1a76c75088bc}{SDL\_SCANCODE\_LALT}}),}
+\DoxyCodeLine{281     SDLK\_LGUI = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba8b3916409c841cdb3ef4b0d4cc9d9155}{SDL\_SCANCODE\_LGUI}}),}
+\DoxyCodeLine{282     SDLK\_RCTRL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_RCTRL),}
+\DoxyCodeLine{283     SDLK\_RSHIFT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_RSHIFT),}
+\DoxyCodeLine{284     SDLK\_RALT = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba9af4ffee688b9914dfb696b43b4e9889}{SDL\_SCANCODE\_RALT}}),}
+\DoxyCodeLine{285     SDLK\_RGUI = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba46902ad8e7146f0f255400aff8ab489d}{SDL\_SCANCODE\_RGUI}}),}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{287     SDLK\_MODE = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777bac35fd3f41be03648c6c478d6e88bbe91}{SDL\_SCANCODE\_MODE}}),}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     SDLK\_AUDIONEXT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIONEXT),}
+\DoxyCodeLine{290     SDLK\_AUDIOPREV = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIOPREV),}
+\DoxyCodeLine{291     SDLK\_AUDIOSTOP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIOSTOP),}
+\DoxyCodeLine{292     SDLK\_AUDIOPLAY = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIOPLAY),}
+\DoxyCodeLine{293     SDLK\_AUDIOMUTE = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIOMUTE),}
+\DoxyCodeLine{294     SDLK\_MEDIASELECT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_MEDIASELECT),}
+\DoxyCodeLine{295     SDLK\_WWW = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_WWW),}
+\DoxyCodeLine{296     SDLK\_MAIL = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_MAIL),}
+\DoxyCodeLine{297     SDLK\_CALCULATOR = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_CALCULATOR),}
+\DoxyCodeLine{298     SDLK\_COMPUTER = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_COMPUTER),}
+\DoxyCodeLine{299     SDLK\_AC\_SEARCH = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_SEARCH),}
+\DoxyCodeLine{300     SDLK\_AC\_HOME = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_HOME),}
+\DoxyCodeLine{301     SDLK\_AC\_BACK = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_BACK),}
+\DoxyCodeLine{302     SDLK\_AC\_FORWARD = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_FORWARD),}
+\DoxyCodeLine{303     SDLK\_AC\_STOP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_STOP),}
+\DoxyCodeLine{304     SDLK\_AC\_REFRESH = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_REFRESH),}
+\DoxyCodeLine{305     SDLK\_AC\_BOOKMARKS = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AC\_BOOKMARKS),}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307     SDLK\_BRIGHTNESSDOWN =}
+\DoxyCodeLine{308         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_BRIGHTNESSDOWN),}
+\DoxyCodeLine{309     SDLK\_BRIGHTNESSUP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_BRIGHTNESSUP),}
+\DoxyCodeLine{310     SDLK\_DISPLAYSWITCH = SDL\_SCANCODE\_TO\_KEYCODE(\mbox{\hyperlink{_s_d_l__scancode_8h_a82ab7cff701034fb40a47b5b3a02777ba893aa25f300cba8af0cf6263a4cd7ade}{SDL\_SCANCODE\_DISPLAYSWITCH}}),}
+\DoxyCodeLine{311     SDLK\_KBDILLUMTOGGLE =}
+\DoxyCodeLine{312         SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KBDILLUMTOGGLE),}
+\DoxyCodeLine{313     SDLK\_KBDILLUMDOWN = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KBDILLUMDOWN),}
+\DoxyCodeLine{314     SDLK\_KBDILLUMUP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_KBDILLUMUP),}
+\DoxyCodeLine{315     SDLK\_EJECT = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_EJECT),}
+\DoxyCodeLine{316     SDLK\_SLEEP = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_SLEEP),}
+\DoxyCodeLine{317     SDLK\_APP1 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_APP1),}
+\DoxyCodeLine{318     SDLK\_APP2 = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_APP2),}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     SDLK\_AUDIOREWIND = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIOREWIND),}
+\DoxyCodeLine{321     SDLK\_AUDIOFASTFORWARD = SDL\_SCANCODE\_TO\_KEYCODE(SDL\_SCANCODE\_AUDIOFASTFORWARD)}
+\DoxyCodeLine{322 \} SDL\_KeyCode;}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{327 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{328 \{}
+\DoxyCodeLine{329     KMOD\_NONE = 0x0000,}
+\DoxyCodeLine{330     KMOD\_LSHIFT = 0x0001,}
+\DoxyCodeLine{331     KMOD\_RSHIFT = 0x0002,}
+\DoxyCodeLine{332     KMOD\_LCTRL = 0x0040,}
+\DoxyCodeLine{333     KMOD\_RCTRL = 0x0080,}
+\DoxyCodeLine{334     KMOD\_LALT = 0x0100,}
+\DoxyCodeLine{335     KMOD\_RALT = 0x0200,}
+\DoxyCodeLine{336     KMOD\_LGUI = 0x0400,}
+\DoxyCodeLine{337     KMOD\_RGUI = 0x0800,}
+\DoxyCodeLine{338     KMOD\_NUM = 0x1000,}
+\DoxyCodeLine{339     KMOD\_CAPS = 0x2000,}
+\DoxyCodeLine{340     KMOD\_MODE = 0x4000,}
+\DoxyCodeLine{341     KMOD\_SCROLL = 0x8000,}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343     KMOD\_CTRL = KMOD\_LCTRL | KMOD\_RCTRL,}
+\DoxyCodeLine{344     KMOD\_SHIFT = KMOD\_LSHIFT | KMOD\_RSHIFT,}
+\DoxyCodeLine{345     KMOD\_ALT = KMOD\_LALT | KMOD\_RALT,}
+\DoxyCodeLine{346     KMOD\_GUI = KMOD\_LGUI | KMOD\_RGUI,}
+\DoxyCodeLine{347 }
+\DoxyCodeLine{348     KMOD\_RESERVED = KMOD\_SCROLL \textcolor{comment}{/* This is for source-\/level compatibility with SDL 2.0.0. */}}
+\DoxyCodeLine{349 \} \mbox{\hyperlink{_s_d_l__keycode_8h_afa050ad71f0a5b86aa05cb13f542d747}{SDL\_Keymod}};}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_keycode\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{352 }
+\DoxyCodeLine{353 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

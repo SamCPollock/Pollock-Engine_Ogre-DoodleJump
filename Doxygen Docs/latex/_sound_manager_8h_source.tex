@@ -1,0 +1,25 @@
+\hypertarget{_sound_manager_8h_source}{}\doxysection{Sound\+Manager.\+h}
+\label{_sound_manager_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OrgreTemplateV2/SoundManager.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OrgreTemplateV2/SoundManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <SDL\_mixer.h>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_sound_manager}{SoundManager}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     \mbox{\hyperlink{class_sound_manager_abcc1fbf3488be5788a42c9a4fe56df35}{SoundManager}}();}
+\DoxyCodeLine{9     \mbox{\hyperlink{class_sound_manager}{\string~SoundManager}}();}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_manager_ad072f123b270f53624663f4c555fc282}{addSoundEffect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* path);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sound_manager_a9f7249b4a9e6ec16da34d3a4438365c6}{playSoundEffect}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index, \textcolor{keywordtype}{bool} isLooping);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     std::vector<Mix\_Chunk*> mSoundEffectBank;}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+
+\end{DoxyCode}

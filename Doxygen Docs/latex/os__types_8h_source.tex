@@ -1,0 +1,133 @@
+\hypertarget{os__types_8h_source}{}\doxysection{os\+\_\+types.\+h}
+\label{os__types_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/playoggvorbis/include/Ogg/os\_types.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/samples/playoggvorbis/include/Ogg/os\_types.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/********************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ *                                                                  *}}
+\DoxyCodeLine{3 \textcolor{comment}{ * THIS FILE IS PART OF THE OggVorbis SOFTWARE CODEC SOURCE CODE.   *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * USE, DISTRIBUTION AND REPRODUCTION OF THIS LIBRARY SOURCE IS     *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * GOVERNED BY A BSD-\/STYLE SOURCE LICENSE INCLUDED WITH THIS SOURCE *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * IN 'COPYING'. PLEASE READ THESE TERMS BEFORE DISTRIBUTING.       *}}
+\DoxyCodeLine{7 \textcolor{comment}{ *                                                                  *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * THE OggVorbis SOURCE CODE IS (C) COPYRIGHT 1994-\/2002             *}}
+\DoxyCodeLine{9 \textcolor{comment}{ * by the Xiph.Org Foundation http://www.xiph.org/                  *}}
+\DoxyCodeLine{10 \textcolor{comment}{ *                                                                  *}}
+\DoxyCodeLine{11 \textcolor{comment}{ ********************************************************************}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{ function: \#ifdef jail to whip a few platforms into the UNIX ideal.}}
+\DoxyCodeLine{14 \textcolor{comment}{ last mod: \$Id: os\_types.h 7524 2004-\/08-\/11 04:20:36Z conrad \$}}
+\DoxyCodeLine{15 \textcolor{comment}{}}
+\DoxyCodeLine{16 \textcolor{comment}{ ********************************************************************/}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef \_OS\_TYPES\_H}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_OS\_TYPES\_H}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/* make it easy on the folks that want to compile the libs with a}}
+\DoxyCodeLine{21 \textcolor{comment}{   different malloc than stdlib */}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_ogg\_malloc  malloc}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define \_ogg\_calloc  calloc}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define \_ogg\_realloc realloc}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define \_ogg\_free    free}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#if defined(\_WIN32) }}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#  if defined(\_\_CYGWIN\_\_)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#    include <\_G\_config.h>}}
+\DoxyCodeLine{31      \textcolor{keyword}{typedef} \_G\_int64\_t ogg\_int64\_t;}
+\DoxyCodeLine{32      \textcolor{keyword}{typedef} \_G\_int32\_t ogg\_int32\_t;}
+\DoxyCodeLine{33      \textcolor{keyword}{typedef} \_G\_uint32\_t ogg\_uint32\_t;}
+\DoxyCodeLine{34      \textcolor{keyword}{typedef} \_G\_int16\_t ogg\_int16\_t;}
+\DoxyCodeLine{35      \textcolor{keyword}{typedef} \_G\_uint16\_t ogg\_uint16\_t;}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#  elif defined(\_\_MINGW32\_\_)}}
+\DoxyCodeLine{37      \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} ogg\_int16\_t;                                                                             }
+\DoxyCodeLine{38      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ogg\_uint16\_t;                                                                   }
+\DoxyCodeLine{39      \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ogg\_int32\_t;                                                                               }
+\DoxyCodeLine{40      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ogg\_uint32\_t;                                                                     }
+\DoxyCodeLine{41      \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ogg\_int64\_t;                                                                         }
+\DoxyCodeLine{42      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ogg\_uint64\_t;  }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#  elif defined(\_\_MWERKS\_\_)}}
+\DoxyCodeLine{44      \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ogg\_int64\_t;}
+\DoxyCodeLine{45      \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ogg\_int32\_t;}
+\DoxyCodeLine{46      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ogg\_uint32\_t;}
+\DoxyCodeLine{47      \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} ogg\_int16\_t;}
+\DoxyCodeLine{48      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ogg\_uint16\_t;}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{50      \textcolor{comment}{/* MSVC/Borland */}}
+\DoxyCodeLine{51      \textcolor{keyword}{typedef} \_\_int64 ogg\_int64\_t;}
+\DoxyCodeLine{52      \textcolor{keyword}{typedef} \_\_int32 ogg\_int32\_t;}
+\DoxyCodeLine{53      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int32 ogg\_uint32\_t;}
+\DoxyCodeLine{54      \textcolor{keyword}{typedef} \_\_int16 ogg\_int16\_t;}
+\DoxyCodeLine{55      \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int16 ogg\_uint16\_t;}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#elif defined(\_\_MACOS\_\_)}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#  include <sys/types.h>}}
+\DoxyCodeLine{61    \textcolor{keyword}{typedef} SInt16 ogg\_int16\_t;}
+\DoxyCodeLine{62    \textcolor{keyword}{typedef} UInt16 ogg\_uint16\_t;}
+\DoxyCodeLine{63    \textcolor{keyword}{typedef} SInt32 ogg\_int32\_t;}
+\DoxyCodeLine{64    \textcolor{keyword}{typedef} UInt32 ogg\_uint32\_t;}
+\DoxyCodeLine{65    \textcolor{keyword}{typedef} SInt64 ogg\_int64\_t;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#elif defined(\_\_MACOSX\_\_) }\textcolor{comment}{/* MacOS X Framework build */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#  include <sys/types.h>}}
+\DoxyCodeLine{70    \textcolor{keyword}{typedef} int16\_t ogg\_int16\_t;}
+\DoxyCodeLine{71    \textcolor{keyword}{typedef} u\_int16\_t ogg\_uint16\_t;}
+\DoxyCodeLine{72    \textcolor{keyword}{typedef} int32\_t ogg\_int32\_t;}
+\DoxyCodeLine{73    \textcolor{keyword}{typedef} u\_int32\_t ogg\_uint32\_t;}
+\DoxyCodeLine{74    \textcolor{keyword}{typedef} int64\_t ogg\_int64\_t;}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#elif defined(\_\_BEOS\_\_)}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78    \textcolor{comment}{/* Be */}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#  include <inttypes.h>}}
+\DoxyCodeLine{80    \textcolor{keyword}{typedef} int16\_t ogg\_int16\_t;}
+\DoxyCodeLine{81    \textcolor{keyword}{typedef} u\_int16\_t ogg\_uint16\_t;}
+\DoxyCodeLine{82    \textcolor{keyword}{typedef} int32\_t ogg\_int32\_t;}
+\DoxyCodeLine{83    \textcolor{keyword}{typedef} u\_int32\_t ogg\_uint32\_t;}
+\DoxyCodeLine{84    \textcolor{keyword}{typedef} int64\_t ogg\_int64\_t;}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#elif defined (\_\_EMX\_\_)}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88    \textcolor{comment}{/* OS/2 GCC */}}
+\DoxyCodeLine{89    \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} ogg\_int16\_t;}
+\DoxyCodeLine{90    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ogg\_uint16\_t;}
+\DoxyCodeLine{91    \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ogg\_int32\_t;}
+\DoxyCodeLine{92    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ogg\_uint32\_t;}
+\DoxyCodeLine{93    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ogg\_int64\_t;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#elif defined (DJGPP)}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97    \textcolor{comment}{/* DJGPP */}}
+\DoxyCodeLine{98    \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} ogg\_int16\_t;}
+\DoxyCodeLine{99    \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ogg\_int32\_t;}
+\DoxyCodeLine{100    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ogg\_uint32\_t;}
+\DoxyCodeLine{101    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} ogg\_int64\_t;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#elif defined(R5900)}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105    \textcolor{comment}{/* PS2 EE */}}
+\DoxyCodeLine{106    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} ogg\_int64\_t;}
+\DoxyCodeLine{107    \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ogg\_int32\_t;}
+\DoxyCodeLine{108    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} ogg\_uint32\_t;}
+\DoxyCodeLine{109    \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} ogg\_int16\_t;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#elif defined(\_\_SYMBIAN32\_\_)}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113    \textcolor{comment}{/* Symbian GCC */}}
+\DoxyCodeLine{114    \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} ogg\_int16\_t;}
+\DoxyCodeLine{115    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ogg\_uint16\_t;}
+\DoxyCodeLine{116    \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} ogg\_int32\_t;}
+\DoxyCodeLine{117    \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ogg\_uint32\_t;}
+\DoxyCodeLine{118    \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} ogg\_int64\_t;}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#  include <sys/types.h>}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#  include <ogg/config\_types.h>}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_OS\_TYPES\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

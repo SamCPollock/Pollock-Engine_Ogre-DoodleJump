@@ -1,0 +1,228 @@
+\hypertarget{alc_8h_source}{}\doxysection{alc.\+h}
+\label{alc_8h_source}\index{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/alc.h@{C:/Users/samcp/Documents/Github Stuff/GBC Year 3/\_Ogre-\/Assignment2-\/DoodleJump/OrgreTemplateV2/OpenAL/include/alc.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AL\_ALC\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AL\_ALC\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{5 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#if defined(\_WIN32) \&\& !defined(\_XBOX)}}
+\DoxyCodeLine{9  \textcolor{comment}{/* \_OPENAL32LIB is deprecated */}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{ \#if defined(AL\_BUILD\_LIBRARY) || defined (\_OPENAL32LIB)}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{  \#define ALC\_API \_\_declspec(dllexport)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{ \#else}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{  \#define ALC\_API \_\_declspec(dllimport)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{ \#endif}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{ \#if defined(AL\_BUILD\_LIBRARY) \&\& defined(HAVE\_GCC\_VISIBILITY)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{  \#define ALC\_API \_\_attribute\_\_((visibility("{}default"{}})))}
+\DoxyCodeLine{18 \textcolor{preprocessor}{ \#else}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{  \#define ALC\_API extern}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{ \#endif}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#if defined(\_WIN32)}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{ \#define ALC\_APIENTRY \_\_cdecl}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{ \#define ALC\_APIENTRY}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#if defined(TARGET\_OS\_MAC) \&\& TARGET\_OS\_MAC}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{ \#pragma export on}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{ * The ALCAPI, ALCAPIENTRY, and ALC\_INVALID macros are deprecated, but are}}
+\DoxyCodeLine{35 \textcolor{comment}{ * included for applications porting code from AL 1.0}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define ALCAPI ALC\_API}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define ALCAPIENTRY ALC\_APIENTRY}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define ALC\_INVALID 0}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define ALC\_VERSION\_0\_1         1}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }ALCdevice\_struct ALCdevice;}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }ALCcontext\_struct ALCcontext;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char} ALCboolean;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char} ALCchar;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keywordtype}{char} ALCbyte;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{58 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ALCubyte;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keywordtype}{short} ALCshort;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} ALCushort;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ALCint;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ALCuint;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ALCsizei;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} ALCenum;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keywordtype}{float} ALCfloat;}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82 \textcolor{keyword}{typedef} \textcolor{keywordtype}{double} ALCdouble;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} ALCvoid;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/* Enumerant values begin at column 50. No tabs. */}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{/* Boolean False. */}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define ALC\_FALSE                                0}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{/* Boolean True. */}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define ALC\_TRUE                                 1}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define ALC\_FREQUENCY                            0x1007}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define ALC\_REFRESH                              0x1008}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define ALC\_SYNC                                 0x1009}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define ALC\_MONO\_SOURCES                         0x1010}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define ALC\_STEREO\_SOURCES                       0x1011}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define ALC\_NO\_ERROR                             ALC\_FALSE}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define ALC\_INVALID\_DEVICE                       0xA001}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define ALC\_INVALID\_CONTEXT                      0xA002}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define ALC\_INVALID\_ENUM                         0xA003}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define ALC\_INVALID\_VALUE                        0xA004}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define ALC\_OUT\_OF\_MEMORY                        0xA005}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define ALC\_DEFAULT\_DEVICE\_SPECIFIER             0x1004}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define ALC\_DEVICE\_SPECIFIER                     0x1005}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define ALC\_EXTENSIONS                           0x1006}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define ALC\_MAJOR\_VERSION                        0x1000}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define ALC\_MINOR\_VERSION                        0x1001}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define ALC\_ATTRIBUTES\_SIZE                      0x1002}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define ALC\_ALL\_ATTRIBUTES                       0x1003}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define ALC\_DEFAULT\_ALL\_DEVICES\_SPECIFIER        0x1012}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define ALC\_ALL\_DEVICES\_SPECIFIER                0x1013}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define ALC\_CAPTURE\_DEVICE\_SPECIFIER             0x310}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define ALC\_CAPTURE\_DEFAULT\_DEVICE\_SPECIFIER     0x311}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define ALC\_CAPTURE\_SAMPLES                      0x312}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{/*}}
+\DoxyCodeLine{184 \textcolor{comment}{ * Context Management}}
+\DoxyCodeLine{185 \textcolor{comment}{ */}}
+\DoxyCodeLine{186 ALC\_API ALCcontext *    ALC\_APIENTRY alcCreateContext( ALCdevice *device, \textcolor{keyword}{const} ALCint* attrlist );}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 ALC\_API ALCboolean      ALC\_APIENTRY alcMakeContextCurrent( ALCcontext *context );}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcProcessContext( ALCcontext *context );}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcSuspendContext( ALCcontext *context );}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcDestroyContext( ALCcontext *context );}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196 ALC\_API ALCcontext *    ALC\_APIENTRY alcGetCurrentContext( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 ALC\_API ALCdevice*      ALC\_APIENTRY alcGetContextsDevice( ALCcontext *context );}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 \textcolor{comment}{/*}}
+\DoxyCodeLine{202 \textcolor{comment}{ * Device Management}}
+\DoxyCodeLine{203 \textcolor{comment}{ */}}
+\DoxyCodeLine{204 ALC\_API ALCdevice *     ALC\_APIENTRY alcOpenDevice( \textcolor{keyword}{const} ALCchar *devicename );}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 ALC\_API ALCboolean      ALC\_APIENTRY alcCloseDevice( ALCdevice *device );}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{comment}{/*}}
+\DoxyCodeLine{210 \textcolor{comment}{ * Error support.}}
+\DoxyCodeLine{211 \textcolor{comment}{ * Obtain the most recent Context error}}
+\DoxyCodeLine{212 \textcolor{comment}{ */}}
+\DoxyCodeLine{213 ALC\_API ALCenum         ALC\_APIENTRY alcGetError( ALCdevice *device );}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 \textcolor{comment}{/* }}
+\DoxyCodeLine{217 \textcolor{comment}{ * Extension support.}}
+\DoxyCodeLine{218 \textcolor{comment}{ * Query for the presence of an extension, and obtain any appropriate}}
+\DoxyCodeLine{219 \textcolor{comment}{ * function pointers and enum values.}}
+\DoxyCodeLine{220 \textcolor{comment}{ */}}
+\DoxyCodeLine{221 ALC\_API ALCboolean      ALC\_APIENTRY alcIsExtensionPresent( ALCdevice *device, \textcolor{keyword}{const} ALCchar *extname );}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 ALC\_API \textcolor{keywordtype}{void}  *         ALC\_APIENTRY alcGetProcAddress( ALCdevice *device, \textcolor{keyword}{const} ALCchar *funcname );}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 ALC\_API ALCenum         ALC\_APIENTRY alcGetEnumValue( ALCdevice *device, \textcolor{keyword}{const} ALCchar *enumname );}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{comment}{/*}}
+\DoxyCodeLine{229 \textcolor{comment}{ * Query functions}}
+\DoxyCodeLine{230 \textcolor{comment}{ */}}
+\DoxyCodeLine{231 ALC\_API \textcolor{keyword}{const} ALCchar * ALC\_APIENTRY alcGetString( ALCdevice *device, ALCenum param );}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcGetIntegerv( ALCdevice *device, ALCenum param, ALCsizei size, ALCint *data );}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{comment}{/*}}
+\DoxyCodeLine{237 \textcolor{comment}{ * Capture functions}}
+\DoxyCodeLine{238 \textcolor{comment}{ */}}
+\DoxyCodeLine{239 ALC\_API ALCdevice*      ALC\_APIENTRY alcCaptureOpenDevice( \textcolor{keyword}{const} ALCchar *devicename, ALCuint frequency, ALCenum format, ALCsizei buffersize );}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 ALC\_API ALCboolean      ALC\_APIENTRY alcCaptureCloseDevice( ALCdevice *device );}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcCaptureStart( ALCdevice *device );}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcCaptureStop( ALCdevice *device );}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 ALC\_API \textcolor{keywordtype}{void}            ALC\_APIENTRY alcCaptureSamples( ALCdevice *device, ALCvoid *buffer, ALCsizei samples );}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{comment}{/*}}
+\DoxyCodeLine{250 \textcolor{comment}{ * Pointer-\/to-\/function types, useful for dynamically getting ALC entry points.}}
+\DoxyCodeLine{251 \textcolor{comment}{ */}}
+\DoxyCodeLine{252 \textcolor{keyword}{typedef} ALCcontext *   (ALC\_APIENTRY *LPALCCREATECONTEXT) (ALCdevice *device, \textcolor{keyword}{const} ALCint *attrlist);}
+\DoxyCodeLine{253 \textcolor{keyword}{typedef} ALCboolean     (ALC\_APIENTRY *LPALCMAKECONTEXTCURRENT)( ALCcontext *context );}
+\DoxyCodeLine{254 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCPROCESSCONTEXT)( ALCcontext *context );}
+\DoxyCodeLine{255 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCSUSPENDCONTEXT)( ALCcontext *context );}
+\DoxyCodeLine{256 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCDESTROYCONTEXT)( ALCcontext *context );}
+\DoxyCodeLine{257 \textcolor{keyword}{typedef} ALCcontext *   (ALC\_APIENTRY *LPALCGETCURRENTCONTEXT)( \textcolor{keywordtype}{void} );}
+\DoxyCodeLine{258 \textcolor{keyword}{typedef} ALCdevice *    (ALC\_APIENTRY *LPALCGETCONTEXTSDEVICE)( ALCcontext *context );}
+\DoxyCodeLine{259 \textcolor{keyword}{typedef} ALCdevice *    (ALC\_APIENTRY *LPALCOPENDEVICE)( \textcolor{keyword}{const} ALCchar *devicename );}
+\DoxyCodeLine{260 \textcolor{keyword}{typedef} ALCboolean     (ALC\_APIENTRY *LPALCCLOSEDEVICE)( ALCdevice *device );}
+\DoxyCodeLine{261 \textcolor{keyword}{typedef} ALCenum        (ALC\_APIENTRY *LPALCGETERROR)( ALCdevice *device );}
+\DoxyCodeLine{262 \textcolor{keyword}{typedef} ALCboolean     (ALC\_APIENTRY *LPALCISEXTENSIONPRESENT)( ALCdevice *device, \textcolor{keyword}{const} ALCchar *extname );}
+\DoxyCodeLine{263 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} *         (ALC\_APIENTRY *LPALCGETPROCADDRESS)(ALCdevice *device, \textcolor{keyword}{const} ALCchar *funcname );}
+\DoxyCodeLine{264 \textcolor{keyword}{typedef} ALCenum        (ALC\_APIENTRY *LPALCGETENUMVALUE)(ALCdevice *device, \textcolor{keyword}{const} ALCchar *enumname );}
+\DoxyCodeLine{265 \textcolor{keyword}{typedef} \textcolor{keyword}{const} ALCchar* (ALC\_APIENTRY *LPALCGETSTRING)( ALCdevice *device, ALCenum param );}
+\DoxyCodeLine{266 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCGETINTEGERV)( ALCdevice *device, ALCenum param, ALCsizei size, ALCint *dest );}
+\DoxyCodeLine{267 \textcolor{keyword}{typedef} ALCdevice *    (ALC\_APIENTRY *LPALCCAPTUREOPENDEVICE)( \textcolor{keyword}{const} ALCchar *devicename, ALCuint frequency, ALCenum format, ALCsizei buffersize );}
+\DoxyCodeLine{268 \textcolor{keyword}{typedef} ALCboolean     (ALC\_APIENTRY *LPALCCAPTURECLOSEDEVICE)( ALCdevice *device );}
+\DoxyCodeLine{269 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCCAPTURESTART)( ALCdevice *device );}
+\DoxyCodeLine{270 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCCAPTURESTOP)( ALCdevice *device );}
+\DoxyCodeLine{271 \textcolor{keyword}{typedef} void           (ALC\_APIENTRY *LPALCCAPTURESAMPLES)( ALCdevice *device, ALCvoid *buffer, ALCsizei samples );}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#if defined(TARGET\_OS\_MAC) \&\& TARGET\_OS\_MAC}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{ \#pragma export off}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#if defined(\_\_cplusplus)}}
+\DoxyCodeLine{278 \}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* AL\_ALC\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
